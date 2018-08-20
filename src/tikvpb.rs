@@ -21,143 +21,4289 @@
 use protobuf::Message as Message_imported_for_functions;
 use protobuf::ProtobufEnum as ProtobufEnum_imported_for_functions;
 
+#[derive(PartialEq,Clone,Default)]
+pub struct SuperBatchRequest {
+    // message fields
+    pub requests: ::protobuf::RepeatedField<SuperBatchRequest_Request>,
+    // special fields
+    unknown_fields: ::protobuf::UnknownFields,
+    cached_size: ::protobuf::CachedSize,
+}
+
+impl SuperBatchRequest {
+    pub fn new() -> SuperBatchRequest {
+        ::std::default::Default::default()
+    }
+
+    // repeated .tikvpb.SuperBatchRequest.Request requests = 1;
+
+    pub fn clear_requests(&mut self) {
+        self.requests.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_requests(&mut self, v: ::protobuf::RepeatedField<SuperBatchRequest_Request>) {
+        self.requests = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_requests(&mut self) -> &mut ::protobuf::RepeatedField<SuperBatchRequest_Request> {
+        &mut self.requests
+    }
+
+    // Take field
+    pub fn take_requests(&mut self) -> ::protobuf::RepeatedField<SuperBatchRequest_Request> {
+        ::std::mem::replace(&mut self.requests, ::protobuf::RepeatedField::new())
+    }
+
+    pub fn get_requests(&self) -> &[SuperBatchRequest_Request] {
+        &self.requests
+    }
+}
+
+impl ::protobuf::Message for SuperBatchRequest {
+    fn is_initialized(&self) -> bool {
+        for v in &self.requests {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_repeated_message_into(wire_type, is, &mut self.requests)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        for value in &self.requests {
+            let len = value.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        };
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        for v in &self.requests {
+            os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        };
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &::std::any::Any {
+        self as &::std::any::Any
+    }
+    fn as_any_mut(&mut self) -> &mut ::std::any::Any {
+        self as &mut ::std::any::Any
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<::std::any::Any> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> SuperBatchRequest {
+        SuperBatchRequest::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_repeated_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<SuperBatchRequest_Request>>(
+                    "requests",
+                    |m: &SuperBatchRequest| { &m.requests },
+                    |m: &mut SuperBatchRequest| { &mut m.requests },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<SuperBatchRequest>(
+                    "SuperBatchRequest",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static SuperBatchRequest {
+        static mut instance: ::protobuf::lazy::Lazy<SuperBatchRequest> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const SuperBatchRequest,
+        };
+        unsafe {
+            instance.get(SuperBatchRequest::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for SuperBatchRequest {
+    fn clear(&mut self) {
+        self.clear_requests();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for SuperBatchRequest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for SuperBatchRequest {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
+pub struct SuperBatchRequest_Request {
+    // message oneof groups
+    pub cmd: ::std::option::Option<SuperBatchRequest_Request_oneof_cmd>,
+    // special fields
+    unknown_fields: ::protobuf::UnknownFields,
+    cached_size: ::protobuf::CachedSize,
+}
+
+#[derive(Clone,PartialEq)]
+pub enum SuperBatchRequest_Request_oneof_cmd {
+    Get(super::kvrpcpb::GetRequest),
+    Scan(super::kvrpcpb::ScanRequest),
+    Prewrite(super::kvrpcpb::PrewriteRequest),
+    Commit(super::kvrpcpb::CommitRequest),
+    Import(super::kvrpcpb::ImportRequest),
+    Cleanup(super::kvrpcpb::CleanupRequest),
+    BatchGet(super::kvrpcpb::BatchGetRequest),
+    BatchRollback(super::kvrpcpb::BatchRollbackRequest),
+    ScanLock(super::kvrpcpb::ScanLockRequest),
+    ResolveLock(super::kvrpcpb::ResolveLockRequest),
+    GC(super::kvrpcpb::GCRequest),
+    DeleteRange(super::kvrpcpb::DeleteRangeRequest),
+    RawGet(super::kvrpcpb::RawGetRequest),
+    RawBatchGet(super::kvrpcpb::RawBatchGetRequest),
+    RawPut(super::kvrpcpb::RawPutRequest),
+    RawBatchPut(super::kvrpcpb::RawBatchPutRequest),
+    RawDelete(super::kvrpcpb::RawDeleteRequest),
+    RawBatchDelete(super::kvrpcpb::RawBatchDeleteRequest),
+    RawScan(super::kvrpcpb::RawScanRequest),
+    RawDeleteRange(super::kvrpcpb::RawDeleteRangeRequest),
+    RawBatchScan(super::kvrpcpb::RawBatchScanRequest),
+    Coprocessor(super::coprocessor::Request),
+}
+
+impl SuperBatchRequest_Request {
+    pub fn new() -> SuperBatchRequest_Request {
+        ::std::default::Default::default()
+    }
+
+    // .kvrpcpb.GetRequest Get = 1;
+
+    pub fn clear_Get(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Get(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Get(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Get(&mut self, v: super::kvrpcpb::GetRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Get(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Get(&mut self) -> &mut super::kvrpcpb::GetRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Get(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Get(super::kvrpcpb::GetRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Get(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Get(&mut self) -> super::kvrpcpb::GetRequest {
+        if self.has_Get() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Get(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::GetRequest::new()
+        }
+    }
+
+    pub fn get_Get(&self) -> &super::kvrpcpb::GetRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Get(ref v)) => v,
+            _ => super::kvrpcpb::GetRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.ScanRequest Scan = 2;
+
+    pub fn clear_Scan(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Scan(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Scan(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Scan(&mut self, v: super::kvrpcpb::ScanRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Scan(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Scan(&mut self) -> &mut super::kvrpcpb::ScanRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Scan(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Scan(super::kvrpcpb::ScanRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Scan(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Scan(&mut self) -> super::kvrpcpb::ScanRequest {
+        if self.has_Scan() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Scan(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::ScanRequest::new()
+        }
+    }
+
+    pub fn get_Scan(&self) -> &super::kvrpcpb::ScanRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Scan(ref v)) => v,
+            _ => super::kvrpcpb::ScanRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.PrewriteRequest Prewrite = 3;
+
+    pub fn clear_Prewrite(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Prewrite(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Prewrite(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Prewrite(&mut self, v: super::kvrpcpb::PrewriteRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Prewrite(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Prewrite(&mut self) -> &mut super::kvrpcpb::PrewriteRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Prewrite(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Prewrite(super::kvrpcpb::PrewriteRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Prewrite(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Prewrite(&mut self) -> super::kvrpcpb::PrewriteRequest {
+        if self.has_Prewrite() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Prewrite(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::PrewriteRequest::new()
+        }
+    }
+
+    pub fn get_Prewrite(&self) -> &super::kvrpcpb::PrewriteRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Prewrite(ref v)) => v,
+            _ => super::kvrpcpb::PrewriteRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.CommitRequest Commit = 4;
+
+    pub fn clear_Commit(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Commit(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Commit(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Commit(&mut self, v: super::kvrpcpb::CommitRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Commit(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Commit(&mut self) -> &mut super::kvrpcpb::CommitRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Commit(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Commit(super::kvrpcpb::CommitRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Commit(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Commit(&mut self) -> super::kvrpcpb::CommitRequest {
+        if self.has_Commit() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Commit(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::CommitRequest::new()
+        }
+    }
+
+    pub fn get_Commit(&self) -> &super::kvrpcpb::CommitRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Commit(ref v)) => v,
+            _ => super::kvrpcpb::CommitRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.ImportRequest Import = 5;
+
+    pub fn clear_Import(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Import(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Import(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Import(&mut self, v: super::kvrpcpb::ImportRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Import(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Import(&mut self) -> &mut super::kvrpcpb::ImportRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Import(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Import(super::kvrpcpb::ImportRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Import(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Import(&mut self) -> super::kvrpcpb::ImportRequest {
+        if self.has_Import() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Import(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::ImportRequest::new()
+        }
+    }
+
+    pub fn get_Import(&self) -> &super::kvrpcpb::ImportRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Import(ref v)) => v,
+            _ => super::kvrpcpb::ImportRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.CleanupRequest Cleanup = 6;
+
+    pub fn clear_Cleanup(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Cleanup(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Cleanup(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Cleanup(&mut self, v: super::kvrpcpb::CleanupRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Cleanup(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Cleanup(&mut self) -> &mut super::kvrpcpb::CleanupRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Cleanup(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Cleanup(super::kvrpcpb::CleanupRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Cleanup(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Cleanup(&mut self) -> super::kvrpcpb::CleanupRequest {
+        if self.has_Cleanup() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Cleanup(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::CleanupRequest::new()
+        }
+    }
+
+    pub fn get_Cleanup(&self) -> &super::kvrpcpb::CleanupRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Cleanup(ref v)) => v,
+            _ => super::kvrpcpb::CleanupRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.BatchGetRequest BatchGet = 7;
+
+    pub fn clear_BatchGet(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_BatchGet(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchGet(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_BatchGet(&mut self, v: super::kvrpcpb::BatchGetRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchGet(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_BatchGet(&mut self) -> &mut super::kvrpcpb::BatchGetRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchGet(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchGet(super::kvrpcpb::BatchGetRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchGet(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_BatchGet(&mut self) -> super::kvrpcpb::BatchGetRequest {
+        if self.has_BatchGet() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchGet(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::BatchGetRequest::new()
+        }
+    }
+
+    pub fn get_BatchGet(&self) -> &super::kvrpcpb::BatchGetRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchGet(ref v)) => v,
+            _ => super::kvrpcpb::BatchGetRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.BatchRollbackRequest BatchRollback = 8;
+
+    pub fn clear_BatchRollback(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_BatchRollback(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchRollback(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_BatchRollback(&mut self, v: super::kvrpcpb::BatchRollbackRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchRollback(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_BatchRollback(&mut self) -> &mut super::kvrpcpb::BatchRollbackRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchRollback(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchRollback(super::kvrpcpb::BatchRollbackRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchRollback(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_BatchRollback(&mut self) -> super::kvrpcpb::BatchRollbackRequest {
+        if self.has_BatchRollback() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchRollback(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::BatchRollbackRequest::new()
+        }
+    }
+
+    pub fn get_BatchRollback(&self) -> &super::kvrpcpb::BatchRollbackRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchRollback(ref v)) => v,
+            _ => super::kvrpcpb::BatchRollbackRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.ScanLockRequest ScanLock = 9;
+
+    pub fn clear_ScanLock(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_ScanLock(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ScanLock(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ScanLock(&mut self, v: super::kvrpcpb::ScanLockRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ScanLock(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_ScanLock(&mut self) -> &mut super::kvrpcpb::ScanLockRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ScanLock(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ScanLock(super::kvrpcpb::ScanLockRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ScanLock(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_ScanLock(&mut self) -> super::kvrpcpb::ScanLockRequest {
+        if self.has_ScanLock() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ScanLock(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::ScanLockRequest::new()
+        }
+    }
+
+    pub fn get_ScanLock(&self) -> &super::kvrpcpb::ScanLockRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ScanLock(ref v)) => v,
+            _ => super::kvrpcpb::ScanLockRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.ResolveLockRequest ResolveLock = 10;
+
+    pub fn clear_ResolveLock(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_ResolveLock(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ResolveLock(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ResolveLock(&mut self, v: super::kvrpcpb::ResolveLockRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ResolveLock(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_ResolveLock(&mut self) -> &mut super::kvrpcpb::ResolveLockRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ResolveLock(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ResolveLock(super::kvrpcpb::ResolveLockRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ResolveLock(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_ResolveLock(&mut self) -> super::kvrpcpb::ResolveLockRequest {
+        if self.has_ResolveLock() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ResolveLock(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::ResolveLockRequest::new()
+        }
+    }
+
+    pub fn get_ResolveLock(&self) -> &super::kvrpcpb::ResolveLockRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ResolveLock(ref v)) => v,
+            _ => super::kvrpcpb::ResolveLockRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.GCRequest GC = 11;
+
+    pub fn clear_GC(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_GC(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::GC(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_GC(&mut self, v: super::kvrpcpb::GCRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::GC(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_GC(&mut self) -> &mut super::kvrpcpb::GCRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::GC(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::GC(super::kvrpcpb::GCRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::GC(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_GC(&mut self) -> super::kvrpcpb::GCRequest {
+        if self.has_GC() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::GC(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::GCRequest::new()
+        }
+    }
+
+    pub fn get_GC(&self) -> &super::kvrpcpb::GCRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::GC(ref v)) => v,
+            _ => super::kvrpcpb::GCRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.DeleteRangeRequest DeleteRange = 12;
+
+    pub fn clear_DeleteRange(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_DeleteRange(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::DeleteRange(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_DeleteRange(&mut self, v: super::kvrpcpb::DeleteRangeRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::DeleteRange(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_DeleteRange(&mut self) -> &mut super::kvrpcpb::DeleteRangeRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::DeleteRange(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::DeleteRange(super::kvrpcpb::DeleteRangeRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::DeleteRange(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_DeleteRange(&mut self) -> super::kvrpcpb::DeleteRangeRequest {
+        if self.has_DeleteRange() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::DeleteRange(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::DeleteRangeRequest::new()
+        }
+    }
+
+    pub fn get_DeleteRange(&self) -> &super::kvrpcpb::DeleteRangeRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::DeleteRange(ref v)) => v,
+            _ => super::kvrpcpb::DeleteRangeRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawGetRequest RawGet = 13;
+
+    pub fn clear_RawGet(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawGet(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawGet(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawGet(&mut self, v: super::kvrpcpb::RawGetRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawGet(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawGet(&mut self) -> &mut super::kvrpcpb::RawGetRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawGet(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawGet(super::kvrpcpb::RawGetRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawGet(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawGet(&mut self) -> super::kvrpcpb::RawGetRequest {
+        if self.has_RawGet() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawGet(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawGetRequest::new()
+        }
+    }
+
+    pub fn get_RawGet(&self) -> &super::kvrpcpb::RawGetRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawGet(ref v)) => v,
+            _ => super::kvrpcpb::RawGetRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawBatchGetRequest RawBatchGet = 14;
+
+    pub fn clear_RawBatchGet(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawBatchGet(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchGet(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawBatchGet(&mut self, v: super::kvrpcpb::RawBatchGetRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchGet(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawBatchGet(&mut self) -> &mut super::kvrpcpb::RawBatchGetRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchGet(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchGet(super::kvrpcpb::RawBatchGetRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchGet(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawBatchGet(&mut self) -> super::kvrpcpb::RawBatchGetRequest {
+        if self.has_RawBatchGet() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchGet(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawBatchGetRequest::new()
+        }
+    }
+
+    pub fn get_RawBatchGet(&self) -> &super::kvrpcpb::RawBatchGetRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchGet(ref v)) => v,
+            _ => super::kvrpcpb::RawBatchGetRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawPutRequest RawPut = 15;
+
+    pub fn clear_RawPut(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawPut(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawPut(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawPut(&mut self, v: super::kvrpcpb::RawPutRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawPut(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawPut(&mut self) -> &mut super::kvrpcpb::RawPutRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawPut(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawPut(super::kvrpcpb::RawPutRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawPut(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawPut(&mut self) -> super::kvrpcpb::RawPutRequest {
+        if self.has_RawPut() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawPut(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawPutRequest::new()
+        }
+    }
+
+    pub fn get_RawPut(&self) -> &super::kvrpcpb::RawPutRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawPut(ref v)) => v,
+            _ => super::kvrpcpb::RawPutRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawBatchPutRequest RawBatchPut = 16;
+
+    pub fn clear_RawBatchPut(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawBatchPut(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchPut(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawBatchPut(&mut self, v: super::kvrpcpb::RawBatchPutRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchPut(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawBatchPut(&mut self) -> &mut super::kvrpcpb::RawBatchPutRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchPut(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchPut(super::kvrpcpb::RawBatchPutRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchPut(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawBatchPut(&mut self) -> super::kvrpcpb::RawBatchPutRequest {
+        if self.has_RawBatchPut() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchPut(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawBatchPutRequest::new()
+        }
+    }
+
+    pub fn get_RawBatchPut(&self) -> &super::kvrpcpb::RawBatchPutRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchPut(ref v)) => v,
+            _ => super::kvrpcpb::RawBatchPutRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawDeleteRequest RawDelete = 17;
+
+    pub fn clear_RawDelete(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawDelete(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDelete(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawDelete(&mut self, v: super::kvrpcpb::RawDeleteRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDelete(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawDelete(&mut self) -> &mut super::kvrpcpb::RawDeleteRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDelete(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDelete(super::kvrpcpb::RawDeleteRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDelete(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawDelete(&mut self) -> super::kvrpcpb::RawDeleteRequest {
+        if self.has_RawDelete() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDelete(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawDeleteRequest::new()
+        }
+    }
+
+    pub fn get_RawDelete(&self) -> &super::kvrpcpb::RawDeleteRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDelete(ref v)) => v,
+            _ => super::kvrpcpb::RawDeleteRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawBatchDeleteRequest RawBatchDelete = 18;
+
+    pub fn clear_RawBatchDelete(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawBatchDelete(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchDelete(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawBatchDelete(&mut self, v: super::kvrpcpb::RawBatchDeleteRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchDelete(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawBatchDelete(&mut self) -> &mut super::kvrpcpb::RawBatchDeleteRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchDelete(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchDelete(super::kvrpcpb::RawBatchDeleteRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchDelete(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawBatchDelete(&mut self) -> super::kvrpcpb::RawBatchDeleteRequest {
+        if self.has_RawBatchDelete() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchDelete(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawBatchDeleteRequest::new()
+        }
+    }
+
+    pub fn get_RawBatchDelete(&self) -> &super::kvrpcpb::RawBatchDeleteRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchDelete(ref v)) => v,
+            _ => super::kvrpcpb::RawBatchDeleteRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawScanRequest RawScan = 19;
+
+    pub fn clear_RawScan(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawScan(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawScan(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawScan(&mut self, v: super::kvrpcpb::RawScanRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawScan(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawScan(&mut self) -> &mut super::kvrpcpb::RawScanRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawScan(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawScan(super::kvrpcpb::RawScanRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawScan(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawScan(&mut self) -> super::kvrpcpb::RawScanRequest {
+        if self.has_RawScan() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawScan(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawScanRequest::new()
+        }
+    }
+
+    pub fn get_RawScan(&self) -> &super::kvrpcpb::RawScanRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawScan(ref v)) => v,
+            _ => super::kvrpcpb::RawScanRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawDeleteRangeRequest RawDeleteRange = 20;
+
+    pub fn clear_RawDeleteRange(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawDeleteRange(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDeleteRange(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawDeleteRange(&mut self, v: super::kvrpcpb::RawDeleteRangeRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDeleteRange(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawDeleteRange(&mut self) -> &mut super::kvrpcpb::RawDeleteRangeRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDeleteRange(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDeleteRange(super::kvrpcpb::RawDeleteRangeRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDeleteRange(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawDeleteRange(&mut self) -> super::kvrpcpb::RawDeleteRangeRequest {
+        if self.has_RawDeleteRange() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDeleteRange(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawDeleteRangeRequest::new()
+        }
+    }
+
+    pub fn get_RawDeleteRange(&self) -> &super::kvrpcpb::RawDeleteRangeRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDeleteRange(ref v)) => v,
+            _ => super::kvrpcpb::RawDeleteRangeRequest::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawBatchScanRequest RawBatchScan = 21;
+
+    pub fn clear_RawBatchScan(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawBatchScan(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchScan(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawBatchScan(&mut self, v: super::kvrpcpb::RawBatchScanRequest) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchScan(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawBatchScan(&mut self) -> &mut super::kvrpcpb::RawBatchScanRequest {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchScan(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchScan(super::kvrpcpb::RawBatchScanRequest::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchScan(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawBatchScan(&mut self) -> super::kvrpcpb::RawBatchScanRequest {
+        if self.has_RawBatchScan() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchScan(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawBatchScanRequest::new()
+        }
+    }
+
+    pub fn get_RawBatchScan(&self) -> &super::kvrpcpb::RawBatchScanRequest {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchScan(ref v)) => v,
+            _ => super::kvrpcpb::RawBatchScanRequest::default_instance(),
+        }
+    }
+
+    // .coprocessor.Request Coprocessor = 22;
+
+    pub fn clear_Coprocessor(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Coprocessor(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Coprocessor(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Coprocessor(&mut self, v: super::coprocessor::Request) {
+        self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Coprocessor(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Coprocessor(&mut self) -> &mut super::coprocessor::Request {
+        if let ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Coprocessor(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Coprocessor(super::coprocessor::Request::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Coprocessor(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Coprocessor(&mut self) -> super::coprocessor::Request {
+        if self.has_Coprocessor() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Coprocessor(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::coprocessor::Request::new()
+        }
+    }
+
+    pub fn get_Coprocessor(&self) -> &super::coprocessor::Request {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Coprocessor(ref v)) => v,
+            _ => super::coprocessor::Request::default_instance(),
+        }
+    }
+}
+
+impl ::protobuf::Message for SuperBatchRequest_Request {
+    fn is_initialized(&self) -> bool {
+        if let Some(SuperBatchRequest_Request_oneof_cmd::Get(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::Scan(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::Prewrite(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::Commit(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::Import(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::Cleanup(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::BatchGet(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::BatchRollback(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::ScanLock(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::ResolveLock(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::GC(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::DeleteRange(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::RawGet(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::RawBatchGet(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::RawPut(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::RawBatchPut(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::RawDelete(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::RawBatchDelete(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::RawScan(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::RawDeleteRange(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::RawBatchScan(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchRequest_Request_oneof_cmd::Coprocessor(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Get(is.read_message()?));
+                },
+                2 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Scan(is.read_message()?));
+                },
+                3 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Prewrite(is.read_message()?));
+                },
+                4 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Commit(is.read_message()?));
+                },
+                5 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Import(is.read_message()?));
+                },
+                6 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Cleanup(is.read_message()?));
+                },
+                7 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchGet(is.read_message()?));
+                },
+                8 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::BatchRollback(is.read_message()?));
+                },
+                9 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ScanLock(is.read_message()?));
+                },
+                10 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::ResolveLock(is.read_message()?));
+                },
+                11 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::GC(is.read_message()?));
+                },
+                12 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::DeleteRange(is.read_message()?));
+                },
+                13 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawGet(is.read_message()?));
+                },
+                14 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchGet(is.read_message()?));
+                },
+                15 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawPut(is.read_message()?));
+                },
+                16 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchPut(is.read_message()?));
+                },
+                17 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDelete(is.read_message()?));
+                },
+                18 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchDelete(is.read_message()?));
+                },
+                19 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawScan(is.read_message()?));
+                },
+                20 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawDeleteRange(is.read_message()?));
+                },
+                21 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::RawBatchScan(is.read_message()?));
+                },
+                22 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchRequest_Request_oneof_cmd::Coprocessor(is.read_message()?));
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if let ::std::option::Option::Some(ref v) = self.cmd {
+            match v {
+                &SuperBatchRequest_Request_oneof_cmd::Get(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Scan(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Prewrite(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Commit(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Import(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Cleanup(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::BatchGet(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::BatchRollback(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::ScanLock(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::ResolveLock(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::GC(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::DeleteRange(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawGet(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawBatchGet(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawPut(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawBatchPut(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawDelete(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawBatchDelete(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawScan(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawDeleteRange(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawBatchScan(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Coprocessor(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+            };
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        if let ::std::option::Option::Some(ref v) = self.cmd {
+            match v {
+                &SuperBatchRequest_Request_oneof_cmd::Get(ref v) => {
+                    os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Scan(ref v) => {
+                    os.write_tag(2, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Prewrite(ref v) => {
+                    os.write_tag(3, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Commit(ref v) => {
+                    os.write_tag(4, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Import(ref v) => {
+                    os.write_tag(5, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Cleanup(ref v) => {
+                    os.write_tag(6, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::BatchGet(ref v) => {
+                    os.write_tag(7, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::BatchRollback(ref v) => {
+                    os.write_tag(8, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::ScanLock(ref v) => {
+                    os.write_tag(9, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::ResolveLock(ref v) => {
+                    os.write_tag(10, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::GC(ref v) => {
+                    os.write_tag(11, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::DeleteRange(ref v) => {
+                    os.write_tag(12, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawGet(ref v) => {
+                    os.write_tag(13, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawBatchGet(ref v) => {
+                    os.write_tag(14, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawPut(ref v) => {
+                    os.write_tag(15, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawBatchPut(ref v) => {
+                    os.write_tag(16, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawDelete(ref v) => {
+                    os.write_tag(17, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawBatchDelete(ref v) => {
+                    os.write_tag(18, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawScan(ref v) => {
+                    os.write_tag(19, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawDeleteRange(ref v) => {
+                    os.write_tag(20, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::RawBatchScan(ref v) => {
+                    os.write_tag(21, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchRequest_Request_oneof_cmd::Coprocessor(ref v) => {
+                    os.write_tag(22, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+            };
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &::std::any::Any {
+        self as &::std::any::Any
+    }
+    fn as_any_mut(&mut self) -> &mut ::std::any::Any {
+        self as &mut ::std::any::Any
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<::std::any::Any> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> SuperBatchRequest_Request {
+        SuperBatchRequest_Request::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::GetRequest>(
+                    "Get",
+                    SuperBatchRequest_Request::has_Get,
+                    SuperBatchRequest_Request::get_Get,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::ScanRequest>(
+                    "Scan",
+                    SuperBatchRequest_Request::has_Scan,
+                    SuperBatchRequest_Request::get_Scan,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::PrewriteRequest>(
+                    "Prewrite",
+                    SuperBatchRequest_Request::has_Prewrite,
+                    SuperBatchRequest_Request::get_Prewrite,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::CommitRequest>(
+                    "Commit",
+                    SuperBatchRequest_Request::has_Commit,
+                    SuperBatchRequest_Request::get_Commit,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::ImportRequest>(
+                    "Import",
+                    SuperBatchRequest_Request::has_Import,
+                    SuperBatchRequest_Request::get_Import,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::CleanupRequest>(
+                    "Cleanup",
+                    SuperBatchRequest_Request::has_Cleanup,
+                    SuperBatchRequest_Request::get_Cleanup,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::BatchGetRequest>(
+                    "BatchGet",
+                    SuperBatchRequest_Request::has_BatchGet,
+                    SuperBatchRequest_Request::get_BatchGet,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::BatchRollbackRequest>(
+                    "BatchRollback",
+                    SuperBatchRequest_Request::has_BatchRollback,
+                    SuperBatchRequest_Request::get_BatchRollback,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::ScanLockRequest>(
+                    "ScanLock",
+                    SuperBatchRequest_Request::has_ScanLock,
+                    SuperBatchRequest_Request::get_ScanLock,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::ResolveLockRequest>(
+                    "ResolveLock",
+                    SuperBatchRequest_Request::has_ResolveLock,
+                    SuperBatchRequest_Request::get_ResolveLock,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::GCRequest>(
+                    "GC",
+                    SuperBatchRequest_Request::has_GC,
+                    SuperBatchRequest_Request::get_GC,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::DeleteRangeRequest>(
+                    "DeleteRange",
+                    SuperBatchRequest_Request::has_DeleteRange,
+                    SuperBatchRequest_Request::get_DeleteRange,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawGetRequest>(
+                    "RawGet",
+                    SuperBatchRequest_Request::has_RawGet,
+                    SuperBatchRequest_Request::get_RawGet,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawBatchGetRequest>(
+                    "RawBatchGet",
+                    SuperBatchRequest_Request::has_RawBatchGet,
+                    SuperBatchRequest_Request::get_RawBatchGet,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawPutRequest>(
+                    "RawPut",
+                    SuperBatchRequest_Request::has_RawPut,
+                    SuperBatchRequest_Request::get_RawPut,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawBatchPutRequest>(
+                    "RawBatchPut",
+                    SuperBatchRequest_Request::has_RawBatchPut,
+                    SuperBatchRequest_Request::get_RawBatchPut,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawDeleteRequest>(
+                    "RawDelete",
+                    SuperBatchRequest_Request::has_RawDelete,
+                    SuperBatchRequest_Request::get_RawDelete,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawBatchDeleteRequest>(
+                    "RawBatchDelete",
+                    SuperBatchRequest_Request::has_RawBatchDelete,
+                    SuperBatchRequest_Request::get_RawBatchDelete,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawScanRequest>(
+                    "RawScan",
+                    SuperBatchRequest_Request::has_RawScan,
+                    SuperBatchRequest_Request::get_RawScan,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawDeleteRangeRequest>(
+                    "RawDeleteRange",
+                    SuperBatchRequest_Request::has_RawDeleteRange,
+                    SuperBatchRequest_Request::get_RawDeleteRange,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawBatchScanRequest>(
+                    "RawBatchScan",
+                    SuperBatchRequest_Request::has_RawBatchScan,
+                    SuperBatchRequest_Request::get_RawBatchScan,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::coprocessor::Request>(
+                    "Coprocessor",
+                    SuperBatchRequest_Request::has_Coprocessor,
+                    SuperBatchRequest_Request::get_Coprocessor,
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<SuperBatchRequest_Request>(
+                    "SuperBatchRequest_Request",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static SuperBatchRequest_Request {
+        static mut instance: ::protobuf::lazy::Lazy<SuperBatchRequest_Request> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const SuperBatchRequest_Request,
+        };
+        unsafe {
+            instance.get(SuperBatchRequest_Request::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for SuperBatchRequest_Request {
+    fn clear(&mut self) {
+        self.clear_Get();
+        self.clear_Scan();
+        self.clear_Prewrite();
+        self.clear_Commit();
+        self.clear_Import();
+        self.clear_Cleanup();
+        self.clear_BatchGet();
+        self.clear_BatchRollback();
+        self.clear_ScanLock();
+        self.clear_ResolveLock();
+        self.clear_GC();
+        self.clear_DeleteRange();
+        self.clear_RawGet();
+        self.clear_RawBatchGet();
+        self.clear_RawPut();
+        self.clear_RawBatchPut();
+        self.clear_RawDelete();
+        self.clear_RawBatchDelete();
+        self.clear_RawScan();
+        self.clear_RawDeleteRange();
+        self.clear_RawBatchScan();
+        self.clear_Coprocessor();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for SuperBatchRequest_Request {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for SuperBatchRequest_Request {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
+pub struct SuperBatchResponse {
+    // message fields
+    pub responses: ::protobuf::RepeatedField<SuperBatchResponse_Response>,
+    // special fields
+    unknown_fields: ::protobuf::UnknownFields,
+    cached_size: ::protobuf::CachedSize,
+}
+
+impl SuperBatchResponse {
+    pub fn new() -> SuperBatchResponse {
+        ::std::default::Default::default()
+    }
+
+    // repeated .tikvpb.SuperBatchResponse.Response responses = 1;
+
+    pub fn clear_responses(&mut self) {
+        self.responses.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_responses(&mut self, v: ::protobuf::RepeatedField<SuperBatchResponse_Response>) {
+        self.responses = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_responses(&mut self) -> &mut ::protobuf::RepeatedField<SuperBatchResponse_Response> {
+        &mut self.responses
+    }
+
+    // Take field
+    pub fn take_responses(&mut self) -> ::protobuf::RepeatedField<SuperBatchResponse_Response> {
+        ::std::mem::replace(&mut self.responses, ::protobuf::RepeatedField::new())
+    }
+
+    pub fn get_responses(&self) -> &[SuperBatchResponse_Response] {
+        &self.responses
+    }
+}
+
+impl ::protobuf::Message for SuperBatchResponse {
+    fn is_initialized(&self) -> bool {
+        for v in &self.responses {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_repeated_message_into(wire_type, is, &mut self.responses)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        for value in &self.responses {
+            let len = value.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        };
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        for v in &self.responses {
+            os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        };
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &::std::any::Any {
+        self as &::std::any::Any
+    }
+    fn as_any_mut(&mut self) -> &mut ::std::any::Any {
+        self as &mut ::std::any::Any
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<::std::any::Any> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> SuperBatchResponse {
+        SuperBatchResponse::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_repeated_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<SuperBatchResponse_Response>>(
+                    "responses",
+                    |m: &SuperBatchResponse| { &m.responses },
+                    |m: &mut SuperBatchResponse| { &mut m.responses },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<SuperBatchResponse>(
+                    "SuperBatchResponse",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static SuperBatchResponse {
+        static mut instance: ::protobuf::lazy::Lazy<SuperBatchResponse> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const SuperBatchResponse,
+        };
+        unsafe {
+            instance.get(SuperBatchResponse::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for SuperBatchResponse {
+    fn clear(&mut self) {
+        self.clear_responses();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for SuperBatchResponse {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for SuperBatchResponse {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
+pub struct SuperBatchResponse_Response {
+    // message oneof groups
+    pub cmd: ::std::option::Option<SuperBatchResponse_Response_oneof_cmd>,
+    // special fields
+    unknown_fields: ::protobuf::UnknownFields,
+    cached_size: ::protobuf::CachedSize,
+}
+
+#[derive(Clone,PartialEq)]
+pub enum SuperBatchResponse_Response_oneof_cmd {
+    Get(super::kvrpcpb::GetResponse),
+    Scan(super::kvrpcpb::ScanResponse),
+    Prewrite(super::kvrpcpb::PrewriteResponse),
+    Commit(super::kvrpcpb::CommitResponse),
+    Import(super::kvrpcpb::ImportResponse),
+    Cleanup(super::kvrpcpb::CleanupResponse),
+    BatchGet(super::kvrpcpb::BatchGetResponse),
+    BatchRollback(super::kvrpcpb::BatchRollbackResponse),
+    ScanLock(super::kvrpcpb::ScanLockResponse),
+    ResolveLock(super::kvrpcpb::ResolveLockResponse),
+    GC(super::kvrpcpb::GCResponse),
+    DeleteRange(super::kvrpcpb::DeleteRangeResponse),
+    RawGet(super::kvrpcpb::RawGetResponse),
+    RawBatchGet(super::kvrpcpb::RawBatchGetResponse),
+    RawPut(super::kvrpcpb::RawPutResponse),
+    RawBatchPut(super::kvrpcpb::RawBatchPutResponse),
+    RawDelete(super::kvrpcpb::RawDeleteResponse),
+    RawBatchDelete(super::kvrpcpb::RawBatchDeleteResponse),
+    RawScan(super::kvrpcpb::RawScanResponse),
+    RawDeleteRange(super::kvrpcpb::RawDeleteRangeResponse),
+    RawBatchScan(super::kvrpcpb::RawBatchScanResponse),
+    Coprocessor(super::coprocessor::Response),
+}
+
+impl SuperBatchResponse_Response {
+    pub fn new() -> SuperBatchResponse_Response {
+        ::std::default::Default::default()
+    }
+
+    // .kvrpcpb.GetResponse Get = 1;
+
+    pub fn clear_Get(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Get(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Get(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Get(&mut self, v: super::kvrpcpb::GetResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Get(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Get(&mut self) -> &mut super::kvrpcpb::GetResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Get(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Get(super::kvrpcpb::GetResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Get(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Get(&mut self) -> super::kvrpcpb::GetResponse {
+        if self.has_Get() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Get(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::GetResponse::new()
+        }
+    }
+
+    pub fn get_Get(&self) -> &super::kvrpcpb::GetResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Get(ref v)) => v,
+            _ => super::kvrpcpb::GetResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.ScanResponse Scan = 2;
+
+    pub fn clear_Scan(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Scan(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Scan(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Scan(&mut self, v: super::kvrpcpb::ScanResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Scan(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Scan(&mut self) -> &mut super::kvrpcpb::ScanResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Scan(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Scan(super::kvrpcpb::ScanResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Scan(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Scan(&mut self) -> super::kvrpcpb::ScanResponse {
+        if self.has_Scan() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Scan(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::ScanResponse::new()
+        }
+    }
+
+    pub fn get_Scan(&self) -> &super::kvrpcpb::ScanResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Scan(ref v)) => v,
+            _ => super::kvrpcpb::ScanResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.PrewriteResponse Prewrite = 3;
+
+    pub fn clear_Prewrite(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Prewrite(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Prewrite(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Prewrite(&mut self, v: super::kvrpcpb::PrewriteResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Prewrite(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Prewrite(&mut self) -> &mut super::kvrpcpb::PrewriteResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Prewrite(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Prewrite(super::kvrpcpb::PrewriteResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Prewrite(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Prewrite(&mut self) -> super::kvrpcpb::PrewriteResponse {
+        if self.has_Prewrite() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Prewrite(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::PrewriteResponse::new()
+        }
+    }
+
+    pub fn get_Prewrite(&self) -> &super::kvrpcpb::PrewriteResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Prewrite(ref v)) => v,
+            _ => super::kvrpcpb::PrewriteResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.CommitResponse Commit = 4;
+
+    pub fn clear_Commit(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Commit(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Commit(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Commit(&mut self, v: super::kvrpcpb::CommitResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Commit(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Commit(&mut self) -> &mut super::kvrpcpb::CommitResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Commit(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Commit(super::kvrpcpb::CommitResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Commit(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Commit(&mut self) -> super::kvrpcpb::CommitResponse {
+        if self.has_Commit() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Commit(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::CommitResponse::new()
+        }
+    }
+
+    pub fn get_Commit(&self) -> &super::kvrpcpb::CommitResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Commit(ref v)) => v,
+            _ => super::kvrpcpb::CommitResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.ImportResponse Import = 5;
+
+    pub fn clear_Import(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Import(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Import(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Import(&mut self, v: super::kvrpcpb::ImportResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Import(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Import(&mut self) -> &mut super::kvrpcpb::ImportResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Import(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Import(super::kvrpcpb::ImportResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Import(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Import(&mut self) -> super::kvrpcpb::ImportResponse {
+        if self.has_Import() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Import(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::ImportResponse::new()
+        }
+    }
+
+    pub fn get_Import(&self) -> &super::kvrpcpb::ImportResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Import(ref v)) => v,
+            _ => super::kvrpcpb::ImportResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.CleanupResponse Cleanup = 6;
+
+    pub fn clear_Cleanup(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Cleanup(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Cleanup(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Cleanup(&mut self, v: super::kvrpcpb::CleanupResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Cleanup(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Cleanup(&mut self) -> &mut super::kvrpcpb::CleanupResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Cleanup(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Cleanup(super::kvrpcpb::CleanupResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Cleanup(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Cleanup(&mut self) -> super::kvrpcpb::CleanupResponse {
+        if self.has_Cleanup() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Cleanup(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::CleanupResponse::new()
+        }
+    }
+
+    pub fn get_Cleanup(&self) -> &super::kvrpcpb::CleanupResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Cleanup(ref v)) => v,
+            _ => super::kvrpcpb::CleanupResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.BatchGetResponse BatchGet = 7;
+
+    pub fn clear_BatchGet(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_BatchGet(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchGet(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_BatchGet(&mut self, v: super::kvrpcpb::BatchGetResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchGet(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_BatchGet(&mut self) -> &mut super::kvrpcpb::BatchGetResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchGet(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchGet(super::kvrpcpb::BatchGetResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchGet(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_BatchGet(&mut self) -> super::kvrpcpb::BatchGetResponse {
+        if self.has_BatchGet() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchGet(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::BatchGetResponse::new()
+        }
+    }
+
+    pub fn get_BatchGet(&self) -> &super::kvrpcpb::BatchGetResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchGet(ref v)) => v,
+            _ => super::kvrpcpb::BatchGetResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.BatchRollbackResponse BatchRollback = 8;
+
+    pub fn clear_BatchRollback(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_BatchRollback(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchRollback(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_BatchRollback(&mut self, v: super::kvrpcpb::BatchRollbackResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchRollback(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_BatchRollback(&mut self) -> &mut super::kvrpcpb::BatchRollbackResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchRollback(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchRollback(super::kvrpcpb::BatchRollbackResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchRollback(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_BatchRollback(&mut self) -> super::kvrpcpb::BatchRollbackResponse {
+        if self.has_BatchRollback() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchRollback(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::BatchRollbackResponse::new()
+        }
+    }
+
+    pub fn get_BatchRollback(&self) -> &super::kvrpcpb::BatchRollbackResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchRollback(ref v)) => v,
+            _ => super::kvrpcpb::BatchRollbackResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.ScanLockResponse ScanLock = 9;
+
+    pub fn clear_ScanLock(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_ScanLock(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ScanLock(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ScanLock(&mut self, v: super::kvrpcpb::ScanLockResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ScanLock(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_ScanLock(&mut self) -> &mut super::kvrpcpb::ScanLockResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ScanLock(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ScanLock(super::kvrpcpb::ScanLockResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ScanLock(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_ScanLock(&mut self) -> super::kvrpcpb::ScanLockResponse {
+        if self.has_ScanLock() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ScanLock(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::ScanLockResponse::new()
+        }
+    }
+
+    pub fn get_ScanLock(&self) -> &super::kvrpcpb::ScanLockResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ScanLock(ref v)) => v,
+            _ => super::kvrpcpb::ScanLockResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.ResolveLockResponse ResolveLock = 10;
+
+    pub fn clear_ResolveLock(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_ResolveLock(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ResolveLock(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ResolveLock(&mut self, v: super::kvrpcpb::ResolveLockResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ResolveLock(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_ResolveLock(&mut self) -> &mut super::kvrpcpb::ResolveLockResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ResolveLock(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ResolveLock(super::kvrpcpb::ResolveLockResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ResolveLock(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_ResolveLock(&mut self) -> super::kvrpcpb::ResolveLockResponse {
+        if self.has_ResolveLock() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ResolveLock(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::ResolveLockResponse::new()
+        }
+    }
+
+    pub fn get_ResolveLock(&self) -> &super::kvrpcpb::ResolveLockResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ResolveLock(ref v)) => v,
+            _ => super::kvrpcpb::ResolveLockResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.GCResponse GC = 11;
+
+    pub fn clear_GC(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_GC(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::GC(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_GC(&mut self, v: super::kvrpcpb::GCResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::GC(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_GC(&mut self) -> &mut super::kvrpcpb::GCResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::GC(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::GC(super::kvrpcpb::GCResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::GC(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_GC(&mut self) -> super::kvrpcpb::GCResponse {
+        if self.has_GC() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::GC(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::GCResponse::new()
+        }
+    }
+
+    pub fn get_GC(&self) -> &super::kvrpcpb::GCResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::GC(ref v)) => v,
+            _ => super::kvrpcpb::GCResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.DeleteRangeResponse DeleteRange = 12;
+
+    pub fn clear_DeleteRange(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_DeleteRange(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::DeleteRange(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_DeleteRange(&mut self, v: super::kvrpcpb::DeleteRangeResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::DeleteRange(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_DeleteRange(&mut self) -> &mut super::kvrpcpb::DeleteRangeResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::DeleteRange(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::DeleteRange(super::kvrpcpb::DeleteRangeResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::DeleteRange(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_DeleteRange(&mut self) -> super::kvrpcpb::DeleteRangeResponse {
+        if self.has_DeleteRange() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::DeleteRange(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::DeleteRangeResponse::new()
+        }
+    }
+
+    pub fn get_DeleteRange(&self) -> &super::kvrpcpb::DeleteRangeResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::DeleteRange(ref v)) => v,
+            _ => super::kvrpcpb::DeleteRangeResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawGetResponse RawGet = 13;
+
+    pub fn clear_RawGet(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawGet(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawGet(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawGet(&mut self, v: super::kvrpcpb::RawGetResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawGet(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawGet(&mut self) -> &mut super::kvrpcpb::RawGetResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawGet(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawGet(super::kvrpcpb::RawGetResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawGet(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawGet(&mut self) -> super::kvrpcpb::RawGetResponse {
+        if self.has_RawGet() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawGet(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawGetResponse::new()
+        }
+    }
+
+    pub fn get_RawGet(&self) -> &super::kvrpcpb::RawGetResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawGet(ref v)) => v,
+            _ => super::kvrpcpb::RawGetResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawBatchGetResponse RawBatchGet = 14;
+
+    pub fn clear_RawBatchGet(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawBatchGet(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchGet(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawBatchGet(&mut self, v: super::kvrpcpb::RawBatchGetResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchGet(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawBatchGet(&mut self) -> &mut super::kvrpcpb::RawBatchGetResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchGet(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchGet(super::kvrpcpb::RawBatchGetResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchGet(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawBatchGet(&mut self) -> super::kvrpcpb::RawBatchGetResponse {
+        if self.has_RawBatchGet() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchGet(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawBatchGetResponse::new()
+        }
+    }
+
+    pub fn get_RawBatchGet(&self) -> &super::kvrpcpb::RawBatchGetResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchGet(ref v)) => v,
+            _ => super::kvrpcpb::RawBatchGetResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawPutResponse RawPut = 15;
+
+    pub fn clear_RawPut(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawPut(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawPut(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawPut(&mut self, v: super::kvrpcpb::RawPutResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawPut(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawPut(&mut self) -> &mut super::kvrpcpb::RawPutResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawPut(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawPut(super::kvrpcpb::RawPutResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawPut(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawPut(&mut self) -> super::kvrpcpb::RawPutResponse {
+        if self.has_RawPut() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawPut(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawPutResponse::new()
+        }
+    }
+
+    pub fn get_RawPut(&self) -> &super::kvrpcpb::RawPutResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawPut(ref v)) => v,
+            _ => super::kvrpcpb::RawPutResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawBatchPutResponse RawBatchPut = 16;
+
+    pub fn clear_RawBatchPut(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawBatchPut(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchPut(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawBatchPut(&mut self, v: super::kvrpcpb::RawBatchPutResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchPut(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawBatchPut(&mut self) -> &mut super::kvrpcpb::RawBatchPutResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchPut(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchPut(super::kvrpcpb::RawBatchPutResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchPut(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawBatchPut(&mut self) -> super::kvrpcpb::RawBatchPutResponse {
+        if self.has_RawBatchPut() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchPut(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawBatchPutResponse::new()
+        }
+    }
+
+    pub fn get_RawBatchPut(&self) -> &super::kvrpcpb::RawBatchPutResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchPut(ref v)) => v,
+            _ => super::kvrpcpb::RawBatchPutResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawDeleteResponse RawDelete = 17;
+
+    pub fn clear_RawDelete(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawDelete(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDelete(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawDelete(&mut self, v: super::kvrpcpb::RawDeleteResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDelete(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawDelete(&mut self) -> &mut super::kvrpcpb::RawDeleteResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDelete(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDelete(super::kvrpcpb::RawDeleteResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDelete(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawDelete(&mut self) -> super::kvrpcpb::RawDeleteResponse {
+        if self.has_RawDelete() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDelete(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawDeleteResponse::new()
+        }
+    }
+
+    pub fn get_RawDelete(&self) -> &super::kvrpcpb::RawDeleteResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDelete(ref v)) => v,
+            _ => super::kvrpcpb::RawDeleteResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawBatchDeleteResponse RawBatchDelete = 18;
+
+    pub fn clear_RawBatchDelete(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawBatchDelete(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchDelete(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawBatchDelete(&mut self, v: super::kvrpcpb::RawBatchDeleteResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchDelete(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawBatchDelete(&mut self) -> &mut super::kvrpcpb::RawBatchDeleteResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchDelete(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchDelete(super::kvrpcpb::RawBatchDeleteResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchDelete(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawBatchDelete(&mut self) -> super::kvrpcpb::RawBatchDeleteResponse {
+        if self.has_RawBatchDelete() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchDelete(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawBatchDeleteResponse::new()
+        }
+    }
+
+    pub fn get_RawBatchDelete(&self) -> &super::kvrpcpb::RawBatchDeleteResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchDelete(ref v)) => v,
+            _ => super::kvrpcpb::RawBatchDeleteResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawScanResponse RawScan = 19;
+
+    pub fn clear_RawScan(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawScan(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawScan(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawScan(&mut self, v: super::kvrpcpb::RawScanResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawScan(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawScan(&mut self) -> &mut super::kvrpcpb::RawScanResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawScan(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawScan(super::kvrpcpb::RawScanResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawScan(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawScan(&mut self) -> super::kvrpcpb::RawScanResponse {
+        if self.has_RawScan() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawScan(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawScanResponse::new()
+        }
+    }
+
+    pub fn get_RawScan(&self) -> &super::kvrpcpb::RawScanResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawScan(ref v)) => v,
+            _ => super::kvrpcpb::RawScanResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawDeleteRangeResponse RawDeleteRange = 20;
+
+    pub fn clear_RawDeleteRange(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawDeleteRange(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDeleteRange(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawDeleteRange(&mut self, v: super::kvrpcpb::RawDeleteRangeResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDeleteRange(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawDeleteRange(&mut self) -> &mut super::kvrpcpb::RawDeleteRangeResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDeleteRange(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDeleteRange(super::kvrpcpb::RawDeleteRangeResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDeleteRange(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawDeleteRange(&mut self) -> super::kvrpcpb::RawDeleteRangeResponse {
+        if self.has_RawDeleteRange() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDeleteRange(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawDeleteRangeResponse::new()
+        }
+    }
+
+    pub fn get_RawDeleteRange(&self) -> &super::kvrpcpb::RawDeleteRangeResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDeleteRange(ref v)) => v,
+            _ => super::kvrpcpb::RawDeleteRangeResponse::default_instance(),
+        }
+    }
+
+    // .kvrpcpb.RawBatchScanResponse RawBatchScan = 21;
+
+    pub fn clear_RawBatchScan(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_RawBatchScan(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchScan(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_RawBatchScan(&mut self, v: super::kvrpcpb::RawBatchScanResponse) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchScan(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_RawBatchScan(&mut self) -> &mut super::kvrpcpb::RawBatchScanResponse {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchScan(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchScan(super::kvrpcpb::RawBatchScanResponse::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchScan(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_RawBatchScan(&mut self) -> super::kvrpcpb::RawBatchScanResponse {
+        if self.has_RawBatchScan() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchScan(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::kvrpcpb::RawBatchScanResponse::new()
+        }
+    }
+
+    pub fn get_RawBatchScan(&self) -> &super::kvrpcpb::RawBatchScanResponse {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchScan(ref v)) => v,
+            _ => super::kvrpcpb::RawBatchScanResponse::default_instance(),
+        }
+    }
+
+    // .coprocessor.Response Coprocessor = 22;
+
+    pub fn clear_Coprocessor(&mut self) {
+        self.cmd = ::std::option::Option::None;
+    }
+
+    pub fn has_Coprocessor(&self) -> bool {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Coprocessor(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_Coprocessor(&mut self, v: super::coprocessor::Response) {
+        self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Coprocessor(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_Coprocessor(&mut self) -> &mut super::coprocessor::Response {
+        if let ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Coprocessor(_)) = self.cmd {
+        } else {
+            self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Coprocessor(super::coprocessor::Response::new()));
+        }
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Coprocessor(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_Coprocessor(&mut self) -> super::coprocessor::Response {
+        if self.has_Coprocessor() {
+            match self.cmd.take() {
+                ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Coprocessor(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::coprocessor::Response::new()
+        }
+    }
+
+    pub fn get_Coprocessor(&self) -> &super::coprocessor::Response {
+        match self.cmd {
+            ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Coprocessor(ref v)) => v,
+            _ => super::coprocessor::Response::default_instance(),
+        }
+    }
+}
+
+impl ::protobuf::Message for SuperBatchResponse_Response {
+    fn is_initialized(&self) -> bool {
+        if let Some(SuperBatchResponse_Response_oneof_cmd::Get(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::Scan(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::Prewrite(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::Commit(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::Import(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::Cleanup(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::BatchGet(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::BatchRollback(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::ScanLock(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::ResolveLock(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::GC(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::DeleteRange(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::RawGet(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::RawBatchGet(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::RawPut(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::RawBatchPut(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::RawDelete(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::RawBatchDelete(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::RawScan(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::RawDeleteRange(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::RawBatchScan(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(SuperBatchResponse_Response_oneof_cmd::Coprocessor(ref v)) = self.cmd {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Get(is.read_message()?));
+                },
+                2 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Scan(is.read_message()?));
+                },
+                3 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Prewrite(is.read_message()?));
+                },
+                4 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Commit(is.read_message()?));
+                },
+                5 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Import(is.read_message()?));
+                },
+                6 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Cleanup(is.read_message()?));
+                },
+                7 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchGet(is.read_message()?));
+                },
+                8 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::BatchRollback(is.read_message()?));
+                },
+                9 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ScanLock(is.read_message()?));
+                },
+                10 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::ResolveLock(is.read_message()?));
+                },
+                11 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::GC(is.read_message()?));
+                },
+                12 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::DeleteRange(is.read_message()?));
+                },
+                13 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawGet(is.read_message()?));
+                },
+                14 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchGet(is.read_message()?));
+                },
+                15 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawPut(is.read_message()?));
+                },
+                16 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchPut(is.read_message()?));
+                },
+                17 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDelete(is.read_message()?));
+                },
+                18 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchDelete(is.read_message()?));
+                },
+                19 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawScan(is.read_message()?));
+                },
+                20 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawDeleteRange(is.read_message()?));
+                },
+                21 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::RawBatchScan(is.read_message()?));
+                },
+                22 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.cmd = ::std::option::Option::Some(SuperBatchResponse_Response_oneof_cmd::Coprocessor(is.read_message()?));
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if let ::std::option::Option::Some(ref v) = self.cmd {
+            match v {
+                &SuperBatchResponse_Response_oneof_cmd::Get(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Scan(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Prewrite(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Commit(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Import(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Cleanup(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::BatchGet(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::BatchRollback(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::ScanLock(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::ResolveLock(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::GC(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::DeleteRange(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawGet(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawBatchGet(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawPut(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawBatchPut(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawDelete(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawBatchDelete(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawScan(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawDeleteRange(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawBatchScan(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Coprocessor(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+            };
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        if let ::std::option::Option::Some(ref v) = self.cmd {
+            match v {
+                &SuperBatchResponse_Response_oneof_cmd::Get(ref v) => {
+                    os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Scan(ref v) => {
+                    os.write_tag(2, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Prewrite(ref v) => {
+                    os.write_tag(3, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Commit(ref v) => {
+                    os.write_tag(4, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Import(ref v) => {
+                    os.write_tag(5, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Cleanup(ref v) => {
+                    os.write_tag(6, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::BatchGet(ref v) => {
+                    os.write_tag(7, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::BatchRollback(ref v) => {
+                    os.write_tag(8, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::ScanLock(ref v) => {
+                    os.write_tag(9, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::ResolveLock(ref v) => {
+                    os.write_tag(10, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::GC(ref v) => {
+                    os.write_tag(11, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::DeleteRange(ref v) => {
+                    os.write_tag(12, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawGet(ref v) => {
+                    os.write_tag(13, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawBatchGet(ref v) => {
+                    os.write_tag(14, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawPut(ref v) => {
+                    os.write_tag(15, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawBatchPut(ref v) => {
+                    os.write_tag(16, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawDelete(ref v) => {
+                    os.write_tag(17, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawBatchDelete(ref v) => {
+                    os.write_tag(18, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawScan(ref v) => {
+                    os.write_tag(19, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawDeleteRange(ref v) => {
+                    os.write_tag(20, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::RawBatchScan(ref v) => {
+                    os.write_tag(21, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &SuperBatchResponse_Response_oneof_cmd::Coprocessor(ref v) => {
+                    os.write_tag(22, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+            };
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &::std::any::Any {
+        self as &::std::any::Any
+    }
+    fn as_any_mut(&mut self) -> &mut ::std::any::Any {
+        self as &mut ::std::any::Any
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<::std::any::Any> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> SuperBatchResponse_Response {
+        SuperBatchResponse_Response::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::GetResponse>(
+                    "Get",
+                    SuperBatchResponse_Response::has_Get,
+                    SuperBatchResponse_Response::get_Get,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::ScanResponse>(
+                    "Scan",
+                    SuperBatchResponse_Response::has_Scan,
+                    SuperBatchResponse_Response::get_Scan,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::PrewriteResponse>(
+                    "Prewrite",
+                    SuperBatchResponse_Response::has_Prewrite,
+                    SuperBatchResponse_Response::get_Prewrite,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::CommitResponse>(
+                    "Commit",
+                    SuperBatchResponse_Response::has_Commit,
+                    SuperBatchResponse_Response::get_Commit,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::ImportResponse>(
+                    "Import",
+                    SuperBatchResponse_Response::has_Import,
+                    SuperBatchResponse_Response::get_Import,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::CleanupResponse>(
+                    "Cleanup",
+                    SuperBatchResponse_Response::has_Cleanup,
+                    SuperBatchResponse_Response::get_Cleanup,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::BatchGetResponse>(
+                    "BatchGet",
+                    SuperBatchResponse_Response::has_BatchGet,
+                    SuperBatchResponse_Response::get_BatchGet,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::BatchRollbackResponse>(
+                    "BatchRollback",
+                    SuperBatchResponse_Response::has_BatchRollback,
+                    SuperBatchResponse_Response::get_BatchRollback,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::ScanLockResponse>(
+                    "ScanLock",
+                    SuperBatchResponse_Response::has_ScanLock,
+                    SuperBatchResponse_Response::get_ScanLock,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::ResolveLockResponse>(
+                    "ResolveLock",
+                    SuperBatchResponse_Response::has_ResolveLock,
+                    SuperBatchResponse_Response::get_ResolveLock,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::GCResponse>(
+                    "GC",
+                    SuperBatchResponse_Response::has_GC,
+                    SuperBatchResponse_Response::get_GC,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::DeleteRangeResponse>(
+                    "DeleteRange",
+                    SuperBatchResponse_Response::has_DeleteRange,
+                    SuperBatchResponse_Response::get_DeleteRange,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawGetResponse>(
+                    "RawGet",
+                    SuperBatchResponse_Response::has_RawGet,
+                    SuperBatchResponse_Response::get_RawGet,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawBatchGetResponse>(
+                    "RawBatchGet",
+                    SuperBatchResponse_Response::has_RawBatchGet,
+                    SuperBatchResponse_Response::get_RawBatchGet,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawPutResponse>(
+                    "RawPut",
+                    SuperBatchResponse_Response::has_RawPut,
+                    SuperBatchResponse_Response::get_RawPut,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawBatchPutResponse>(
+                    "RawBatchPut",
+                    SuperBatchResponse_Response::has_RawBatchPut,
+                    SuperBatchResponse_Response::get_RawBatchPut,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawDeleteResponse>(
+                    "RawDelete",
+                    SuperBatchResponse_Response::has_RawDelete,
+                    SuperBatchResponse_Response::get_RawDelete,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawBatchDeleteResponse>(
+                    "RawBatchDelete",
+                    SuperBatchResponse_Response::has_RawBatchDelete,
+                    SuperBatchResponse_Response::get_RawBatchDelete,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawScanResponse>(
+                    "RawScan",
+                    SuperBatchResponse_Response::has_RawScan,
+                    SuperBatchResponse_Response::get_RawScan,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawDeleteRangeResponse>(
+                    "RawDeleteRange",
+                    SuperBatchResponse_Response::has_RawDeleteRange,
+                    SuperBatchResponse_Response::get_RawDeleteRange,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::kvrpcpb::RawBatchScanResponse>(
+                    "RawBatchScan",
+                    SuperBatchResponse_Response::has_RawBatchScan,
+                    SuperBatchResponse_Response::get_RawBatchScan,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, super::coprocessor::Response>(
+                    "Coprocessor",
+                    SuperBatchResponse_Response::has_Coprocessor,
+                    SuperBatchResponse_Response::get_Coprocessor,
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<SuperBatchResponse_Response>(
+                    "SuperBatchResponse_Response",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static SuperBatchResponse_Response {
+        static mut instance: ::protobuf::lazy::Lazy<SuperBatchResponse_Response> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const SuperBatchResponse_Response,
+        };
+        unsafe {
+            instance.get(SuperBatchResponse_Response::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for SuperBatchResponse_Response {
+    fn clear(&mut self) {
+        self.clear_Get();
+        self.clear_Scan();
+        self.clear_Prewrite();
+        self.clear_Commit();
+        self.clear_Import();
+        self.clear_Cleanup();
+        self.clear_BatchGet();
+        self.clear_BatchRollback();
+        self.clear_ScanLock();
+        self.clear_ResolveLock();
+        self.clear_GC();
+        self.clear_DeleteRange();
+        self.clear_RawGet();
+        self.clear_RawBatchGet();
+        self.clear_RawPut();
+        self.clear_RawBatchPut();
+        self.clear_RawDelete();
+        self.clear_RawBatchDelete();
+        self.clear_RawScan();
+        self.clear_RawDeleteRange();
+        self.clear_RawBatchScan();
+        self.clear_Coprocessor();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for SuperBatchResponse_Response {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for SuperBatchResponse_Response {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
 static file_descriptor_proto_data: &'static [u8] = b"\
     \n\x0ctikvpb.proto\x12\x06tikvpb\x1a\x11coprocessor.proto\x1a\rkvrpcpb.p\
-    roto\x1a\x13raft_serverpb.proto\x1a\x14gogoproto/gogo.proto2\xb2\x0f\n\
-    \x04Tikv\x124\n\x05KvGet\x12\x13.kvrpcpb.GetRequest\x1a\x14.kvrpcpb.GetR\
-    esponse\"\0\x127\n\x06KvScan\x12\x14.kvrpcpb.ScanRequest\x1a\x15.kvrpcpb\
-    .ScanResponse\"\0\x12C\n\nKvPrewrite\x12\x18.kvrpcpb.PrewriteRequest\x1a\
-    \x19.kvrpcpb.PrewriteResponse\"\0\x12=\n\x08KvCommit\x12\x16.kvrpcpb.Com\
-    mitRequest\x1a\x17.kvrpcpb.CommitResponse\"\0\x12=\n\x08KvImport\x12\x16\
-    .kvrpcpb.ImportRequest\x1a\x17.kvrpcpb.ImportResponse\"\0\x12@\n\tKvClea\
-    nup\x12\x17.kvrpcpb.CleanupRequest\x1a\x18.kvrpcpb.CleanupResponse\"\0\
-    \x12C\n\nKvBatchGet\x12\x18.kvrpcpb.BatchGetRequest\x1a\x19.kvrpcpb.Batc\
-    hGetResponse\"\0\x12R\n\x0fKvBatchRollback\x12\x1d.kvrpcpb.BatchRollback\
-    Request\x1a\x1e.kvrpcpb.BatchRollbackResponse\"\0\x12C\n\nKvScanLock\x12\
-    \x18.kvrpcpb.ScanLockRequest\x1a\x19.kvrpcpb.ScanLockResponse\"\0\x12L\n\
-    \rKvResolveLock\x12\x1b.kvrpcpb.ResolveLockRequest\x1a\x1c.kvrpcpb.Resol\
-    veLockResponse\"\0\x121\n\x04KvGC\x12\x12.kvrpcpb.GCRequest\x1a\x13.kvrp\
-    cpb.GCResponse\"\0\x12L\n\rKvDeleteRange\x12\x1b.kvrpcpb.DeleteRangeRequ\
-    est\x1a\x1c.kvrpcpb.DeleteRangeResponse\"\0\x12;\n\x06RawGet\x12\x16.kvr\
-    pcpb.RawGetRequest\x1a\x17.kvrpcpb.RawGetResponse\"\0\x12J\n\x0bRawBatch\
-    Get\x12\x1b.kvrpcpb.RawBatchGetRequest\x1a\x1c.kvrpcpb.RawBatchGetRespon\
-    se\"\0\x12;\n\x06RawPut\x12\x16.kvrpcpb.RawPutRequest\x1a\x17.kvrpcpb.Ra\
-    wPutResponse\"\0\x12J\n\x0bRawBatchPut\x12\x1b.kvrpcpb.RawBatchPutReques\
-    t\x1a\x1c.kvrpcpb.RawBatchPutResponse\"\0\x12D\n\tRawDelete\x12\x19.kvrp\
-    cpb.RawDeleteRequest\x1a\x1a.kvrpcpb.RawDeleteResponse\"\0\x12S\n\x0eRaw\
-    BatchDelete\x12\x1e.kvrpcpb.RawBatchDeleteRequest\x1a\x1f.kvrpcpb.RawBat\
-    chDeleteResponse\"\0\x12>\n\x07RawScan\x12\x17.kvrpcpb.RawScanRequest\
-    \x1a\x18.kvrpcpb.RawScanResponse\"\0\x12S\n\x0eRawDeleteRange\x12\x1e.kv\
-    rpcpb.RawDeleteRangeRequest\x1a\x1f.kvrpcpb.RawDeleteRangeResponse\"\0\
-    \x12M\n\x0cRawBatchScan\x12\x1c.kvrpcpb.RawBatchScanRequest\x1a\x1d.kvrp\
-    cpb.RawBatchScanResponse\"\0\x12<\n\x0bCoprocessor\x12\x14.coprocessor.R\
-    equest\x1a\x15.coprocessor.Response\"\0\x12D\n\x11CoprocessorStream\x12\
-    \x14.coprocessor.Request\x1a\x15.coprocessor.Response\"\00\x01\x12;\n\
-    \x04Raft\x12\x1a.raft_serverpb.RaftMessage\x1a\x13.raft_serverpb.Done\"\
-    \0(\x01\x12A\n\x08Snapshot\x12\x1c.raft_serverpb.SnapshotChunk\x1a\x13.r\
-    aft_serverpb.Done\"\0(\x01\x12J\n\x0bSplitRegion\x12\x1b.kvrpcpb.SplitRe\
-    gionRequest\x1a\x1c.kvrpcpb.SplitRegionResponse\"\0\x12M\n\x0cMvccGetByK\
-    ey\x12\x1c.kvrpcpb.MvccGetByKeyRequest\x1a\x1d.kvrpcpb.MvccGetByKeyRespo\
-    nse\"\0\x12Y\n\x10MvccGetByStartTs\x12\x20.kvrpcpb.MvccGetByStartTsReque\
-    st\x1a!.kvrpcpb.MvccGetByStartTsResponse\"\0B&\n\x18com.pingcap.tikv.kvp\
-    roto\xc8\xe2\x1e\x01\xd0\xe2\x1e\x01\xe0\xe2\x1e\x01J\xab\x11\n\x06\x12\
-    \x04\0\08\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\
-    \x01\x08\x0e\n\t\n\x02\x03\0\x12\x03\x03\x07\x1a\n\t\n\x02\x03\x01\x12\
-    \x03\x04\x07\x16\n\t\n\x02\x03\x02\x12\x03\x05\x07\x1c\n\t\n\x02\x03\x03\
-    \x12\x03\x07\x07\x1d\n\x08\n\x01\x08\x12\x03\t\0$\n\x0b\n\x04\x08\xe7\
-    \x07\0\x12\x03\t\0$\n\x0c\n\x05\x08\xe7\x07\0\x02\x12\x03\t\x07\x1c\n\r\
-    \n\x06\x08\xe7\x07\0\x02\0\x12\x03\t\x07\x1c\n\x0e\n\x07\x08\xe7\x07\0\
-    \x02\0\x01\x12\x03\t\x08\x1b\n\x0c\n\x05\x08\xe7\x07\0\x03\x12\x03\t\x1f\
-    #\n\x08\n\x01\x08\x12\x03\n\0(\n\x0b\n\x04\x08\xe7\x07\x01\x12\x03\n\0(\
-    \n\x0c\n\x05\x08\xe7\x07\x01\x02\x12\x03\n\x07\x20\n\r\n\x06\x08\xe7\x07\
-    \x01\x02\0\x12\x03\n\x07\x20\n\x0e\n\x07\x08\xe7\x07\x01\x02\0\x01\x12\
-    \x03\n\x08\x1f\n\x0c\n\x05\x08\xe7\x07\x01\x03\x12\x03\n#'\n\x08\n\x01\
-    \x08\x12\x03\x0b\0*\n\x0b\n\x04\x08\xe7\x07\x02\x12\x03\x0b\0*\n\x0c\n\
-    \x05\x08\xe7\x07\x02\x02\x12\x03\x0b\x07\"\n\r\n\x06\x08\xe7\x07\x02\x02\
-    \0\x12\x03\x0b\x07\"\n\x0e\n\x07\x08\xe7\x07\x02\x02\0\x01\x12\x03\x0b\
-    \x08!\n\x0c\n\x05\x08\xe7\x07\x02\x03\x12\x03\x0b%)\n\x08\n\x01\x08\x12\
-    \x03\r\01\n\x0b\n\x04\x08\xe7\x07\x03\x12\x03\r\01\n\x0c\n\x05\x08\xe7\
-    \x07\x03\x02\x12\x03\r\x07\x13\n\r\n\x06\x08\xe7\x07\x03\x02\0\x12\x03\r\
-    \x07\x13\n\x0e\n\x07\x08\xe7\x07\x03\x02\0\x01\x12\x03\r\x07\x13\n\x0c\n\
-    \x05\x08\xe7\x07\x03\x07\x12\x03\r\x160\n1\n\x02\x06\0\x12\x04\x10\08\
-    \x01\x1a%\x20Serve\x20as\x20a\x20distributed\x20kv\x20database.\n\n\n\n\
-    \x03\x06\0\x01\x12\x03\x10\x08\x0c\n3\n\x04\x06\0\x02\0\x12\x03\x12\x04B\
-    \x1a&\x20KV\x20commands\x20with\x20mvcc/txn\x20supported.\n\n\x0c\n\x05\
-    \x06\0\x02\0\x01\x12\x03\x12\x08\r\n\x0c\n\x05\x06\0\x02\0\x02\x12\x03\
-    \x12\x0e\x20\n\x0c\n\x05\x06\0\x02\0\x03\x12\x03\x12+>\n\x0b\n\x04\x06\0\
-    \x02\x01\x12\x03\x13\x04E\n\x0c\n\x05\x06\0\x02\x01\x01\x12\x03\x13\x08\
-    \x0e\n\x0c\n\x05\x06\0\x02\x01\x02\x12\x03\x13\x0f\"\n\x0c\n\x05\x06\0\
-    \x02\x01\x03\x12\x03\x13-A\n\x0b\n\x04\x06\0\x02\x02\x12\x03\x14\x04Q\n\
-    \x0c\n\x05\x06\0\x02\x02\x01\x12\x03\x14\x08\x12\n\x0c\n\x05\x06\0\x02\
-    \x02\x02\x12\x03\x14\x13*\n\x0c\n\x05\x06\0\x02\x02\x03\x12\x03\x145M\n\
-    \x0b\n\x04\x06\0\x02\x03\x12\x03\x15\x04K\n\x0c\n\x05\x06\0\x02\x03\x01\
-    \x12\x03\x15\x08\x10\n\x0c\n\x05\x06\0\x02\x03\x02\x12\x03\x15\x11&\n\
-    \x0c\n\x05\x06\0\x02\x03\x03\x12\x03\x151G\n\x0b\n\x04\x06\0\x02\x04\x12\
-    \x03\x16\x04K\n\x0c\n\x05\x06\0\x02\x04\x01\x12\x03\x16\x08\x10\n\x0c\n\
-    \x05\x06\0\x02\x04\x02\x12\x03\x16\x11&\n\x0c\n\x05\x06\0\x02\x04\x03\
-    \x12\x03\x161G\n\x0b\n\x04\x06\0\x02\x05\x12\x03\x17\x04N\n\x0c\n\x05\
-    \x06\0\x02\x05\x01\x12\x03\x17\x08\x11\n\x0c\n\x05\x06\0\x02\x05\x02\x12\
-    \x03\x17\x12(\n\x0c\n\x05\x06\0\x02\x05\x03\x12\x03\x173J\n\x0b\n\x04\
-    \x06\0\x02\x06\x12\x03\x18\x04Q\n\x0c\n\x05\x06\0\x02\x06\x01\x12\x03\
-    \x18\x08\x12\n\x0c\n\x05\x06\0\x02\x06\x02\x12\x03\x18\x13*\n\x0c\n\x05\
-    \x06\0\x02\x06\x03\x12\x03\x185M\n\x0b\n\x04\x06\0\x02\x07\x12\x03\x19\
-    \x04`\n\x0c\n\x05\x06\0\x02\x07\x01\x12\x03\x19\x08\x17\n\x0c\n\x05\x06\
-    \0\x02\x07\x02\x12\x03\x19\x184\n\x0c\n\x05\x06\0\x02\x07\x03\x12\x03\
-    \x19?\\\n\x0b\n\x04\x06\0\x02\x08\x12\x03\x1a\x04Q\n\x0c\n\x05\x06\0\x02\
-    \x08\x01\x12\x03\x1a\x08\x12\n\x0c\n\x05\x06\0\x02\x08\x02\x12\x03\x1a\
-    \x13*\n\x0c\n\x05\x06\0\x02\x08\x03\x12\x03\x1a5M\n\x0b\n\x04\x06\0\x02\
-    \t\x12\x03\x1b\x04Z\n\x0c\n\x05\x06\0\x02\t\x01\x12\x03\x1b\x08\x15\n\
-    \x0c\n\x05\x06\0\x02\t\x02\x12\x03\x1b\x160\n\x0c\n\x05\x06\0\x02\t\x03\
-    \x12\x03\x1b;V\n\x0b\n\x04\x06\0\x02\n\x12\x03\x1c\x04?\n\x0c\n\x05\x06\
-    \0\x02\n\x01\x12\x03\x1c\x08\x0c\n\x0c\n\x05\x06\0\x02\n\x02\x12\x03\x1c\
-    \r\x1e\n\x0c\n\x05\x06\0\x02\n\x03\x12\x03\x1c);\n\x0b\n\x04\x06\0\x02\
-    \x0b\x12\x03\x1d\x04Z\n\x0c\n\x05\x06\0\x02\x0b\x01\x12\x03\x1d\x08\x15\
-    \n\x0c\n\x05\x06\0\x02\x0b\x02\x12\x03\x1d\x160\n\x0c\n\x05\x06\0\x02\
-    \x0b\x03\x12\x03\x1d;V\n\x1e\n\x04\x06\0\x02\x0c\x12\x03\x20\x04I\x1a\
-    \x11\x20RawKV\x20commands.\n\n\x0c\n\x05\x06\0\x02\x0c\x01\x12\x03\x20\
-    \x08\x0e\n\x0c\n\x05\x06\0\x02\x0c\x02\x12\x03\x20\x0f$\n\x0c\n\x05\x06\
-    \0\x02\x0c\x03\x12\x03\x20/E\n\x0b\n\x04\x06\0\x02\r\x12\x03!\x04X\n\x0c\
-    \n\x05\x06\0\x02\r\x01\x12\x03!\x08\x13\n\x0c\n\x05\x06\0\x02\r\x02\x12\
-    \x03!\x14.\n\x0c\n\x05\x06\0\x02\r\x03\x12\x03!9T\n\x0b\n\x04\x06\0\x02\
-    \x0e\x12\x03\"\x04I\n\x0c\n\x05\x06\0\x02\x0e\x01\x12\x03\"\x08\x0e\n\
-    \x0c\n\x05\x06\0\x02\x0e\x02\x12\x03\"\x0f$\n\x0c\n\x05\x06\0\x02\x0e\
-    \x03\x12\x03\"/E\n\x0b\n\x04\x06\0\x02\x0f\x12\x03#\x04X\n\x0c\n\x05\x06\
-    \0\x02\x0f\x01\x12\x03#\x08\x13\n\x0c\n\x05\x06\0\x02\x0f\x02\x12\x03#\
-    \x14.\n\x0c\n\x05\x06\0\x02\x0f\x03\x12\x03#9T\n\x0b\n\x04\x06\0\x02\x10\
-    \x12\x03$\x04R\n\x0c\n\x05\x06\0\x02\x10\x01\x12\x03$\x08\x11\n\x0c\n\
-    \x05\x06\0\x02\x10\x02\x12\x03$\x12*\n\x0c\n\x05\x06\0\x02\x10\x03\x12\
-    \x03$5N\n\x0b\n\x04\x06\0\x02\x11\x12\x03%\x04a\n\x0c\n\x05\x06\0\x02\
-    \x11\x01\x12\x03%\x08\x16\n\x0c\n\x05\x06\0\x02\x11\x02\x12\x03%\x174\n\
-    \x0c\n\x05\x06\0\x02\x11\x03\x12\x03%?]\n\x0b\n\x04\x06\0\x02\x12\x12\
-    \x03&\x04L\n\x0c\n\x05\x06\0\x02\x12\x01\x12\x03&\x08\x0f\n\x0c\n\x05\
-    \x06\0\x02\x12\x02\x12\x03&\x10&\n\x0c\n\x05\x06\0\x02\x12\x03\x12\x03&1\
-    H\n\x0b\n\x04\x06\0\x02\x13\x12\x03'\x04a\n\x0c\n\x05\x06\0\x02\x13\x01\
-    \x12\x03'\x08\x16\n\x0c\n\x05\x06\0\x02\x13\x02\x12\x03'\x174\n\x0c\n\
-    \x05\x06\0\x02\x13\x03\x12\x03'?]\n\x0b\n\x04\x06\0\x02\x14\x12\x03(\x04\
-    [\n\x0c\n\x05\x06\0\x02\x14\x01\x12\x03(\x08\x14\n\x0c\n\x05\x06\0\x02\
-    \x14\x02\x12\x03(\x150\n\x0c\n\x05\x06\0\x02\x14\x03\x12\x03(;W\n&\n\x04\
-    \x06\0\x02\x15\x12\x03+\x04J\x1a\x19\x20SQL\x20push\x20down\x20commands.\
-    \n\n\x0c\n\x05\x06\0\x02\x15\x01\x12\x03+\x08\x13\n\x0c\n\x05\x06\0\x02\
-    \x15\x02\x12\x03+\x14'\n\x0c\n\x05\x06\0\x02\x15\x03\x12\x03+2F\n\x0b\n\
-    \x04\x06\0\x02\x16\x12\x03,\x04X\n\x0c\n\x05\x06\0\x02\x16\x01\x12\x03,\
-    \x08\x19\n\x0c\n\x05\x06\0\x02\x16\x02\x12\x03,\x1a-\n\x0c\n\x05\x06\0\
-    \x02\x16\x06\x12\x03,9?\n\x0c\n\x05\x06\0\x02\x16\x03\x12\x03,@T\n-\n\
-    \x04\x06\0\x02\x17\x12\x03/\x04N\x1a\x20\x20Raft\x20commands\x20(tikv\
-    \x20<->\x20tikv).\n\n\x0c\n\x05\x06\0\x02\x17\x01\x12\x03/\x08\x0c\n\x0c\
-    \n\x05\x06\0\x02\x17\x05\x12\x03/\r\x13\n\x0c\n\x05\x06\0\x02\x17\x02\
-    \x12\x03/\x14-\n\x0c\n\x05\x06\0\x02\x17\x03\x12\x03/8J\n\x0b\n\x04\x06\
-    \0\x02\x18\x12\x030\x04T\n\x0c\n\x05\x06\0\x02\x18\x01\x12\x030\x08\x10\
-    \n\x0c\n\x05\x06\0\x02\x18\x05\x12\x030\x11\x17\n\x0c\n\x05\x06\0\x02\
-    \x18\x02\x12\x030\x183\n\x0c\n\x05\x06\0\x02\x18\x03\x12\x030>P\n\x1f\n\
-    \x04\x06\0\x02\x19\x12\x033\x04Y\x1a\x12\x20Region\x20commands.\n\n\x0c\
-    \n\x05\x06\0\x02\x19\x01\x12\x033\x08\x13\n\x0c\n\x05\x06\0\x02\x19\x02\
-    \x12\x033\x15/\n\x0c\n\x05\x06\0\x02\x19\x03\x12\x033:U\n-\n\x04\x06\0\
-    \x02\x1a\x12\x036\x04[\x1a\x20\x20transaction\x20debugger\x20commands.\n\
-    \n\x0c\n\x05\x06\0\x02\x1a\x01\x12\x036\x08\x14\n\x0c\n\x05\x06\0\x02\
-    \x1a\x02\x12\x036\x150\n\x0c\n\x05\x06\0\x02\x1a\x03\x12\x036;W\n\x0b\n\
-    \x04\x06\0\x02\x1b\x12\x037\x04g\n\x0c\n\x05\x06\0\x02\x1b\x01\x12\x037\
-    \x08\x18\n\x0c\n\x05\x06\0\x02\x1b\x02\x12\x037\x198\n\x0c\n\x05\x06\0\
-    \x02\x1b\x03\x12\x037Ccb\x06proto3\
+    roto\x1a\x13raft_serverpb.proto\x1a\x14gogoproto/gogo.proto\"\xd2\n\n\
+    \x11SuperBatchRequest\x12=\n\x08requests\x18\x01\x20\x03(\x0b2!.tikvpb.S\
+    uperBatchRequest.RequestR\x08requests\x1a\xfd\t\n\x07Request\x12'\n\x03G\
+    et\x18\x01\x20\x01(\x0b2\x13.kvrpcpb.GetRequestH\0R\x03Get\x12*\n\x04Sca\
+    n\x18\x02\x20\x01(\x0b2\x14.kvrpcpb.ScanRequestH\0R\x04Scan\x126\n\x08Pr\
+    ewrite\x18\x03\x20\x01(\x0b2\x18.kvrpcpb.PrewriteRequestH\0R\x08Prewrite\
+    \x120\n\x06Commit\x18\x04\x20\x01(\x0b2\x16.kvrpcpb.CommitRequestH\0R\
+    \x06Commit\x120\n\x06Import\x18\x05\x20\x01(\x0b2\x16.kvrpcpb.ImportRequ\
+    estH\0R\x06Import\x123\n\x07Cleanup\x18\x06\x20\x01(\x0b2\x17.kvrpcpb.Cl\
+    eanupRequestH\0R\x07Cleanup\x126\n\x08BatchGet\x18\x07\x20\x01(\x0b2\x18\
+    .kvrpcpb.BatchGetRequestH\0R\x08BatchGet\x12E\n\rBatchRollback\x18\x08\
+    \x20\x01(\x0b2\x1d.kvrpcpb.BatchRollbackRequestH\0R\rBatchRollback\x126\
+    \n\x08ScanLock\x18\t\x20\x01(\x0b2\x18.kvrpcpb.ScanLockRequestH\0R\x08Sc\
+    anLock\x12?\n\x0bResolveLock\x18\n\x20\x01(\x0b2\x1b.kvrpcpb.ResolveLock\
+    RequestH\0R\x0bResolveLock\x12$\n\x02GC\x18\x0b\x20\x01(\x0b2\x12.kvrpcp\
+    b.GCRequestH\0R\x02GC\x12?\n\x0bDeleteRange\x18\x0c\x20\x01(\x0b2\x1b.kv\
+    rpcpb.DeleteRangeRequestH\0R\x0bDeleteRange\x120\n\x06RawGet\x18\r\x20\
+    \x01(\x0b2\x16.kvrpcpb.RawGetRequestH\0R\x06RawGet\x12?\n\x0bRawBatchGet\
+    \x18\x0e\x20\x01(\x0b2\x1b.kvrpcpb.RawBatchGetRequestH\0R\x0bRawBatchGet\
+    \x120\n\x06RawPut\x18\x0f\x20\x01(\x0b2\x16.kvrpcpb.RawPutRequestH\0R\
+    \x06RawPut\x12?\n\x0bRawBatchPut\x18\x10\x20\x01(\x0b2\x1b.kvrpcpb.RawBa\
+    tchPutRequestH\0R\x0bRawBatchPut\x129\n\tRawDelete\x18\x11\x20\x01(\x0b2\
+    \x19.kvrpcpb.RawDeleteRequestH\0R\tRawDelete\x12H\n\x0eRawBatchDelete\
+    \x18\x12\x20\x01(\x0b2\x1e.kvrpcpb.RawBatchDeleteRequestH\0R\x0eRawBatch\
+    Delete\x123\n\x07RawScan\x18\x13\x20\x01(\x0b2\x17.kvrpcpb.RawScanReques\
+    tH\0R\x07RawScan\x12H\n\x0eRawDeleteRange\x18\x14\x20\x01(\x0b2\x1e.kvrp\
+    cpb.RawDeleteRangeRequestH\0R\x0eRawDeleteRange\x12B\n\x0cRawBatchScan\
+    \x18\x15\x20\x01(\x0b2\x1c.kvrpcpb.RawBatchScanRequestH\0R\x0cRawBatchSc\
+    an\x128\n\x0bCoprocessor\x18\x16\x20\x01(\x0b2\x14.coprocessor.RequestH\
+    \0R\x0bCoprocessorB\x05\n\x03cmd\"\xee\n\n\x12SuperBatchResponse\x12A\n\
+    \tresponses\x18\x01\x20\x03(\x0b2#.tikvpb.SuperBatchResponse.ResponseR\t\
+    responses\x1a\x94\n\n\x08Response\x12(\n\x03Get\x18\x01\x20\x01(\x0b2\
+    \x14.kvrpcpb.GetResponseH\0R\x03Get\x12+\n\x04Scan\x18\x02\x20\x01(\x0b2\
+    \x15.kvrpcpb.ScanResponseH\0R\x04Scan\x127\n\x08Prewrite\x18\x03\x20\x01\
+    (\x0b2\x19.kvrpcpb.PrewriteResponseH\0R\x08Prewrite\x121\n\x06Commit\x18\
+    \x04\x20\x01(\x0b2\x17.kvrpcpb.CommitResponseH\0R\x06Commit\x121\n\x06Im\
+    port\x18\x05\x20\x01(\x0b2\x17.kvrpcpb.ImportResponseH\0R\x06Import\x124\
+    \n\x07Cleanup\x18\x06\x20\x01(\x0b2\x18.kvrpcpb.CleanupResponseH\0R\x07C\
+    leanup\x127\n\x08BatchGet\x18\x07\x20\x01(\x0b2\x19.kvrpcpb.BatchGetResp\
+    onseH\0R\x08BatchGet\x12F\n\rBatchRollback\x18\x08\x20\x01(\x0b2\x1e.kvr\
+    pcpb.BatchRollbackResponseH\0R\rBatchRollback\x127\n\x08ScanLock\x18\t\
+    \x20\x01(\x0b2\x19.kvrpcpb.ScanLockResponseH\0R\x08ScanLock\x12@\n\x0bRe\
+    solveLock\x18\n\x20\x01(\x0b2\x1c.kvrpcpb.ResolveLockResponseH\0R\x0bRes\
+    olveLock\x12%\n\x02GC\x18\x0b\x20\x01(\x0b2\x13.kvrpcpb.GCResponseH\0R\
+    \x02GC\x12@\n\x0bDeleteRange\x18\x0c\x20\x01(\x0b2\x1c.kvrpcpb.DeleteRan\
+    geResponseH\0R\x0bDeleteRange\x121\n\x06RawGet\x18\r\x20\x01(\x0b2\x17.k\
+    vrpcpb.RawGetResponseH\0R\x06RawGet\x12@\n\x0bRawBatchGet\x18\x0e\x20\
+    \x01(\x0b2\x1c.kvrpcpb.RawBatchGetResponseH\0R\x0bRawBatchGet\x121\n\x06\
+    RawPut\x18\x0f\x20\x01(\x0b2\x17.kvrpcpb.RawPutResponseH\0R\x06RawPut\
+    \x12@\n\x0bRawBatchPut\x18\x10\x20\x01(\x0b2\x1c.kvrpcpb.RawBatchPutResp\
+    onseH\0R\x0bRawBatchPut\x12:\n\tRawDelete\x18\x11\x20\x01(\x0b2\x1a.kvrp\
+    cpb.RawDeleteResponseH\0R\tRawDelete\x12I\n\x0eRawBatchDelete\x18\x12\
+    \x20\x01(\x0b2\x1f.kvrpcpb.RawBatchDeleteResponseH\0R\x0eRawBatchDelete\
+    \x124\n\x07RawScan\x18\x13\x20\x01(\x0b2\x18.kvrpcpb.RawScanResponseH\0R\
+    \x07RawScan\x12I\n\x0eRawDeleteRange\x18\x14\x20\x01(\x0b2\x1f.kvrpcpb.R\
+    awDeleteRangeResponseH\0R\x0eRawDeleteRange\x12C\n\x0cRawBatchScan\x18\
+    \x15\x20\x01(\x0b2\x1d.kvrpcpb.RawBatchScanResponseH\0R\x0cRawBatchScan\
+    \x129\n\x0bCoprocessor\x18\x16\x20\x01(\x0b2\x15.coprocessor.ResponseH\0\
+    R\x0bCoprocessorB\x05\n\x03cmd2\xf9\x0f\n\x04Tikv\x124\n\x05KvGet\x12\
+    \x13.kvrpcpb.GetRequest\x1a\x14.kvrpcpb.GetResponse\"\0\x127\n\x06KvScan\
+    \x12\x14.kvrpcpb.ScanRequest\x1a\x15.kvrpcpb.ScanResponse\"\0\x12C\n\nKv\
+    Prewrite\x12\x18.kvrpcpb.PrewriteRequest\x1a\x19.kvrpcpb.PrewriteRespons\
+    e\"\0\x12=\n\x08KvCommit\x12\x16.kvrpcpb.CommitRequest\x1a\x17.kvrpcpb.C\
+    ommitResponse\"\0\x12=\n\x08KvImport\x12\x16.kvrpcpb.ImportRequest\x1a\
+    \x17.kvrpcpb.ImportResponse\"\0\x12@\n\tKvCleanup\x12\x17.kvrpcpb.Cleanu\
+    pRequest\x1a\x18.kvrpcpb.CleanupResponse\"\0\x12C\n\nKvBatchGet\x12\x18.\
+    kvrpcpb.BatchGetRequest\x1a\x19.kvrpcpb.BatchGetResponse\"\0\x12R\n\x0fK\
+    vBatchRollback\x12\x1d.kvrpcpb.BatchRollbackRequest\x1a\x1e.kvrpcpb.Batc\
+    hRollbackResponse\"\0\x12C\n\nKvScanLock\x12\x18.kvrpcpb.ScanLockRequest\
+    \x1a\x19.kvrpcpb.ScanLockResponse\"\0\x12L\n\rKvResolveLock\x12\x1b.kvrp\
+    cpb.ResolveLockRequest\x1a\x1c.kvrpcpb.ResolveLockResponse\"\0\x121\n\
+    \x04KvGC\x12\x12.kvrpcpb.GCRequest\x1a\x13.kvrpcpb.GCResponse\"\0\x12L\n\
+    \rKvDeleteRange\x12\x1b.kvrpcpb.DeleteRangeRequest\x1a\x1c.kvrpcpb.Delet\
+    eRangeResponse\"\0\x12;\n\x06RawGet\x12\x16.kvrpcpb.RawGetRequest\x1a\
+    \x17.kvrpcpb.RawGetResponse\"\0\x12J\n\x0bRawBatchGet\x12\x1b.kvrpcpb.Ra\
+    wBatchGetRequest\x1a\x1c.kvrpcpb.RawBatchGetResponse\"\0\x12;\n\x06RawPu\
+    t\x12\x16.kvrpcpb.RawPutRequest\x1a\x17.kvrpcpb.RawPutResponse\"\0\x12J\
+    \n\x0bRawBatchPut\x12\x1b.kvrpcpb.RawBatchPutRequest\x1a\x1c.kvrpcpb.Raw\
+    BatchPutResponse\"\0\x12D\n\tRawDelete\x12\x19.kvrpcpb.RawDeleteRequest\
+    \x1a\x1a.kvrpcpb.RawDeleteResponse\"\0\x12S\n\x0eRawBatchDelete\x12\x1e.\
+    kvrpcpb.RawBatchDeleteRequest\x1a\x1f.kvrpcpb.RawBatchDeleteResponse\"\0\
+    \x12>\n\x07RawScan\x12\x17.kvrpcpb.RawScanRequest\x1a\x18.kvrpcpb.RawSca\
+    nResponse\"\0\x12S\n\x0eRawDeleteRange\x12\x1e.kvrpcpb.RawDeleteRangeReq\
+    uest\x1a\x1f.kvrpcpb.RawDeleteRangeResponse\"\0\x12M\n\x0cRawBatchScan\
+    \x12\x1c.kvrpcpb.RawBatchScanRequest\x1a\x1d.kvrpcpb.RawBatchScanRespons\
+    e\"\0\x12<\n\x0bCoprocessor\x12\x14.coprocessor.Request\x1a\x15.coproces\
+    sor.Response\"\0\x12D\n\x11CoprocessorStream\x12\x14.coprocessor.Request\
+    \x1a\x15.coprocessor.Response\"\00\x01\x12;\n\x04Raft\x12\x1a.raft_serve\
+    rpb.RaftMessage\x1a\x13.raft_serverpb.Done\"\0(\x01\x12A\n\x08Snapshot\
+    \x12\x1c.raft_serverpb.SnapshotChunk\x1a\x13.raft_serverpb.Done\"\0(\x01\
+    \x12J\n\x0bSplitRegion\x12\x1b.kvrpcpb.SplitRegionRequest\x1a\x1c.kvrpcp\
+    b.SplitRegionResponse\"\0\x12M\n\x0cMvccGetByKey\x12\x1c.kvrpcpb.MvccGet\
+    ByKeyRequest\x1a\x1d.kvrpcpb.MvccGetByKeyResponse\"\0\x12Y\n\x10MvccGetB\
+    yStartTs\x12\x20.kvrpcpb.MvccGetByStartTsRequest\x1a!.kvrpcpb.MvccGetByS\
+    tartTsResponse\"\0\x12E\n\nSuperBatch\x12\x19.tikvpb.SuperBatchRequest\
+    \x1a\x1a.tikvpb.SuperBatchResponse\"\0B&\n\x18com.pingcap.tikv.kvproto\
+    \xd0\xe2\x1e\x01\xc8\xe2\x1e\x01\xe0\xe2\x1e\x01J\xe8)\n\x06\x12\x04\0\0\
+    |\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\x01\x08\
+    \x0e\n\t\n\x02\x03\0\x12\x03\x03\x07\x1a\n\t\n\x02\x03\x01\x12\x03\x04\
+    \x07\x16\n\t\n\x02\x03\x02\x12\x03\x05\x07\x1c\n\t\n\x02\x03\x03\x12\x03\
+    \x07\x07\x1d\n\x08\n\x01\x08\x12\x03\t\0$\n\x0b\n\x04\x08\xe7\x07\0\x12\
+    \x03\t\0$\n\x0c\n\x05\x08\xe7\x07\0\x02\x12\x03\t\x07\x1c\n\r\n\x06\x08\
+    \xe7\x07\0\x02\0\x12\x03\t\x07\x1c\n\x0e\n\x07\x08\xe7\x07\0\x02\0\x01\
+    \x12\x03\t\x08\x1b\n\x0c\n\x05\x08\xe7\x07\0\x03\x12\x03\t\x1f#\n\x08\n\
+    \x01\x08\x12\x03\n\0(\n\x0b\n\x04\x08\xe7\x07\x01\x12\x03\n\0(\n\x0c\n\
+    \x05\x08\xe7\x07\x01\x02\x12\x03\n\x07\x20\n\r\n\x06\x08\xe7\x07\x01\x02\
+    \0\x12\x03\n\x07\x20\n\x0e\n\x07\x08\xe7\x07\x01\x02\0\x01\x12\x03\n\x08\
+    \x1f\n\x0c\n\x05\x08\xe7\x07\x01\x03\x12\x03\n#'\n\x08\n\x01\x08\x12\x03\
+    \x0b\0*\n\x0b\n\x04\x08\xe7\x07\x02\x12\x03\x0b\0*\n\x0c\n\x05\x08\xe7\
+    \x07\x02\x02\x12\x03\x0b\x07\"\n\r\n\x06\x08\xe7\x07\x02\x02\0\x12\x03\
+    \x0b\x07\"\n\x0e\n\x07\x08\xe7\x07\x02\x02\0\x01\x12\x03\x0b\x08!\n\x0c\
+    \n\x05\x08\xe7\x07\x02\x03\x12\x03\x0b%)\n\x08\n\x01\x08\x12\x03\r\01\n\
+    \x0b\n\x04\x08\xe7\x07\x03\x12\x03\r\01\n\x0c\n\x05\x08\xe7\x07\x03\x02\
+    \x12\x03\r\x07\x13\n\r\n\x06\x08\xe7\x07\x03\x02\0\x12\x03\r\x07\x13\n\
+    \x0e\n\x07\x08\xe7\x07\x03\x02\0\x01\x12\x03\r\x07\x13\n\x0c\n\x05\x08\
+    \xe7\x07\x03\x07\x12\x03\r\x160\n1\n\x02\x06\0\x12\x04\x10\0:\x01\x1a%\
+    \x20Serve\x20as\x20a\x20distributed\x20kv\x20database.\n\n\n\n\x03\x06\0\
+    \x01\x12\x03\x10\x08\x0c\n3\n\x04\x06\0\x02\0\x12\x03\x12\x04B\x1a&\x20K\
+    V\x20commands\x20with\x20mvcc/txn\x20supported.\n\n\x0c\n\x05\x06\0\x02\
+    \0\x01\x12\x03\x12\x08\r\n\x0c\n\x05\x06\0\x02\0\x02\x12\x03\x12\x0e\x20\
+    \n\x0c\n\x05\x06\0\x02\0\x03\x12\x03\x12+>\n\x0b\n\x04\x06\0\x02\x01\x12\
+    \x03\x13\x04E\n\x0c\n\x05\x06\0\x02\x01\x01\x12\x03\x13\x08\x0e\n\x0c\n\
+    \x05\x06\0\x02\x01\x02\x12\x03\x13\x0f\"\n\x0c\n\x05\x06\0\x02\x01\x03\
+    \x12\x03\x13-A\n\x0b\n\x04\x06\0\x02\x02\x12\x03\x14\x04Q\n\x0c\n\x05\
+    \x06\0\x02\x02\x01\x12\x03\x14\x08\x12\n\x0c\n\x05\x06\0\x02\x02\x02\x12\
+    \x03\x14\x13*\n\x0c\n\x05\x06\0\x02\x02\x03\x12\x03\x145M\n\x0b\n\x04\
+    \x06\0\x02\x03\x12\x03\x15\x04K\n\x0c\n\x05\x06\0\x02\x03\x01\x12\x03\
+    \x15\x08\x10\n\x0c\n\x05\x06\0\x02\x03\x02\x12\x03\x15\x11&\n\x0c\n\x05\
+    \x06\0\x02\x03\x03\x12\x03\x151G\n\x0b\n\x04\x06\0\x02\x04\x12\x03\x16\
+    \x04K\n\x0c\n\x05\x06\0\x02\x04\x01\x12\x03\x16\x08\x10\n\x0c\n\x05\x06\
+    \0\x02\x04\x02\x12\x03\x16\x11&\n\x0c\n\x05\x06\0\x02\x04\x03\x12\x03\
+    \x161G\n\x0b\n\x04\x06\0\x02\x05\x12\x03\x17\x04N\n\x0c\n\x05\x06\0\x02\
+    \x05\x01\x12\x03\x17\x08\x11\n\x0c\n\x05\x06\0\x02\x05\x02\x12\x03\x17\
+    \x12(\n\x0c\n\x05\x06\0\x02\x05\x03\x12\x03\x173J\n\x0b\n\x04\x06\0\x02\
+    \x06\x12\x03\x18\x04Q\n\x0c\n\x05\x06\0\x02\x06\x01\x12\x03\x18\x08\x12\
+    \n\x0c\n\x05\x06\0\x02\x06\x02\x12\x03\x18\x13*\n\x0c\n\x05\x06\0\x02\
+    \x06\x03\x12\x03\x185M\n\x0b\n\x04\x06\0\x02\x07\x12\x03\x19\x04`\n\x0c\
+    \n\x05\x06\0\x02\x07\x01\x12\x03\x19\x08\x17\n\x0c\n\x05\x06\0\x02\x07\
+    \x02\x12\x03\x19\x184\n\x0c\n\x05\x06\0\x02\x07\x03\x12\x03\x19?\\\n\x0b\
+    \n\x04\x06\0\x02\x08\x12\x03\x1a\x04Q\n\x0c\n\x05\x06\0\x02\x08\x01\x12\
+    \x03\x1a\x08\x12\n\x0c\n\x05\x06\0\x02\x08\x02\x12\x03\x1a\x13*\n\x0c\n\
+    \x05\x06\0\x02\x08\x03\x12\x03\x1a5M\n\x0b\n\x04\x06\0\x02\t\x12\x03\x1b\
+    \x04Z\n\x0c\n\x05\x06\0\x02\t\x01\x12\x03\x1b\x08\x15\n\x0c\n\x05\x06\0\
+    \x02\t\x02\x12\x03\x1b\x160\n\x0c\n\x05\x06\0\x02\t\x03\x12\x03\x1b;V\n\
+    \x0b\n\x04\x06\0\x02\n\x12\x03\x1c\x04?\n\x0c\n\x05\x06\0\x02\n\x01\x12\
+    \x03\x1c\x08\x0c\n\x0c\n\x05\x06\0\x02\n\x02\x12\x03\x1c\r\x1e\n\x0c\n\
+    \x05\x06\0\x02\n\x03\x12\x03\x1c);\n\x0b\n\x04\x06\0\x02\x0b\x12\x03\x1d\
+    \x04Z\n\x0c\n\x05\x06\0\x02\x0b\x01\x12\x03\x1d\x08\x15\n\x0c\n\x05\x06\
+    \0\x02\x0b\x02\x12\x03\x1d\x160\n\x0c\n\x05\x06\0\x02\x0b\x03\x12\x03\
+    \x1d;V\n\x1e\n\x04\x06\0\x02\x0c\x12\x03\x20\x04I\x1a\x11\x20RawKV\x20co\
+    mmands.\n\n\x0c\n\x05\x06\0\x02\x0c\x01\x12\x03\x20\x08\x0e\n\x0c\n\x05\
+    \x06\0\x02\x0c\x02\x12\x03\x20\x0f$\n\x0c\n\x05\x06\0\x02\x0c\x03\x12\
+    \x03\x20/E\n\x0b\n\x04\x06\0\x02\r\x12\x03!\x04X\n\x0c\n\x05\x06\0\x02\r\
+    \x01\x12\x03!\x08\x13\n\x0c\n\x05\x06\0\x02\r\x02\x12\x03!\x14.\n\x0c\n\
+    \x05\x06\0\x02\r\x03\x12\x03!9T\n\x0b\n\x04\x06\0\x02\x0e\x12\x03\"\x04I\
+    \n\x0c\n\x05\x06\0\x02\x0e\x01\x12\x03\"\x08\x0e\n\x0c\n\x05\x06\0\x02\
+    \x0e\x02\x12\x03\"\x0f$\n\x0c\n\x05\x06\0\x02\x0e\x03\x12\x03\"/E\n\x0b\
+    \n\x04\x06\0\x02\x0f\x12\x03#\x04X\n\x0c\n\x05\x06\0\x02\x0f\x01\x12\x03\
+    #\x08\x13\n\x0c\n\x05\x06\0\x02\x0f\x02\x12\x03#\x14.\n\x0c\n\x05\x06\0\
+    \x02\x0f\x03\x12\x03#9T\n\x0b\n\x04\x06\0\x02\x10\x12\x03$\x04R\n\x0c\n\
+    \x05\x06\0\x02\x10\x01\x12\x03$\x08\x11\n\x0c\n\x05\x06\0\x02\x10\x02\
+    \x12\x03$\x12*\n\x0c\n\x05\x06\0\x02\x10\x03\x12\x03$5N\n\x0b\n\x04\x06\
+    \0\x02\x11\x12\x03%\x04a\n\x0c\n\x05\x06\0\x02\x11\x01\x12\x03%\x08\x16\
+    \n\x0c\n\x05\x06\0\x02\x11\x02\x12\x03%\x174\n\x0c\n\x05\x06\0\x02\x11\
+    \x03\x12\x03%?]\n\x0b\n\x04\x06\0\x02\x12\x12\x03&\x04L\n\x0c\n\x05\x06\
+    \0\x02\x12\x01\x12\x03&\x08\x0f\n\x0c\n\x05\x06\0\x02\x12\x02\x12\x03&\
+    \x10&\n\x0c\n\x05\x06\0\x02\x12\x03\x12\x03&1H\n\x0b\n\x04\x06\0\x02\x13\
+    \x12\x03'\x04a\n\x0c\n\x05\x06\0\x02\x13\x01\x12\x03'\x08\x16\n\x0c\n\
+    \x05\x06\0\x02\x13\x02\x12\x03'\x174\n\x0c\n\x05\x06\0\x02\x13\x03\x12\
+    \x03'?]\n\x0b\n\x04\x06\0\x02\x14\x12\x03(\x04[\n\x0c\n\x05\x06\0\x02\
+    \x14\x01\x12\x03(\x08\x14\n\x0c\n\x05\x06\0\x02\x14\x02\x12\x03(\x150\n\
+    \x0c\n\x05\x06\0\x02\x14\x03\x12\x03(;W\n&\n\x04\x06\0\x02\x15\x12\x03+\
+    \x04J\x1a\x19\x20SQL\x20push\x20down\x20commands.\n\n\x0c\n\x05\x06\0\
+    \x02\x15\x01\x12\x03+\x08\x13\n\x0c\n\x05\x06\0\x02\x15\x02\x12\x03+\x14\
+    '\n\x0c\n\x05\x06\0\x02\x15\x03\x12\x03+2F\n\x0b\n\x04\x06\0\x02\x16\x12\
+    \x03,\x04X\n\x0c\n\x05\x06\0\x02\x16\x01\x12\x03,\x08\x19\n\x0c\n\x05\
+    \x06\0\x02\x16\x02\x12\x03,\x1a-\n\x0c\n\x05\x06\0\x02\x16\x06\x12\x03,9\
+    ?\n\x0c\n\x05\x06\0\x02\x16\x03\x12\x03,@T\n-\n\x04\x06\0\x02\x17\x12\
+    \x03/\x04N\x1a\x20\x20Raft\x20commands\x20(tikv\x20<->\x20tikv).\n\n\x0c\
+    \n\x05\x06\0\x02\x17\x01\x12\x03/\x08\x0c\n\x0c\n\x05\x06\0\x02\x17\x05\
+    \x12\x03/\r\x13\n\x0c\n\x05\x06\0\x02\x17\x02\x12\x03/\x14-\n\x0c\n\x05\
+    \x06\0\x02\x17\x03\x12\x03/8J\n\x0b\n\x04\x06\0\x02\x18\x12\x030\x04T\n\
+    \x0c\n\x05\x06\0\x02\x18\x01\x12\x030\x08\x10\n\x0c\n\x05\x06\0\x02\x18\
+    \x05\x12\x030\x11\x17\n\x0c\n\x05\x06\0\x02\x18\x02\x12\x030\x183\n\x0c\
+    \n\x05\x06\0\x02\x18\x03\x12\x030>P\n\x1f\n\x04\x06\0\x02\x19\x12\x033\
+    \x04Y\x1a\x12\x20Region\x20commands.\n\n\x0c\n\x05\x06\0\x02\x19\x01\x12\
+    \x033\x08\x13\n\x0c\n\x05\x06\0\x02\x19\x02\x12\x033\x15/\n\x0c\n\x05\
+    \x06\0\x02\x19\x03\x12\x033:U\n-\n\x04\x06\0\x02\x1a\x12\x036\x04[\x1a\
+    \x20\x20transaction\x20debugger\x20commands.\n\n\x0c\n\x05\x06\0\x02\x1a\
+    \x01\x12\x036\x08\x14\n\x0c\n\x05\x06\0\x02\x1a\x02\x12\x036\x150\n\x0c\
+    \n\x05\x06\0\x02\x1a\x03\x12\x036;W\n\x0b\n\x04\x06\0\x02\x1b\x12\x037\
+    \x04g\n\x0c\n\x05\x06\0\x02\x1b\x01\x12\x037\x08\x18\n\x0c\n\x05\x06\0\
+    \x02\x1b\x02\x12\x037\x198\n\x0c\n\x05\x06\0\x02\x1b\x03\x12\x037Cc\n\
+    \x0b\n\x04\x06\0\x02\x1c\x12\x039\x04E\n\x0c\n\x05\x06\0\x02\x1c\x01\x12\
+    \x039\x08\x12\n\x0c\n\x05\x06\0\x02\x1c\x02\x12\x039\x13$\n\x0c\n\x05\
+    \x06\0\x02\x1c\x03\x12\x039/A\n\n\n\x02\x04\0\x12\x04<\0[\x01\n\n\n\x03\
+    \x04\0\x01\x12\x03<\x08\x19\n\x0b\n\x04\x04\0\x02\0\x12\x03=\x04\"\n\x0c\
+    \n\x05\x04\0\x02\0\x04\x12\x03=\x04\x0c\n\x0c\n\x05\x04\0\x02\0\x06\x12\
+    \x03=\r\x14\n\x0c\n\x05\x04\0\x02\0\x01\x12\x03=\x15\x1d\n\x0c\n\x05\x04\
+    \0\x02\0\x03\x12\x03=\x20!\n\x0c\n\x04\x04\0\x03\0\x12\x04?\x04Z\x05\n\
+    \x0c\n\x05\x04\0\x03\0\x01\x12\x03?\x0c\x13\n\x0e\n\x06\x04\0\x03\0\x08\
+    \0\x12\x04@\x08Y\t\n\x0e\n\x07\x04\0\x03\0\x08\0\x01\x12\x03@\x0e\x11\n\
+    \r\n\x06\x04\0\x03\0\x02\0\x12\x03A\x0c'\n\x0e\n\x07\x04\0\x03\0\x02\0\
+    \x06\x12\x03A\x0c\x1e\n\x0e\n\x07\x04\0\x03\0\x02\0\x01\x12\x03A\x1f\"\n\
+    \x0e\n\x07\x04\0\x03\0\x02\0\x03\x12\x03A%&\n\r\n\x06\x04\0\x03\0\x02\
+    \x01\x12\x03B\x0c)\n\x0e\n\x07\x04\0\x03\0\x02\x01\x06\x12\x03B\x0c\x1f\
+    \n\x0e\n\x07\x04\0\x03\0\x02\x01\x01\x12\x03B\x20$\n\x0e\n\x07\x04\0\x03\
+    \0\x02\x01\x03\x12\x03B'(\n\r\n\x06\x04\0\x03\0\x02\x02\x12\x03C\x0c1\n\
+    \x0e\n\x07\x04\0\x03\0\x02\x02\x06\x12\x03C\x0c#\n\x0e\n\x07\x04\0\x03\0\
+    \x02\x02\x01\x12\x03C$,\n\x0e\n\x07\x04\0\x03\0\x02\x02\x03\x12\x03C/0\n\
+    \r\n\x06\x04\0\x03\0\x02\x03\x12\x03D\x0c-\n\x0e\n\x07\x04\0\x03\0\x02\
+    \x03\x06\x12\x03D\x0c!\n\x0e\n\x07\x04\0\x03\0\x02\x03\x01\x12\x03D\"(\n\
+    \x0e\n\x07\x04\0\x03\0\x02\x03\x03\x12\x03D+,\n\r\n\x06\x04\0\x03\0\x02\
+    \x04\x12\x03E\x0c-\n\x0e\n\x07\x04\0\x03\0\x02\x04\x06\x12\x03E\x0c!\n\
+    \x0e\n\x07\x04\0\x03\0\x02\x04\x01\x12\x03E\"(\n\x0e\n\x07\x04\0\x03\0\
+    \x02\x04\x03\x12\x03E+,\n\r\n\x06\x04\0\x03\0\x02\x05\x12\x03F\x0c/\n\
+    \x0e\n\x07\x04\0\x03\0\x02\x05\x06\x12\x03F\x0c\"\n\x0e\n\x07\x04\0\x03\
+    \0\x02\x05\x01\x12\x03F#*\n\x0e\n\x07\x04\0\x03\0\x02\x05\x03\x12\x03F-.\
+    \n\r\n\x06\x04\0\x03\0\x02\x06\x12\x03G\x0c1\n\x0e\n\x07\x04\0\x03\0\x02\
+    \x06\x06\x12\x03G\x0c#\n\x0e\n\x07\x04\0\x03\0\x02\x06\x01\x12\x03G$,\n\
+    \x0e\n\x07\x04\0\x03\0\x02\x06\x03\x12\x03G/0\n\r\n\x06\x04\0\x03\0\x02\
+    \x07\x12\x03H\x0c;\n\x0e\n\x07\x04\0\x03\0\x02\x07\x06\x12\x03H\x0c(\n\
+    \x0e\n\x07\x04\0\x03\0\x02\x07\x01\x12\x03H)6\n\x0e\n\x07\x04\0\x03\0\
+    \x02\x07\x03\x12\x03H9:\n\r\n\x06\x04\0\x03\0\x02\x08\x12\x03I\x0c1\n\
+    \x0e\n\x07\x04\0\x03\0\x02\x08\x06\x12\x03I\x0c#\n\x0e\n\x07\x04\0\x03\0\
+    \x02\x08\x01\x12\x03I$,\n\x0e\n\x07\x04\0\x03\0\x02\x08\x03\x12\x03I/0\n\
+    \r\n\x06\x04\0\x03\0\x02\t\x12\x03J\x0c8\n\x0e\n\x07\x04\0\x03\0\x02\t\
+    \x06\x12\x03J\x0c&\n\x0e\n\x07\x04\0\x03\0\x02\t\x01\x12\x03J'2\n\x0e\n\
+    \x07\x04\0\x03\0\x02\t\x03\x12\x03J57\n\r\n\x06\x04\0\x03\0\x02\n\x12\
+    \x03K\x0c&\n\x0e\n\x07\x04\0\x03\0\x02\n\x06\x12\x03K\x0c\x1d\n\x0e\n\
+    \x07\x04\0\x03\0\x02\n\x01\x12\x03K\x1e\x20\n\x0e\n\x07\x04\0\x03\0\x02\
+    \n\x03\x12\x03K#%\n\r\n\x06\x04\0\x03\0\x02\x0b\x12\x03L\x0c8\n\x0e\n\
+    \x07\x04\0\x03\0\x02\x0b\x06\x12\x03L\x0c&\n\x0e\n\x07\x04\0\x03\0\x02\
+    \x0b\x01\x12\x03L'2\n\x0e\n\x07\x04\0\x03\0\x02\x0b\x03\x12\x03L57\n\r\n\
+    \x06\x04\0\x03\0\x02\x0c\x12\x03N\x0c.\n\x0e\n\x07\x04\0\x03\0\x02\x0c\
+    \x06\x12\x03N\x0c!\n\x0e\n\x07\x04\0\x03\0\x02\x0c\x01\x12\x03N\"(\n\x0e\
+    \n\x07\x04\0\x03\0\x02\x0c\x03\x12\x03N+-\n\r\n\x06\x04\0\x03\0\x02\r\
+    \x12\x03O\x0c8\n\x0e\n\x07\x04\0\x03\0\x02\r\x06\x12\x03O\x0c&\n\x0e\n\
+    \x07\x04\0\x03\0\x02\r\x01\x12\x03O'2\n\x0e\n\x07\x04\0\x03\0\x02\r\x03\
+    \x12\x03O57\n\r\n\x06\x04\0\x03\0\x02\x0e\x12\x03P\x0c.\n\x0e\n\x07\x04\
+    \0\x03\0\x02\x0e\x06\x12\x03P\x0c!\n\x0e\n\x07\x04\0\x03\0\x02\x0e\x01\
+    \x12\x03P\"(\n\x0e\n\x07\x04\0\x03\0\x02\x0e\x03\x12\x03P+-\n\r\n\x06\
+    \x04\0\x03\0\x02\x0f\x12\x03Q\x0c8\n\x0e\n\x07\x04\0\x03\0\x02\x0f\x06\
+    \x12\x03Q\x0c&\n\x0e\n\x07\x04\0\x03\0\x02\x0f\x01\x12\x03Q'2\n\x0e\n\
+    \x07\x04\0\x03\0\x02\x0f\x03\x12\x03Q57\n\r\n\x06\x04\0\x03\0\x02\x10\
+    \x12\x03R\x0c4\n\x0e\n\x07\x04\0\x03\0\x02\x10\x06\x12\x03R\x0c$\n\x0e\n\
+    \x07\x04\0\x03\0\x02\x10\x01\x12\x03R%.\n\x0e\n\x07\x04\0\x03\0\x02\x10\
+    \x03\x12\x03R13\n\r\n\x06\x04\0\x03\0\x02\x11\x12\x03S\x0c>\n\x0e\n\x07\
+    \x04\0\x03\0\x02\x11\x06\x12\x03S\x0c)\n\x0e\n\x07\x04\0\x03\0\x02\x11\
+    \x01\x12\x03S*8\n\x0e\n\x07\x04\0\x03\0\x02\x11\x03\x12\x03S;=\n\r\n\x06\
+    \x04\0\x03\0\x02\x12\x12\x03T\x0c0\n\x0e\n\x07\x04\0\x03\0\x02\x12\x06\
+    \x12\x03T\x0c\"\n\x0e\n\x07\x04\0\x03\0\x02\x12\x01\x12\x03T#*\n\x0e\n\
+    \x07\x04\0\x03\0\x02\x12\x03\x12\x03T-/\n\r\n\x06\x04\0\x03\0\x02\x13\
+    \x12\x03U\x0c>\n\x0e\n\x07\x04\0\x03\0\x02\x13\x06\x12\x03U\x0c)\n\x0e\n\
+    \x07\x04\0\x03\0\x02\x13\x01\x12\x03U*8\n\x0e\n\x07\x04\0\x03\0\x02\x13\
+    \x03\x12\x03U;=\n\r\n\x06\x04\0\x03\0\x02\x14\x12\x03V\x0c:\n\x0e\n\x07\
+    \x04\0\x03\0\x02\x14\x06\x12\x03V\x0c'\n\x0e\n\x07\x04\0\x03\0\x02\x14\
+    \x01\x12\x03V(4\n\x0e\n\x07\x04\0\x03\0\x02\x14\x03\x12\x03V79\n\r\n\x06\
+    \x04\0\x03\0\x02\x15\x12\x03X\x0c1\n\x0e\n\x07\x04\0\x03\0\x02\x15\x06\
+    \x12\x03X\x0c\x1f\n\x0e\n\x07\x04\0\x03\0\x02\x15\x01\x12\x03X\x20+\n\
+    \x0e\n\x07\x04\0\x03\0\x02\x15\x03\x12\x03X.0\n\n\n\x02\x04\x01\x12\x04]\
+    \0|\x01\n\n\n\x03\x04\x01\x01\x12\x03]\x08\x1a\n\x0b\n\x04\x04\x01\x02\0\
+    \x12\x03^\x04$\n\x0c\n\x05\x04\x01\x02\0\x04\x12\x03^\x04\x0c\n\x0c\n\
+    \x05\x04\x01\x02\0\x06\x12\x03^\r\x15\n\x0c\n\x05\x04\x01\x02\0\x01\x12\
+    \x03^\x16\x1f\n\x0c\n\x05\x04\x01\x02\0\x03\x12\x03^\"#\n\x0c\n\x04\x04\
+    \x01\x03\0\x12\x04`\x04{\x05\n\x0c\n\x05\x04\x01\x03\0\x01\x12\x03`\x0c\
+    \x14\n\x0e\n\x06\x04\x01\x03\0\x08\0\x12\x04a\x08z\t\n\x0e\n\x07\x04\x01\
+    \x03\0\x08\0\x01\x12\x03a\x0e\x11\n\r\n\x06\x04\x01\x03\0\x02\0\x12\x03b\
+    \x0c(\n\x0e\n\x07\x04\x01\x03\0\x02\0\x06\x12\x03b\x0c\x1f\n\x0e\n\x07\
+    \x04\x01\x03\0\x02\0\x01\x12\x03b\x20#\n\x0e\n\x07\x04\x01\x03\0\x02\0\
+    \x03\x12\x03b&'\n\r\n\x06\x04\x01\x03\0\x02\x01\x12\x03c\x0c*\n\x0e\n\
+    \x07\x04\x01\x03\0\x02\x01\x06\x12\x03c\x0c\x20\n\x0e\n\x07\x04\x01\x03\
+    \0\x02\x01\x01\x12\x03c!%\n\x0e\n\x07\x04\x01\x03\0\x02\x01\x03\x12\x03c\
+    ()\n\r\n\x06\x04\x01\x03\0\x02\x02\x12\x03d\x0c2\n\x0e\n\x07\x04\x01\x03\
+    \0\x02\x02\x06\x12\x03d\x0c$\n\x0e\n\x07\x04\x01\x03\0\x02\x02\x01\x12\
+    \x03d%-\n\x0e\n\x07\x04\x01\x03\0\x02\x02\x03\x12\x03d01\n\r\n\x06\x04\
+    \x01\x03\0\x02\x03\x12\x03e\x0c.\n\x0e\n\x07\x04\x01\x03\0\x02\x03\x06\
+    \x12\x03e\x0c\"\n\x0e\n\x07\x04\x01\x03\0\x02\x03\x01\x12\x03e#)\n\x0e\n\
+    \x07\x04\x01\x03\0\x02\x03\x03\x12\x03e,-\n\r\n\x06\x04\x01\x03\0\x02\
+    \x04\x12\x03f\x0c.\n\x0e\n\x07\x04\x01\x03\0\x02\x04\x06\x12\x03f\x0c\"\
+    \n\x0e\n\x07\x04\x01\x03\0\x02\x04\x01\x12\x03f#)\n\x0e\n\x07\x04\x01\
+    \x03\0\x02\x04\x03\x12\x03f,-\n\r\n\x06\x04\x01\x03\0\x02\x05\x12\x03g\
+    \x0c0\n\x0e\n\x07\x04\x01\x03\0\x02\x05\x06\x12\x03g\x0c#\n\x0e\n\x07\
+    \x04\x01\x03\0\x02\x05\x01\x12\x03g$+\n\x0e\n\x07\x04\x01\x03\0\x02\x05\
+    \x03\x12\x03g./\n\r\n\x06\x04\x01\x03\0\x02\x06\x12\x03h\x0c2\n\x0e\n\
+    \x07\x04\x01\x03\0\x02\x06\x06\x12\x03h\x0c$\n\x0e\n\x07\x04\x01\x03\0\
+    \x02\x06\x01\x12\x03h%-\n\x0e\n\x07\x04\x01\x03\0\x02\x06\x03\x12\x03h01\
+    \n\r\n\x06\x04\x01\x03\0\x02\x07\x12\x03i\x0c<\n\x0e\n\x07\x04\x01\x03\0\
+    \x02\x07\x06\x12\x03i\x0c)\n\x0e\n\x07\x04\x01\x03\0\x02\x07\x01\x12\x03\
+    i*7\n\x0e\n\x07\x04\x01\x03\0\x02\x07\x03\x12\x03i:;\n\r\n\x06\x04\x01\
+    \x03\0\x02\x08\x12\x03j\x0c2\n\x0e\n\x07\x04\x01\x03\0\x02\x08\x06\x12\
+    \x03j\x0c$\n\x0e\n\x07\x04\x01\x03\0\x02\x08\x01\x12\x03j%-\n\x0e\n\x07\
+    \x04\x01\x03\0\x02\x08\x03\x12\x03j01\n\r\n\x06\x04\x01\x03\0\x02\t\x12\
+    \x03k\x0c9\n\x0e\n\x07\x04\x01\x03\0\x02\t\x06\x12\x03k\x0c'\n\x0e\n\x07\
+    \x04\x01\x03\0\x02\t\x01\x12\x03k(3\n\x0e\n\x07\x04\x01\x03\0\x02\t\x03\
+    \x12\x03k68\n\r\n\x06\x04\x01\x03\0\x02\n\x12\x03l\x0c'\n\x0e\n\x07\x04\
+    \x01\x03\0\x02\n\x06\x12\x03l\x0c\x1e\n\x0e\n\x07\x04\x01\x03\0\x02\n\
+    \x01\x12\x03l\x1f!\n\x0e\n\x07\x04\x01\x03\0\x02\n\x03\x12\x03l$&\n\r\n\
+    \x06\x04\x01\x03\0\x02\x0b\x12\x03m\x0c9\n\x0e\n\x07\x04\x01\x03\0\x02\
+    \x0b\x06\x12\x03m\x0c'\n\x0e\n\x07\x04\x01\x03\0\x02\x0b\x01\x12\x03m(3\
+    \n\x0e\n\x07\x04\x01\x03\0\x02\x0b\x03\x12\x03m68\n\r\n\x06\x04\x01\x03\
+    \0\x02\x0c\x12\x03o\x0c/\n\x0e\n\x07\x04\x01\x03\0\x02\x0c\x06\x12\x03o\
+    \x0c\"\n\x0e\n\x07\x04\x01\x03\0\x02\x0c\x01\x12\x03o#)\n\x0e\n\x07\x04\
+    \x01\x03\0\x02\x0c\x03\x12\x03o,.\n\r\n\x06\x04\x01\x03\0\x02\r\x12\x03p\
+    \x0c9\n\x0e\n\x07\x04\x01\x03\0\x02\r\x06\x12\x03p\x0c'\n\x0e\n\x07\x04\
+    \x01\x03\0\x02\r\x01\x12\x03p(3\n\x0e\n\x07\x04\x01\x03\0\x02\r\x03\x12\
+    \x03p68\n\r\n\x06\x04\x01\x03\0\x02\x0e\x12\x03q\x0c/\n\x0e\n\x07\x04\
+    \x01\x03\0\x02\x0e\x06\x12\x03q\x0c\"\n\x0e\n\x07\x04\x01\x03\0\x02\x0e\
+    \x01\x12\x03q#)\n\x0e\n\x07\x04\x01\x03\0\x02\x0e\x03\x12\x03q,.\n\r\n\
+    \x06\x04\x01\x03\0\x02\x0f\x12\x03r\x0c9\n\x0e\n\x07\x04\x01\x03\0\x02\
+    \x0f\x06\x12\x03r\x0c'\n\x0e\n\x07\x04\x01\x03\0\x02\x0f\x01\x12\x03r(3\
+    \n\x0e\n\x07\x04\x01\x03\0\x02\x0f\x03\x12\x03r68\n\r\n\x06\x04\x01\x03\
+    \0\x02\x10\x12\x03s\x0c5\n\x0e\n\x07\x04\x01\x03\0\x02\x10\x06\x12\x03s\
+    \x0c%\n\x0e\n\x07\x04\x01\x03\0\x02\x10\x01\x12\x03s&/\n\x0e\n\x07\x04\
+    \x01\x03\0\x02\x10\x03\x12\x03s24\n\r\n\x06\x04\x01\x03\0\x02\x11\x12\
+    \x03t\x0c?\n\x0e\n\x07\x04\x01\x03\0\x02\x11\x06\x12\x03t\x0c*\n\x0e\n\
+    \x07\x04\x01\x03\0\x02\x11\x01\x12\x03t+9\n\x0e\n\x07\x04\x01\x03\0\x02\
+    \x11\x03\x12\x03t<>\n\r\n\x06\x04\x01\x03\0\x02\x12\x12\x03u\x0c1\n\x0e\
+    \n\x07\x04\x01\x03\0\x02\x12\x06\x12\x03u\x0c#\n\x0e\n\x07\x04\x01\x03\0\
+    \x02\x12\x01\x12\x03u$+\n\x0e\n\x07\x04\x01\x03\0\x02\x12\x03\x12\x03u.0\
+    \n\r\n\x06\x04\x01\x03\0\x02\x13\x12\x03v\x0c?\n\x0e\n\x07\x04\x01\x03\0\
+    \x02\x13\x06\x12\x03v\x0c*\n\x0e\n\x07\x04\x01\x03\0\x02\x13\x01\x12\x03\
+    v+9\n\x0e\n\x07\x04\x01\x03\0\x02\x13\x03\x12\x03v<>\n\r\n\x06\x04\x01\
+    \x03\0\x02\x14\x12\x03w\x0c;\n\x0e\n\x07\x04\x01\x03\0\x02\x14\x06\x12\
+    \x03w\x0c(\n\x0e\n\x07\x04\x01\x03\0\x02\x14\x01\x12\x03w)5\n\x0e\n\x07\
+    \x04\x01\x03\0\x02\x14\x03\x12\x03w8:\n\r\n\x06\x04\x01\x03\0\x02\x15\
+    \x12\x03y\x0c2\n\x0e\n\x07\x04\x01\x03\0\x02\x15\x06\x12\x03y\x0c\x20\n\
+    \x0e\n\x07\x04\x01\x03\0\x02\x15\x01\x12\x03y!,\n\x0e\n\x07\x04\x01\x03\
+    \0\x02\x15\x03\x12\x03y/1b\x06proto3\
 ";
 
 static mut file_descriptor_proto_lazy: ::protobuf::lazy::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::lazy::Lazy {

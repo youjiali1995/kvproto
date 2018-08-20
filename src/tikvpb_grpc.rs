@@ -214,6 +214,13 @@ const METHOD_TIKV_MVCC_GET_BY_START_TS: ::grpcio::Method<super::kvrpcpb::MvccGet
     resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
 };
 
+const METHOD_TIKV_SUPER_BATCH: ::grpcio::Method<super::tikvpb::SuperBatchRequest, super::tikvpb::SuperBatchResponse> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/tikvpb.Tikv/SuperBatch",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
+
 pub struct TikvClient {
     client: ::grpcio::Client,
 }
@@ -648,6 +655,22 @@ impl TikvClient {
     pub fn mvcc_get_by_start_ts_async(&self, req: &super::kvrpcpb::MvccGetByStartTsRequest) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::kvrpcpb::MvccGetByStartTsResponse>> {
         self.mvcc_get_by_start_ts_async_opt(req, ::grpcio::CallOption::default())
     }
+
+    pub fn super_batch_opt(&self, req: &super::tikvpb::SuperBatchRequest, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::tikvpb::SuperBatchResponse> {
+        self.client.unary_call(&METHOD_TIKV_SUPER_BATCH, req, opt)
+    }
+
+    pub fn super_batch(&self, req: &super::tikvpb::SuperBatchRequest) -> ::grpcio::Result<super::tikvpb::SuperBatchResponse> {
+        self.super_batch_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn super_batch_async_opt(&self, req: &super::tikvpb::SuperBatchRequest, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::tikvpb::SuperBatchResponse>> {
+        self.client.unary_call_async(&METHOD_TIKV_SUPER_BATCH, req, opt)
+    }
+
+    pub fn super_batch_async(&self, req: &super::tikvpb::SuperBatchRequest) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::tikvpb::SuperBatchResponse>> {
+        self.super_batch_async_opt(req, ::grpcio::CallOption::default())
+    }
     pub fn spawn<F>(&self, f: F) where F: ::futures::Future<Item = (), Error = ()> + Send + 'static {
         self.client.spawn(f)
     }
@@ -682,6 +705,7 @@ pub trait Tikv {
     fn split_region(&self, ctx: ::grpcio::RpcContext, req: super::kvrpcpb::SplitRegionRequest, sink: ::grpcio::UnarySink<super::kvrpcpb::SplitRegionResponse>);
     fn mvcc_get_by_key(&self, ctx: ::grpcio::RpcContext, req: super::kvrpcpb::MvccGetByKeyRequest, sink: ::grpcio::UnarySink<super::kvrpcpb::MvccGetByKeyResponse>);
     fn mvcc_get_by_start_ts(&self, ctx: ::grpcio::RpcContext, req: super::kvrpcpb::MvccGetByStartTsRequest, sink: ::grpcio::UnarySink<super::kvrpcpb::MvccGetByStartTsResponse>);
+    fn super_batch(&self, ctx: ::grpcio::RpcContext, req: super::tikvpb::SuperBatchRequest, sink: ::grpcio::UnarySink<super::tikvpb::SuperBatchResponse>);
 }
 
 pub fn create_tikv<S: Tikv + Send + Clone + 'static>(s: S) -> ::grpcio::Service {
@@ -797,6 +821,10 @@ pub fn create_tikv<S: Tikv + Send + Clone + 'static>(s: S) -> ::grpcio::Service 
     let instance = s.clone();
     builder = builder.add_unary_handler(&METHOD_TIKV_MVCC_GET_BY_START_TS, move |ctx, req, resp| {
         instance.mvcc_get_by_start_ts(ctx, req, resp)
+    });
+    let instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_TIKV_SUPER_BATCH, move |ctx, req, resp| {
+        instance.super_batch(ctx, req, resp)
     });
     builder.build()
 }
