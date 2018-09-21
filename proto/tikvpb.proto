@@ -58,10 +58,10 @@ service Tikv {
     rpc MvccGetByKey(kvrpcpb.MvccGetByKeyRequest) returns (kvrpcpb.MvccGetByKeyResponse) {}
     rpc MvccGetByStartTs(kvrpcpb.MvccGetByStartTsRequest) returns (kvrpcpb.MvccGetByStartTsResponse) {}
 
-    rpc SuperBatch(stream SuperBatchRequest) returns (stream SuperBatchResponse) {}
+    rpc BatchCommands(stream BatchCommandsRequest) returns (stream BatchCommandsResponse) {}
 }
 
-message SuperBatchRequest {
+message BatchCommandsRequest {
     repeated Request requests = 1;
     repeated uint64 request_ids = 2;
     
@@ -95,7 +95,7 @@ message SuperBatchRequest {
     }
 }
 
-message SuperBatchResponse {
+message BatchCommandsResponse {
     repeated Response responses = 1;
     repeated uint64 request_ids = 2;
     
