@@ -98,8 +98,8 @@ message BatchCommandsRequest {
 message BatchCommandsResponse {
     repeated Response responses = 1;
     repeated uint64 request_ids = 2;
-    // Indicates the transport layer is in heavy load or not.
-    bool in_heavy_load = 3;
+    // 280 means TiKV gRPC cpu usage is 280%.
+    uint64 transport_layer_load = 3;
     
     message Response {
         oneof cmd {
