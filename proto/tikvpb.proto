@@ -49,6 +49,7 @@ service Tikv {
 
     // Raft commands (tikv <-> tikv).
     rpc Raft(stream raft_serverpb.RaftMessage) returns (raft_serverpb.Done) {}
+    rpc BatchRaft(stream BatchRaftMessage) returns (raft_serverpb.Done) {}
     rpc Snapshot(stream raft_serverpb.SnapshotChunk) returns (raft_serverpb.Done) {}
 
     // Region commands.
@@ -130,3 +131,7 @@ message BatchCommandsResponse {
         }
     }
 }
+
+message BatchRaftMessage {
+    repeated raft_serverpb.RaftMessage msgs = 1;
+} 
