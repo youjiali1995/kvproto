@@ -235,7 +235,6 @@ const METHOD_TIKV_BATCH_COMMANDS: ::grpcio::Method<super::tikvpb::BatchCommandsR
     resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
 };
 
-#[derive(Clone)]
 pub struct TikvClient {
     client: ::grpcio::Client,
 }
