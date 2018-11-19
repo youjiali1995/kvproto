@@ -101,7 +101,7 @@ message BatchCommandsResponse {
     repeated uint64 request_ids = 2;
     // 280 means TiKV gRPC cpu usage is 280%.
     uint64 transport_layer_load = 3;
-    
+
     message Response {
         oneof cmd {
             kvrpcpb.GetResponse Get = 1;
@@ -134,4 +134,4 @@ message BatchCommandsResponse {
 
 message BatchRaftMessage {
     repeated raft_serverpb.RaftMessage msgs = 1;
-} 
+}
