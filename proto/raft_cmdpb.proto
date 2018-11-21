@@ -271,6 +271,8 @@ message RaftRequestHeader {
     uint64 term = 6;
 
     bool sync_log = 7;
+    // true allow the read request in follower
+    bool allow_follower_read = 8;
 }
 
 message RaftResponseHeader {
