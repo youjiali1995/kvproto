@@ -7,7 +7,7 @@ if ! check_protoc_version; then
 fi
 
 cargo_install protobuf-codegen 2.0.4
-cargo_install grpcio-compiler 0.4.0
+cargo_install grpcio-compiler 0.4.1
 
 echo "generate rust code..."
 KVPROTO_ROOT=`pwd`
