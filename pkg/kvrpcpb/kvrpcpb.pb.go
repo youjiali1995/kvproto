@@ -124,7 +124,13 @@ var CommandPri_value = map[string]int32{
 func (x CommandPri) String() string {
 	return proto.EnumName(CommandPri_name, int32(x))
 }
+<<<<<<< HEAD
 func (CommandPri) EnumDescriptor() ([]byte, []int) { return fileDescriptorKvrpcpb, []int{0} }
+=======
+func (CommandPri) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{0}
+}
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 
 type IsolationLevel int32
 
@@ -145,7 +151,13 @@ var IsolationLevel_value = map[string]int32{
 func (x IsolationLevel) String() string {
 	return proto.EnumName(IsolationLevel_name, int32(x))
 }
+<<<<<<< HEAD
 func (IsolationLevel) EnumDescriptor() ([]byte, []int) { return fileDescriptorKvrpcpb, []int{1} }
+=======
+func (IsolationLevel) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{1}
+}
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 
 type Op int32
 
@@ -172,6 +184,7 @@ var Op_value = map[string]int32{
 func (x Op) String() string {
 	return proto.EnumName(Op_name, int32(x))
 }
+<<<<<<< HEAD
 func (Op) EnumDescriptor() ([]byte, []int) { return fileDescriptorKvrpcpb, []int{2} }
 
 type LockInfo struct {
@@ -179,6 +192,51 @@ type LockInfo struct {
 	LockVersion uint64 `protobuf:"varint,2,opt,name=lock_version,json=lockVersion,proto3" json:"lock_version,omitempty"`
 	Key         []byte `protobuf:"bytes,3,opt,name=key,proto3" json:"key,omitempty"`
 	LockTtl     uint64 `protobuf:"varint,4,opt,name=lock_ttl,json=lockTtl,proto3" json:"lock_ttl,omitempty"`
+=======
+func (Op) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{2}
+}
+
+type LockInfo struct {
+	PrimaryLock          []byte   `protobuf:"bytes,1,opt,name=primary_lock,json=primaryLock,proto3" json:"primary_lock,omitempty"`
+	LockVersion          uint64   `protobuf:"varint,2,opt,name=lock_version,json=lockVersion,proto3" json:"lock_version,omitempty"`
+	Key                  []byte   `protobuf:"bytes,3,opt,name=key,proto3" json:"key,omitempty"`
+	LockTtl              uint64   `protobuf:"varint,4,opt,name=lock_ttl,json=lockTtl,proto3" json:"lock_ttl,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *LockInfo) Reset()         { *m = LockInfo{} }
+func (m *LockInfo) String() string { return proto.CompactTextString(m) }
+func (*LockInfo) ProtoMessage()    {}
+func (*LockInfo) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{0}
+}
+func (m *LockInfo) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *LockInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_LockInfo.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *LockInfo) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_LockInfo.Merge(dst, src)
+}
+func (m *LockInfo) XXX_Size() int {
+	return m.Size()
+}
+func (m *LockInfo) XXX_DiscardUnknown() {
+	xxx_messageInfo_LockInfo.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *LockInfo) Reset()                    { *m = LockInfo{} }
@@ -215,10 +273,51 @@ func (m *LockInfo) GetLockTtl() uint64 {
 }
 
 type KeyError struct {
+<<<<<<< HEAD
 	Locked    *LockInfo      `protobuf:"bytes,1,opt,name=locked" json:"locked,omitempty"`
 	Retryable string         `protobuf:"bytes,2,opt,name=retryable,proto3" json:"retryable,omitempty"`
 	Abort     string         `protobuf:"bytes,3,opt,name=abort,proto3" json:"abort,omitempty"`
 	Conflict  *WriteConflict `protobuf:"bytes,4,opt,name=conflict" json:"conflict,omitempty"`
+=======
+	Locked               *LockInfo      `protobuf:"bytes,1,opt,name=locked" json:"locked,omitempty"`
+	Retryable            string         `protobuf:"bytes,2,opt,name=retryable,proto3" json:"retryable,omitempty"`
+	Abort                string         `protobuf:"bytes,3,opt,name=abort,proto3" json:"abort,omitempty"`
+	Conflict             *WriteConflict `protobuf:"bytes,4,opt,name=conflict" json:"conflict,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *KeyError) Reset()         { *m = KeyError{} }
+func (m *KeyError) String() string { return proto.CompactTextString(m) }
+func (*KeyError) ProtoMessage()    {}
+func (*KeyError) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{1}
+}
+func (m *KeyError) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *KeyError) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_KeyError.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *KeyError) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_KeyError.Merge(dst, src)
+}
+func (m *KeyError) XXX_Size() int {
+	return m.Size()
+}
+func (m *KeyError) XXX_DiscardUnknown() {
+	xxx_messageInfo_KeyError.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *KeyError) Reset()                    { *m = KeyError{} }
@@ -255,10 +354,51 @@ func (m *KeyError) GetConflict() *WriteConflict {
 }
 
 type WriteConflict struct {
+<<<<<<< HEAD
 	StartTs    uint64 `protobuf:"varint,1,opt,name=start_ts,json=startTs,proto3" json:"start_ts,omitempty"`
 	ConflictTs uint64 `protobuf:"varint,2,opt,name=conflict_ts,json=conflictTs,proto3" json:"conflict_ts,omitempty"`
 	Key        []byte `protobuf:"bytes,3,opt,name=key,proto3" json:"key,omitempty"`
 	Primary    []byte `protobuf:"bytes,4,opt,name=primary,proto3" json:"primary,omitempty"`
+=======
+	StartTs              uint64   `protobuf:"varint,1,opt,name=start_ts,json=startTs,proto3" json:"start_ts,omitempty"`
+	ConflictTs           uint64   `protobuf:"varint,2,opt,name=conflict_ts,json=conflictTs,proto3" json:"conflict_ts,omitempty"`
+	Key                  []byte   `protobuf:"bytes,3,opt,name=key,proto3" json:"key,omitempty"`
+	Primary              []byte   `protobuf:"bytes,4,opt,name=primary,proto3" json:"primary,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *WriteConflict) Reset()         { *m = WriteConflict{} }
+func (m *WriteConflict) String() string { return proto.CompactTextString(m) }
+func (*WriteConflict) ProtoMessage()    {}
+func (*WriteConflict) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{2}
+}
+func (m *WriteConflict) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *WriteConflict) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_WriteConflict.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *WriteConflict) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_WriteConflict.Merge(dst, src)
+}
+func (m *WriteConflict) XXX_Size() int {
+	return m.Size()
+}
+func (m *WriteConflict) XXX_DiscardUnknown() {
+	xxx_messageInfo_WriteConflict.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *WriteConflict) Reset()                    { *m = WriteConflict{} }
@@ -295,6 +435,7 @@ func (m *WriteConflict) GetPrimary() []byte {
 }
 
 type Context struct {
+<<<<<<< HEAD
 	RegionId       uint64              `protobuf:"varint,1,opt,name=region_id,json=regionId,proto3" json:"region_id,omitempty"`
 	RegionEpoch    *metapb.RegionEpoch `protobuf:"bytes,2,opt,name=region_epoch,json=regionEpoch" json:"region_epoch,omitempty"`
 	Peer           *metapb.Peer        `protobuf:"bytes,3,opt,name=peer" json:"peer,omitempty"`
@@ -311,6 +452,55 @@ func (m *Context) Reset()                    { *m = Context{} }
 func (m *Context) String() string            { return proto.CompactTextString(m) }
 func (*Context) ProtoMessage()               {}
 func (*Context) Descriptor() ([]byte, []int) { return fileDescriptorKvrpcpb, []int{3} }
+=======
+	RegionId             uint64              `protobuf:"varint,1,opt,name=region_id,json=regionId,proto3" json:"region_id,omitempty"`
+	RegionEpoch          *metapb.RegionEpoch `protobuf:"bytes,2,opt,name=region_epoch,json=regionEpoch" json:"region_epoch,omitempty"`
+	Peer                 *metapb.Peer        `protobuf:"bytes,3,opt,name=peer" json:"peer,omitempty"`
+	Term                 uint64              `protobuf:"varint,5,opt,name=term,proto3" json:"term,omitempty"`
+	Priority             CommandPri          `protobuf:"varint,6,opt,name=priority,proto3,enum=kvrpcpb.CommandPri" json:"priority,omitempty"`
+	IsolationLevel       IsolationLevel      `protobuf:"varint,7,opt,name=isolation_level,json=isolationLevel,proto3,enum=kvrpcpb.IsolationLevel" json:"isolation_level,omitempty"`
+	NotFillCache         bool                `protobuf:"varint,8,opt,name=not_fill_cache,json=notFillCache,proto3" json:"not_fill_cache,omitempty"`
+	SyncLog              bool                `protobuf:"varint,9,opt,name=sync_log,json=syncLog,proto3" json:"sync_log,omitempty"`
+	HandleTime           bool                `protobuf:"varint,10,opt,name=handle_time,json=handleTime,proto3" json:"handle_time,omitempty"`
+	ScanDetail           bool                `protobuf:"varint,11,opt,name=scan_detail,json=scanDetail,proto3" json:"scan_detail,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
+	XXX_unrecognized     []byte              `json:"-"`
+	XXX_sizecache        int32               `json:"-"`
+}
+
+func (m *Context) Reset()         { *m = Context{} }
+func (m *Context) String() string { return proto.CompactTextString(m) }
+func (*Context) ProtoMessage()    {}
+func (*Context) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{3}
+}
+func (m *Context) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Context) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Context.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *Context) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Context.Merge(dst, src)
+}
+func (m *Context) XXX_Size() int {
+	return m.Size()
+}
+func (m *Context) XXX_DiscardUnknown() {
+	xxx_messageInfo_Context.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Context proto.InternalMessageInfo
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 
 func (m *Context) GetRegionId() uint64 {
 	if m != nil {
@@ -383,8 +573,47 @@ func (m *Context) GetScanDetail() bool {
 }
 
 type HandleTime struct {
+<<<<<<< HEAD
 	WaitMs    int64 `protobuf:"varint,1,opt,name=wait_ms,json=waitMs,proto3" json:"wait_ms,omitempty"`
 	ProcessMs int64 `protobuf:"varint,2,opt,name=process_ms,json=processMs,proto3" json:"process_ms,omitempty"`
+=======
+	WaitMs               int64    `protobuf:"varint,1,opt,name=wait_ms,json=waitMs,proto3" json:"wait_ms,omitempty"`
+	ProcessMs            int64    `protobuf:"varint,2,opt,name=process_ms,json=processMs,proto3" json:"process_ms,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *HandleTime) Reset()         { *m = HandleTime{} }
+func (m *HandleTime) String() string { return proto.CompactTextString(m) }
+func (*HandleTime) ProtoMessage()    {}
+func (*HandleTime) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{4}
+}
+func (m *HandleTime) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *HandleTime) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_HandleTime.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *HandleTime) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HandleTime.Merge(dst, src)
+}
+func (m *HandleTime) XXX_Size() int {
+	return m.Size()
+}
+func (m *HandleTime) XXX_DiscardUnknown() {
+	xxx_messageInfo_HandleTime.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *HandleTime) Reset()                    { *m = HandleTime{} }
@@ -407,8 +636,47 @@ func (m *HandleTime) GetProcessMs() int64 {
 }
 
 type ScanInfo struct {
+<<<<<<< HEAD
 	Total     int64 `protobuf:"varint,1,opt,name=total,proto3" json:"total,omitempty"`
 	Processed int64 `protobuf:"varint,2,opt,name=processed,proto3" json:"processed,omitempty"`
+=======
+	Total                int64    `protobuf:"varint,1,opt,name=total,proto3" json:"total,omitempty"`
+	Processed            int64    `protobuf:"varint,2,opt,name=processed,proto3" json:"processed,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ScanInfo) Reset()         { *m = ScanInfo{} }
+func (m *ScanInfo) String() string { return proto.CompactTextString(m) }
+func (*ScanInfo) ProtoMessage()    {}
+func (*ScanInfo) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{5}
+}
+func (m *ScanInfo) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ScanInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ScanInfo.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ScanInfo) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ScanInfo.Merge(dst, src)
+}
+func (m *ScanInfo) XXX_Size() int {
+	return m.Size()
+}
+func (m *ScanInfo) XXX_DiscardUnknown() {
+	xxx_messageInfo_ScanInfo.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *ScanInfo) Reset()                    { *m = ScanInfo{} }
@@ -431,9 +699,49 @@ func (m *ScanInfo) GetProcessed() int64 {
 }
 
 type ScanDetail struct {
+<<<<<<< HEAD
 	Write *ScanInfo `protobuf:"bytes,1,opt,name=write" json:"write,omitempty"`
 	Lock  *ScanInfo `protobuf:"bytes,2,opt,name=lock" json:"lock,omitempty"`
 	Data  *ScanInfo `protobuf:"bytes,3,opt,name=data" json:"data,omitempty"`
+=======
+	Write                *ScanInfo `protobuf:"bytes,1,opt,name=write" json:"write,omitempty"`
+	Lock                 *ScanInfo `protobuf:"bytes,2,opt,name=lock" json:"lock,omitempty"`
+	Data                 *ScanInfo `protobuf:"bytes,3,opt,name=data" json:"data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
+}
+
+func (m *ScanDetail) Reset()         { *m = ScanDetail{} }
+func (m *ScanDetail) String() string { return proto.CompactTextString(m) }
+func (*ScanDetail) ProtoMessage()    {}
+func (*ScanDetail) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{6}
+}
+func (m *ScanDetail) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ScanDetail) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ScanDetail.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ScanDetail) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ScanDetail.Merge(dst, src)
+}
+func (m *ScanDetail) XXX_Size() int {
+	return m.Size()
+}
+func (m *ScanDetail) XXX_DiscardUnknown() {
+	xxx_messageInfo_ScanDetail.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *ScanDetail) Reset()                    { *m = ScanDetail{} }
@@ -463,8 +771,47 @@ func (m *ScanDetail) GetData() *ScanInfo {
 }
 
 type ExecDetails struct {
+<<<<<<< HEAD
 	HandleTime *HandleTime `protobuf:"bytes,1,opt,name=handle_time,json=handleTime" json:"handle_time,omitempty"`
 	ScanDetail *ScanDetail `protobuf:"bytes,2,opt,name=scan_detail,json=scanDetail" json:"scan_detail,omitempty"`
+=======
+	HandleTime           *HandleTime `protobuf:"bytes,1,opt,name=handle_time,json=handleTime" json:"handle_time,omitempty"`
+	ScanDetail           *ScanDetail `protobuf:"bytes,2,opt,name=scan_detail,json=scanDetail" json:"scan_detail,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *ExecDetails) Reset()         { *m = ExecDetails{} }
+func (m *ExecDetails) String() string { return proto.CompactTextString(m) }
+func (*ExecDetails) ProtoMessage()    {}
+func (*ExecDetails) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{7}
+}
+func (m *ExecDetails) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ExecDetails) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ExecDetails.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ExecDetails) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExecDetails.Merge(dst, src)
+}
+func (m *ExecDetails) XXX_Size() int {
+	return m.Size()
+}
+func (m *ExecDetails) XXX_DiscardUnknown() {
+	xxx_messageInfo_ExecDetails.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *ExecDetails) Reset()                    { *m = ExecDetails{} }
@@ -487,9 +834,49 @@ func (m *ExecDetails) GetScanDetail() *ScanDetail {
 }
 
 type GetRequest struct {
+<<<<<<< HEAD
 	Context *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Key     []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	Version uint64   `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	Key                  []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	Version              uint64   `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetRequest) Reset()         { *m = GetRequest{} }
+func (m *GetRequest) String() string { return proto.CompactTextString(m) }
+func (*GetRequest) ProtoMessage()    {}
+func (*GetRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{8}
+}
+func (m *GetRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *GetRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_GetRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *GetRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetRequest.Merge(dst, src)
+}
+func (m *GetRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *GetRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *GetRequest) Reset()                    { *m = GetRequest{} }
@@ -519,9 +906,49 @@ func (m *GetRequest) GetVersion() uint64 {
 }
 
 type GetResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
 	Value       []byte         `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
+	Value                []byte         `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *GetResponse) Reset()         { *m = GetResponse{} }
+func (m *GetResponse) String() string { return proto.CompactTextString(m) }
+func (*GetResponse) ProtoMessage()    {}
+func (*GetResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{9}
+}
+func (m *GetResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *GetResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_GetResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *GetResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetResponse.Merge(dst, src)
+}
+func (m *GetResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *GetResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *GetResponse) Reset()                    { *m = GetResponse{} }
@@ -557,9 +984,49 @@ type ScanRequest struct {
 	Version  uint64   `protobuf:"varint,4,opt,name=version,proto3" json:"version,omitempty"`
 	KeyOnly  bool     `protobuf:"varint,5,opt,name=key_only,json=keyOnly,proto3" json:"key_only,omitempty"`
 	Reverse  bool     `protobuf:"varint,6,opt,name=reverse,proto3" json:"reverse,omitempty"`
+<<<<<<< HEAD
 	// For compatibility, when scanning forward, the range to scan is [start_key, end_key); and when scanning
 	// backward, the range is [end_key, start_key).
 	EndKey []byte `protobuf:"bytes,7,opt,name=end_key,json=endKey,proto3" json:"end_key,omitempty"`
+=======
+	// For compatibility, when scanning forward, the range to scan is [start_key, end_key), where start_key < end_key;
+	// and when scanning backward, it scans [end_key, start_key) in descending order, where end_key < start_key.
+	EndKey               []byte   `protobuf:"bytes,7,opt,name=end_key,json=endKey,proto3" json:"end_key,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ScanRequest) Reset()         { *m = ScanRequest{} }
+func (m *ScanRequest) String() string { return proto.CompactTextString(m) }
+func (*ScanRequest) ProtoMessage()    {}
+func (*ScanRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{10}
+}
+func (m *ScanRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ScanRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ScanRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ScanRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ScanRequest.Merge(dst, src)
+}
+func (m *ScanRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *ScanRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ScanRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *ScanRequest) Reset()                    { *m = ScanRequest{} }
@@ -617,9 +1084,49 @@ func (m *ScanRequest) GetEndKey() []byte {
 }
 
 type KvPair struct {
+<<<<<<< HEAD
 	Error *KeyError `protobuf:"bytes,1,opt,name=error" json:"error,omitempty"`
 	Key   []byte    `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	Value []byte    `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
+=======
+	Error                *KeyError `protobuf:"bytes,1,opt,name=error" json:"error,omitempty"`
+	Key                  []byte    `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	Value                []byte    `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
+}
+
+func (m *KvPair) Reset()         { *m = KvPair{} }
+func (m *KvPair) String() string { return proto.CompactTextString(m) }
+func (*KvPair) ProtoMessage()    {}
+func (*KvPair) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{11}
+}
+func (m *KvPair) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *KvPair) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_KvPair.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *KvPair) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_KvPair.Merge(dst, src)
+}
+func (m *KvPair) XXX_Size() int {
+	return m.Size()
+}
+func (m *KvPair) XXX_DiscardUnknown() {
+	xxx_messageInfo_KvPair.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *KvPair) Reset()                    { *m = KvPair{} }
@@ -649,8 +1156,47 @@ func (m *KvPair) GetValue() []byte {
 }
 
 type ScanResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Pairs       []*KvPair      `protobuf:"bytes,2,rep,name=pairs" json:"pairs,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Pairs                []*KvPair      `protobuf:"bytes,2,rep,name=pairs" json:"pairs,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *ScanResponse) Reset()         { *m = ScanResponse{} }
+func (m *ScanResponse) String() string { return proto.CompactTextString(m) }
+func (*ScanResponse) ProtoMessage()    {}
+func (*ScanResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{12}
+}
+func (m *ScanResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ScanResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ScanResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ScanResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ScanResponse.Merge(dst, src)
+}
+func (m *ScanResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *ScanResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ScanResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *ScanResponse) Reset()                    { *m = ScanResponse{} }
@@ -673,9 +1219,49 @@ func (m *ScanResponse) GetPairs() []*KvPair {
 }
 
 type Mutation struct {
+<<<<<<< HEAD
 	Op    Op     `protobuf:"varint,1,opt,name=op,proto3,enum=kvrpcpb.Op" json:"op,omitempty"`
 	Key   []byte `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	Value []byte `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
+=======
+	Op                   Op       `protobuf:"varint,1,opt,name=op,proto3,enum=kvrpcpb.Op" json:"op,omitempty"`
+	Key                  []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	Value                []byte   `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Mutation) Reset()         { *m = Mutation{} }
+func (m *Mutation) String() string { return proto.CompactTextString(m) }
+func (*Mutation) ProtoMessage()    {}
+func (*Mutation) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{13}
+}
+func (m *Mutation) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Mutation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Mutation.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *Mutation) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Mutation.Merge(dst, src)
+}
+func (m *Mutation) XXX_Size() int {
+	return m.Size()
+}
+func (m *Mutation) XXX_DiscardUnknown() {
+	xxx_messageInfo_Mutation.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *Mutation) Reset()                    { *m = Mutation{} }
@@ -708,10 +1294,51 @@ type PrewriteRequest struct {
 	Context   *Context    `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Mutations []*Mutation `protobuf:"bytes,2,rep,name=mutations" json:"mutations,omitempty"`
 	// primary_lock_key
+<<<<<<< HEAD
 	PrimaryLock         []byte `protobuf:"bytes,3,opt,name=primary_lock,json=primaryLock,proto3" json:"primary_lock,omitempty"`
 	StartVersion        uint64 `protobuf:"varint,4,opt,name=start_version,json=startVersion,proto3" json:"start_version,omitempty"`
 	LockTtl             uint64 `protobuf:"varint,5,opt,name=lock_ttl,json=lockTtl,proto3" json:"lock_ttl,omitempty"`
 	SkipConstraintCheck bool   `protobuf:"varint,6,opt,name=skip_constraint_check,json=skipConstraintCheck,proto3" json:"skip_constraint_check,omitempty"`
+=======
+	PrimaryLock          []byte   `protobuf:"bytes,3,opt,name=primary_lock,json=primaryLock,proto3" json:"primary_lock,omitempty"`
+	StartVersion         uint64   `protobuf:"varint,4,opt,name=start_version,json=startVersion,proto3" json:"start_version,omitempty"`
+	LockTtl              uint64   `protobuf:"varint,5,opt,name=lock_ttl,json=lockTtl,proto3" json:"lock_ttl,omitempty"`
+	SkipConstraintCheck  bool     `protobuf:"varint,6,opt,name=skip_constraint_check,json=skipConstraintCheck,proto3" json:"skip_constraint_check,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrewriteRequest) Reset()         { *m = PrewriteRequest{} }
+func (m *PrewriteRequest) String() string { return proto.CompactTextString(m) }
+func (*PrewriteRequest) ProtoMessage()    {}
+func (*PrewriteRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{14}
+}
+func (m *PrewriteRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *PrewriteRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_PrewriteRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *PrewriteRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrewriteRequest.Merge(dst, src)
+}
+func (m *PrewriteRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *PrewriteRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrewriteRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *PrewriteRequest) Reset()                    { *m = PrewriteRequest{} }
@@ -762,8 +1389,47 @@ func (m *PrewriteRequest) GetSkipConstraintCheck() bool {
 }
 
 type PrewriteResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Errors      []*KeyError    `protobuf:"bytes,2,rep,name=errors" json:"errors,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Errors               []*KeyError    `protobuf:"bytes,2,rep,name=errors" json:"errors,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *PrewriteResponse) Reset()         { *m = PrewriteResponse{} }
+func (m *PrewriteResponse) String() string { return proto.CompactTextString(m) }
+func (*PrewriteResponse) ProtoMessage()    {}
+func (*PrewriteResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{15}
+}
+func (m *PrewriteResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *PrewriteResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_PrewriteResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *PrewriteResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrewriteResponse.Merge(dst, src)
+}
+func (m *PrewriteResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *PrewriteResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrewriteResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *PrewriteResponse) Reset()                    { *m = PrewriteResponse{} }
@@ -786,10 +1452,51 @@ func (m *PrewriteResponse) GetErrors() []*KeyError {
 }
 
 type CommitRequest struct {
+<<<<<<< HEAD
 	Context       *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	StartVersion  uint64   `protobuf:"varint,2,opt,name=start_version,json=startVersion,proto3" json:"start_version,omitempty"`
 	Keys          [][]byte `protobuf:"bytes,3,rep,name=keys" json:"keys,omitempty"`
 	CommitVersion uint64   `protobuf:"varint,4,opt,name=commit_version,json=commitVersion,proto3" json:"commit_version,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	StartVersion         uint64   `protobuf:"varint,2,opt,name=start_version,json=startVersion,proto3" json:"start_version,omitempty"`
+	Keys                 [][]byte `protobuf:"bytes,3,rep,name=keys" json:"keys,omitempty"`
+	CommitVersion        uint64   `protobuf:"varint,4,opt,name=commit_version,json=commitVersion,proto3" json:"commit_version,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CommitRequest) Reset()         { *m = CommitRequest{} }
+func (m *CommitRequest) String() string { return proto.CompactTextString(m) }
+func (*CommitRequest) ProtoMessage()    {}
+func (*CommitRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{16}
+}
+func (m *CommitRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CommitRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_CommitRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *CommitRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CommitRequest.Merge(dst, src)
+}
+func (m *CommitRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *CommitRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_CommitRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *CommitRequest) Reset()                    { *m = CommitRequest{} }
@@ -826,8 +1533,47 @@ func (m *CommitRequest) GetCommitVersion() uint64 {
 }
 
 type CommitResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *CommitResponse) Reset()         { *m = CommitResponse{} }
+func (m *CommitResponse) String() string { return proto.CompactTextString(m) }
+func (*CommitResponse) ProtoMessage()    {}
+func (*CommitResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{17}
+}
+func (m *CommitResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CommitResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_CommitResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *CommitResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CommitResponse.Merge(dst, src)
+}
+func (m *CommitResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *CommitResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CommitResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *CommitResponse) Reset()                    { *m = CommitResponse{} }
@@ -850,8 +1596,47 @@ func (m *CommitResponse) GetError() *KeyError {
 }
 
 type ImportRequest struct {
+<<<<<<< HEAD
 	Mutations     []*Mutation `protobuf:"bytes,1,rep,name=mutations" json:"mutations,omitempty"`
 	CommitVersion uint64      `protobuf:"varint,2,opt,name=commit_version,json=commitVersion,proto3" json:"commit_version,omitempty"`
+=======
+	Mutations            []*Mutation `protobuf:"bytes,1,rep,name=mutations" json:"mutations,omitempty"`
+	CommitVersion        uint64      `protobuf:"varint,2,opt,name=commit_version,json=commitVersion,proto3" json:"commit_version,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *ImportRequest) Reset()         { *m = ImportRequest{} }
+func (m *ImportRequest) String() string { return proto.CompactTextString(m) }
+func (*ImportRequest) ProtoMessage()    {}
+func (*ImportRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{18}
+}
+func (m *ImportRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ImportRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ImportRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ImportRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ImportRequest.Merge(dst, src)
+}
+func (m *ImportRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *ImportRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ImportRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *ImportRequest) Reset()                    { *m = ImportRequest{} }
@@ -874,8 +1659,47 @@ func (m *ImportRequest) GetCommitVersion() uint64 {
 }
 
 type ImportResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *ImportResponse) Reset()         { *m = ImportResponse{} }
+func (m *ImportResponse) String() string { return proto.CompactTextString(m) }
+func (*ImportResponse) ProtoMessage()    {}
+func (*ImportResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{19}
+}
+func (m *ImportResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ImportResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ImportResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ImportResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ImportResponse.Merge(dst, src)
+}
+func (m *ImportResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *ImportResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ImportResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *ImportResponse) Reset()                    { *m = ImportResponse{} }
@@ -898,9 +1722,49 @@ func (m *ImportResponse) GetError() string {
 }
 
 type BatchRollbackRequest struct {
+<<<<<<< HEAD
 	Context      *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	StartVersion uint64   `protobuf:"varint,2,opt,name=start_version,json=startVersion,proto3" json:"start_version,omitempty"`
 	Keys         [][]byte `protobuf:"bytes,3,rep,name=keys" json:"keys,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	StartVersion         uint64   `protobuf:"varint,2,opt,name=start_version,json=startVersion,proto3" json:"start_version,omitempty"`
+	Keys                 [][]byte `protobuf:"bytes,3,rep,name=keys" json:"keys,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *BatchRollbackRequest) Reset()         { *m = BatchRollbackRequest{} }
+func (m *BatchRollbackRequest) String() string { return proto.CompactTextString(m) }
+func (*BatchRollbackRequest) ProtoMessage()    {}
+func (*BatchRollbackRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{20}
+}
+func (m *BatchRollbackRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *BatchRollbackRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_BatchRollbackRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *BatchRollbackRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BatchRollbackRequest.Merge(dst, src)
+}
+func (m *BatchRollbackRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *BatchRollbackRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_BatchRollbackRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *BatchRollbackRequest) Reset()                    { *m = BatchRollbackRequest{} }
@@ -930,8 +1794,47 @@ func (m *BatchRollbackRequest) GetKeys() [][]byte {
 }
 
 type BatchRollbackResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *BatchRollbackResponse) Reset()         { *m = BatchRollbackResponse{} }
+func (m *BatchRollbackResponse) String() string { return proto.CompactTextString(m) }
+func (*BatchRollbackResponse) ProtoMessage()    {}
+func (*BatchRollbackResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{21}
+}
+func (m *BatchRollbackResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *BatchRollbackResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_BatchRollbackResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *BatchRollbackResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BatchRollbackResponse.Merge(dst, src)
+}
+func (m *BatchRollbackResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *BatchRollbackResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_BatchRollbackResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *BatchRollbackResponse) Reset()                    { *m = BatchRollbackResponse{} }
@@ -954,9 +1857,49 @@ func (m *BatchRollbackResponse) GetError() *KeyError {
 }
 
 type CleanupRequest struct {
+<<<<<<< HEAD
 	Context      *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Key          []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	StartVersion uint64   `protobuf:"varint,3,opt,name=start_version,json=startVersion,proto3" json:"start_version,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	Key                  []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	StartVersion         uint64   `protobuf:"varint,3,opt,name=start_version,json=startVersion,proto3" json:"start_version,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CleanupRequest) Reset()         { *m = CleanupRequest{} }
+func (m *CleanupRequest) String() string { return proto.CompactTextString(m) }
+func (*CleanupRequest) ProtoMessage()    {}
+func (*CleanupRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{22}
+}
+func (m *CleanupRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CleanupRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_CleanupRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *CleanupRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CleanupRequest.Merge(dst, src)
+}
+func (m *CleanupRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *CleanupRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_CleanupRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *CleanupRequest) Reset()                    { *m = CleanupRequest{} }
@@ -986,9 +1929,49 @@ func (m *CleanupRequest) GetStartVersion() uint64 {
 }
 
 type CleanupResponse struct {
+<<<<<<< HEAD
 	RegionError   *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error         *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
 	CommitVersion uint64         `protobuf:"varint,3,opt,name=commit_version,json=commitVersion,proto3" json:"commit_version,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
+	CommitVersion        uint64         `protobuf:"varint,3,opt,name=commit_version,json=commitVersion,proto3" json:"commit_version,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *CleanupResponse) Reset()         { *m = CleanupResponse{} }
+func (m *CleanupResponse) String() string { return proto.CompactTextString(m) }
+func (*CleanupResponse) ProtoMessage()    {}
+func (*CleanupResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{23}
+}
+func (m *CleanupResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CleanupResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_CleanupResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *CleanupResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CleanupResponse.Merge(dst, src)
+}
+func (m *CleanupResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *CleanupResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CleanupResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *CleanupResponse) Reset()                    { *m = CleanupResponse{} }
@@ -1018,9 +2001,49 @@ func (m *CleanupResponse) GetCommitVersion() uint64 {
 }
 
 type BatchGetRequest struct {
+<<<<<<< HEAD
 	Context *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Keys    [][]byte `protobuf:"bytes,2,rep,name=keys" json:"keys,omitempty"`
 	Version uint64   `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	Keys                 [][]byte `protobuf:"bytes,2,rep,name=keys" json:"keys,omitempty"`
+	Version              uint64   `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *BatchGetRequest) Reset()         { *m = BatchGetRequest{} }
+func (m *BatchGetRequest) String() string { return proto.CompactTextString(m) }
+func (*BatchGetRequest) ProtoMessage()    {}
+func (*BatchGetRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{24}
+}
+func (m *BatchGetRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *BatchGetRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_BatchGetRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *BatchGetRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BatchGetRequest.Merge(dst, src)
+}
+func (m *BatchGetRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *BatchGetRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_BatchGetRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *BatchGetRequest) Reset()                    { *m = BatchGetRequest{} }
@@ -1050,8 +2073,47 @@ func (m *BatchGetRequest) GetVersion() uint64 {
 }
 
 type BatchGetResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Pairs       []*KvPair      `protobuf:"bytes,2,rep,name=pairs" json:"pairs,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Pairs                []*KvPair      `protobuf:"bytes,2,rep,name=pairs" json:"pairs,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *BatchGetResponse) Reset()         { *m = BatchGetResponse{} }
+func (m *BatchGetResponse) String() string { return proto.CompactTextString(m) }
+func (*BatchGetResponse) ProtoMessage()    {}
+func (*BatchGetResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{25}
+}
+func (m *BatchGetResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *BatchGetResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_BatchGetResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *BatchGetResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BatchGetResponse.Merge(dst, src)
+}
+func (m *BatchGetResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *BatchGetResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_BatchGetResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *BatchGetResponse) Reset()                    { *m = BatchGetResponse{} }
@@ -1074,10 +2136,51 @@ func (m *BatchGetResponse) GetPairs() []*KvPair {
 }
 
 type ScanLockRequest struct {
+<<<<<<< HEAD
 	Context    *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	MaxVersion uint64   `protobuf:"varint,2,opt,name=max_version,json=maxVersion,proto3" json:"max_version,omitempty"`
 	StartKey   []byte   `protobuf:"bytes,3,opt,name=start_key,json=startKey,proto3" json:"start_key,omitempty"`
 	Limit      uint32   `protobuf:"varint,4,opt,name=limit,proto3" json:"limit,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	MaxVersion           uint64   `protobuf:"varint,2,opt,name=max_version,json=maxVersion,proto3" json:"max_version,omitempty"`
+	StartKey             []byte   `protobuf:"bytes,3,opt,name=start_key,json=startKey,proto3" json:"start_key,omitempty"`
+	Limit                uint32   `protobuf:"varint,4,opt,name=limit,proto3" json:"limit,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ScanLockRequest) Reset()         { *m = ScanLockRequest{} }
+func (m *ScanLockRequest) String() string { return proto.CompactTextString(m) }
+func (*ScanLockRequest) ProtoMessage()    {}
+func (*ScanLockRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{26}
+}
+func (m *ScanLockRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ScanLockRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ScanLockRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ScanLockRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ScanLockRequest.Merge(dst, src)
+}
+func (m *ScanLockRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *ScanLockRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ScanLockRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *ScanLockRequest) Reset()                    { *m = ScanLockRequest{} }
@@ -1114,9 +2217,49 @@ func (m *ScanLockRequest) GetLimit() uint32 {
 }
 
 type ScanLockResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
 	Locks       []*LockInfo    `protobuf:"bytes,3,rep,name=locks" json:"locks,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
+	Locks                []*LockInfo    `protobuf:"bytes,3,rep,name=locks" json:"locks,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *ScanLockResponse) Reset()         { *m = ScanLockResponse{} }
+func (m *ScanLockResponse) String() string { return proto.CompactTextString(m) }
+func (*ScanLockResponse) ProtoMessage()    {}
+func (*ScanLockResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{27}
+}
+func (m *ScanLockResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ScanLockResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ScanLockResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ScanLockResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ScanLockResponse.Merge(dst, src)
+}
+func (m *ScanLockResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *ScanLockResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ScanLockResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *ScanLockResponse) Reset()                    { *m = ScanLockResponse{} }
@@ -1146,8 +2289,47 @@ func (m *ScanLockResponse) GetLocks() []*LockInfo {
 }
 
 type TxnInfo struct {
+<<<<<<< HEAD
 	Txn    uint64 `protobuf:"varint,1,opt,name=txn,proto3" json:"txn,omitempty"`
 	Status uint64 `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
+=======
+	Txn                  uint64   `protobuf:"varint,1,opt,name=txn,proto3" json:"txn,omitempty"`
+	Status               uint64   `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *TxnInfo) Reset()         { *m = TxnInfo{} }
+func (m *TxnInfo) String() string { return proto.CompactTextString(m) }
+func (*TxnInfo) ProtoMessage()    {}
+func (*TxnInfo) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{28}
+}
+func (m *TxnInfo) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *TxnInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_TxnInfo.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *TxnInfo) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TxnInfo.Merge(dst, src)
+}
+func (m *TxnInfo) XXX_Size() int {
+	return m.Size()
+}
+func (m *TxnInfo) XXX_DiscardUnknown() {
+	xxx_messageInfo_TxnInfo.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *TxnInfo) Reset()                    { *m = TxnInfo{} }
@@ -1173,8 +2355,47 @@ type ResolveLockRequest struct {
 	Context      *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	StartVersion uint64   `protobuf:"varint,2,opt,name=start_version,json=startVersion,proto3" json:"start_version,omitempty"`
 	// If the txn is rolled back, do not set it.
+<<<<<<< HEAD
 	CommitVersion uint64     `protobuf:"varint,3,opt,name=commit_version,json=commitVersion,proto3" json:"commit_version,omitempty"`
 	TxnInfos      []*TxnInfo `protobuf:"bytes,4,rep,name=txn_infos,json=txnInfos" json:"txn_infos,omitempty"`
+=======
+	CommitVersion        uint64     `protobuf:"varint,3,opt,name=commit_version,json=commitVersion,proto3" json:"commit_version,omitempty"`
+	TxnInfos             []*TxnInfo `protobuf:"bytes,4,rep,name=txn_infos,json=txnInfos" json:"txn_infos,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *ResolveLockRequest) Reset()         { *m = ResolveLockRequest{} }
+func (m *ResolveLockRequest) String() string { return proto.CompactTextString(m) }
+func (*ResolveLockRequest) ProtoMessage()    {}
+func (*ResolveLockRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{29}
+}
+func (m *ResolveLockRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ResolveLockRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ResolveLockRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ResolveLockRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ResolveLockRequest.Merge(dst, src)
+}
+func (m *ResolveLockRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *ResolveLockRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ResolveLockRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *ResolveLockRequest) Reset()                    { *m = ResolveLockRequest{} }
@@ -1211,8 +2432,47 @@ func (m *ResolveLockRequest) GetTxnInfos() []*TxnInfo {
 }
 
 type ResolveLockResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *ResolveLockResponse) Reset()         { *m = ResolveLockResponse{} }
+func (m *ResolveLockResponse) String() string { return proto.CompactTextString(m) }
+func (*ResolveLockResponse) ProtoMessage()    {}
+func (*ResolveLockResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{30}
+}
+func (m *ResolveLockResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ResolveLockResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ResolveLockResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ResolveLockResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ResolveLockResponse.Merge(dst, src)
+}
+func (m *ResolveLockResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *ResolveLockResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ResolveLockResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *ResolveLockResponse) Reset()                    { *m = ResolveLockResponse{} }
@@ -1235,8 +2495,47 @@ func (m *ResolveLockResponse) GetError() *KeyError {
 }
 
 type GCRequest struct {
+<<<<<<< HEAD
 	Context   *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	SafePoint uint64   `protobuf:"varint,2,opt,name=safe_point,json=safePoint,proto3" json:"safe_point,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	SafePoint            uint64   `protobuf:"varint,2,opt,name=safe_point,json=safePoint,proto3" json:"safe_point,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GCRequest) Reset()         { *m = GCRequest{} }
+func (m *GCRequest) String() string { return proto.CompactTextString(m) }
+func (*GCRequest) ProtoMessage()    {}
+func (*GCRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{31}
+}
+func (m *GCRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *GCRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_GCRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *GCRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GCRequest.Merge(dst, src)
+}
+func (m *GCRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *GCRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GCRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *GCRequest) Reset()                    { *m = GCRequest{} }
@@ -1259,8 +2558,47 @@ func (m *GCRequest) GetSafePoint() uint64 {
 }
 
 type GCResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                *KeyError      `protobuf:"bytes,2,opt,name=error" json:"error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *GCResponse) Reset()         { *m = GCResponse{} }
+func (m *GCResponse) String() string { return proto.CompactTextString(m) }
+func (*GCResponse) ProtoMessage()    {}
+func (*GCResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{32}
+}
+func (m *GCResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *GCResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_GCResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *GCResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GCResponse.Merge(dst, src)
+}
+func (m *GCResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *GCResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GCResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *GCResponse) Reset()                    { *m = GCResponse{} }
@@ -1283,9 +2621,49 @@ func (m *GCResponse) GetError() *KeyError {
 }
 
 type RawGetRequest struct {
+<<<<<<< HEAD
 	Context *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Key     []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	Cf      string   `protobuf:"bytes,3,opt,name=cf,proto3" json:"cf,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	Key                  []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	Cf                   string   `protobuf:"bytes,3,opt,name=cf,proto3" json:"cf,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RawGetRequest) Reset()         { *m = RawGetRequest{} }
+func (m *RawGetRequest) String() string { return proto.CompactTextString(m) }
+func (*RawGetRequest) ProtoMessage()    {}
+func (*RawGetRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{33}
+}
+func (m *RawGetRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawGetRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawGetRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawGetRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawGetRequest.Merge(dst, src)
+}
+func (m *RawGetRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawGetRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawGetRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawGetRequest) Reset()                    { *m = RawGetRequest{} }
@@ -1315,9 +2693,49 @@ func (m *RawGetRequest) GetCf() string {
 }
 
 type RawGetResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
 	Value       []byte         `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	Value                []byte         `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *RawGetResponse) Reset()         { *m = RawGetResponse{} }
+func (m *RawGetResponse) String() string { return proto.CompactTextString(m) }
+func (*RawGetResponse) ProtoMessage()    {}
+func (*RawGetResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{34}
+}
+func (m *RawGetResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawGetResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawGetResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawGetResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawGetResponse.Merge(dst, src)
+}
+func (m *RawGetResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawGetResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawGetResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawGetResponse) Reset()                    { *m = RawGetResponse{} }
@@ -1347,10 +2765,51 @@ func (m *RawGetResponse) GetValue() []byte {
 }
 
 type RawPutRequest struct {
+<<<<<<< HEAD
 	Context *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Key     []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	Value   []byte   `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
 	Cf      string   `protobuf:"bytes,4,opt,name=cf,proto3" json:"cf,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	Key                  []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	Value                []byte   `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
+	Cf                   string   `protobuf:"bytes,4,opt,name=cf,proto3" json:"cf,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RawPutRequest) Reset()         { *m = RawPutRequest{} }
+func (m *RawPutRequest) String() string { return proto.CompactTextString(m) }
+func (*RawPutRequest) ProtoMessage()    {}
+func (*RawPutRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{35}
+}
+func (m *RawPutRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawPutRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawPutRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawPutRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawPutRequest.Merge(dst, src)
+}
+func (m *RawPutRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawPutRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawPutRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawPutRequest) Reset()                    { *m = RawPutRequest{} }
@@ -1387,8 +2846,47 @@ func (m *RawPutRequest) GetCf() string {
 }
 
 type RawPutResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *RawPutResponse) Reset()         { *m = RawPutResponse{} }
+func (m *RawPutResponse) String() string { return proto.CompactTextString(m) }
+func (*RawPutResponse) ProtoMessage()    {}
+func (*RawPutResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{36}
+}
+func (m *RawPutResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawPutResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawPutResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawPutResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawPutResponse.Merge(dst, src)
+}
+func (m *RawPutResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawPutResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawPutResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawPutResponse) Reset()                    { *m = RawPutResponse{} }
@@ -1411,9 +2909,49 @@ func (m *RawPutResponse) GetError() string {
 }
 
 type RawBatchPutRequest struct {
+<<<<<<< HEAD
 	Context *Context  `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Pairs   []*KvPair `protobuf:"bytes,2,rep,name=pairs" json:"pairs,omitempty"`
 	Cf      string    `protobuf:"bytes,3,opt,name=cf,proto3" json:"cf,omitempty"`
+=======
+	Context              *Context  `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	Pairs                []*KvPair `protobuf:"bytes,2,rep,name=pairs" json:"pairs,omitempty"`
+	Cf                   string    `protobuf:"bytes,3,opt,name=cf,proto3" json:"cf,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
+}
+
+func (m *RawBatchPutRequest) Reset()         { *m = RawBatchPutRequest{} }
+func (m *RawBatchPutRequest) String() string { return proto.CompactTextString(m) }
+func (*RawBatchPutRequest) ProtoMessage()    {}
+func (*RawBatchPutRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{37}
+}
+func (m *RawBatchPutRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawBatchPutRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawBatchPutRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawBatchPutRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawBatchPutRequest.Merge(dst, src)
+}
+func (m *RawBatchPutRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawBatchPutRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawBatchPutRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawBatchPutRequest) Reset()                    { *m = RawBatchPutRequest{} }
@@ -1443,8 +2981,47 @@ func (m *RawBatchPutRequest) GetCf() string {
 }
 
 type RawBatchPutResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *RawBatchPutResponse) Reset()         { *m = RawBatchPutResponse{} }
+func (m *RawBatchPutResponse) String() string { return proto.CompactTextString(m) }
+func (*RawBatchPutResponse) ProtoMessage()    {}
+func (*RawBatchPutResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{38}
+}
+func (m *RawBatchPutResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawBatchPutResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawBatchPutResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawBatchPutResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawBatchPutResponse.Merge(dst, src)
+}
+func (m *RawBatchPutResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawBatchPutResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawBatchPutResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawBatchPutResponse) Reset()                    { *m = RawBatchPutResponse{} }
@@ -1467,9 +3044,49 @@ func (m *RawBatchPutResponse) GetError() string {
 }
 
 type RawBatchGetRequest struct {
+<<<<<<< HEAD
 	Context *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Keys    [][]byte `protobuf:"bytes,2,rep,name=keys" json:"keys,omitempty"`
 	Cf      string   `protobuf:"bytes,3,opt,name=cf,proto3" json:"cf,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	Keys                 [][]byte `protobuf:"bytes,2,rep,name=keys" json:"keys,omitempty"`
+	Cf                   string   `protobuf:"bytes,3,opt,name=cf,proto3" json:"cf,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RawBatchGetRequest) Reset()         { *m = RawBatchGetRequest{} }
+func (m *RawBatchGetRequest) String() string { return proto.CompactTextString(m) }
+func (*RawBatchGetRequest) ProtoMessage()    {}
+func (*RawBatchGetRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{39}
+}
+func (m *RawBatchGetRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawBatchGetRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawBatchGetRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawBatchGetRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawBatchGetRequest.Merge(dst, src)
+}
+func (m *RawBatchGetRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawBatchGetRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawBatchGetRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawBatchGetRequest) Reset()                    { *m = RawBatchGetRequest{} }
@@ -1499,8 +3116,47 @@ func (m *RawBatchGetRequest) GetCf() string {
 }
 
 type RawBatchGetResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Pairs       []*KvPair      `protobuf:"bytes,2,rep,name=pairs" json:"pairs,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Pairs                []*KvPair      `protobuf:"bytes,2,rep,name=pairs" json:"pairs,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *RawBatchGetResponse) Reset()         { *m = RawBatchGetResponse{} }
+func (m *RawBatchGetResponse) String() string { return proto.CompactTextString(m) }
+func (*RawBatchGetResponse) ProtoMessage()    {}
+func (*RawBatchGetResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{40}
+}
+func (m *RawBatchGetResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawBatchGetResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawBatchGetResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawBatchGetResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawBatchGetResponse.Merge(dst, src)
+}
+func (m *RawBatchGetResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawBatchGetResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawBatchGetResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawBatchGetResponse) Reset()                    { *m = RawBatchGetResponse{} }
@@ -1523,9 +3179,49 @@ func (m *RawBatchGetResponse) GetPairs() []*KvPair {
 }
 
 type RawDeleteRequest struct {
+<<<<<<< HEAD
 	Context *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Key     []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	Cf      string   `protobuf:"bytes,3,opt,name=cf,proto3" json:"cf,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	Key                  []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	Cf                   string   `protobuf:"bytes,3,opt,name=cf,proto3" json:"cf,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RawDeleteRequest) Reset()         { *m = RawDeleteRequest{} }
+func (m *RawDeleteRequest) String() string { return proto.CompactTextString(m) }
+func (*RawDeleteRequest) ProtoMessage()    {}
+func (*RawDeleteRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{41}
+}
+func (m *RawDeleteRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawDeleteRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawDeleteRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawDeleteRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawDeleteRequest.Merge(dst, src)
+}
+func (m *RawDeleteRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawDeleteRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawDeleteRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawDeleteRequest) Reset()                    { *m = RawDeleteRequest{} }
@@ -1555,8 +3251,47 @@ func (m *RawDeleteRequest) GetCf() string {
 }
 
 type RawDeleteResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *RawDeleteResponse) Reset()         { *m = RawDeleteResponse{} }
+func (m *RawDeleteResponse) String() string { return proto.CompactTextString(m) }
+func (*RawDeleteResponse) ProtoMessage()    {}
+func (*RawDeleteResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{42}
+}
+func (m *RawDeleteResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawDeleteResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawDeleteResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawDeleteResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawDeleteResponse.Merge(dst, src)
+}
+func (m *RawDeleteResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawDeleteResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawDeleteResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawDeleteResponse) Reset()                    { *m = RawDeleteResponse{} }
@@ -1579,9 +3314,49 @@ func (m *RawDeleteResponse) GetError() string {
 }
 
 type RawBatchDeleteRequest struct {
+<<<<<<< HEAD
 	Context *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Keys    [][]byte `protobuf:"bytes,2,rep,name=keys" json:"keys,omitempty"`
 	Cf      string   `protobuf:"bytes,3,opt,name=cf,proto3" json:"cf,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	Keys                 [][]byte `protobuf:"bytes,2,rep,name=keys" json:"keys,omitempty"`
+	Cf                   string   `protobuf:"bytes,3,opt,name=cf,proto3" json:"cf,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RawBatchDeleteRequest) Reset()         { *m = RawBatchDeleteRequest{} }
+func (m *RawBatchDeleteRequest) String() string { return proto.CompactTextString(m) }
+func (*RawBatchDeleteRequest) ProtoMessage()    {}
+func (*RawBatchDeleteRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{43}
+}
+func (m *RawBatchDeleteRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawBatchDeleteRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawBatchDeleteRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawBatchDeleteRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawBatchDeleteRequest.Merge(dst, src)
+}
+func (m *RawBatchDeleteRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawBatchDeleteRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawBatchDeleteRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawBatchDeleteRequest) Reset()                    { *m = RawBatchDeleteRequest{} }
@@ -1611,8 +3386,47 @@ func (m *RawBatchDeleteRequest) GetCf() string {
 }
 
 type RawBatchDeleteResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *RawBatchDeleteResponse) Reset()         { *m = RawBatchDeleteResponse{} }
+func (m *RawBatchDeleteResponse) String() string { return proto.CompactTextString(m) }
+func (*RawBatchDeleteResponse) ProtoMessage()    {}
+func (*RawBatchDeleteResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{44}
+}
+func (m *RawBatchDeleteResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawBatchDeleteResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawBatchDeleteResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawBatchDeleteResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawBatchDeleteResponse.Merge(dst, src)
+}
+func (m *RawBatchDeleteResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawBatchDeleteResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawBatchDeleteResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawBatchDeleteResponse) Reset()                    { *m = RawBatchDeleteResponse{} }
@@ -1635,9 +3449,49 @@ func (m *RawBatchDeleteResponse) GetError() string {
 }
 
 type DeleteRangeRequest struct {
+<<<<<<< HEAD
 	Context  *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	StartKey []byte   `protobuf:"bytes,2,opt,name=start_key,json=startKey,proto3" json:"start_key,omitempty"`
 	EndKey   []byte   `protobuf:"bytes,3,opt,name=end_key,json=endKey,proto3" json:"end_key,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	StartKey             []byte   `protobuf:"bytes,2,opt,name=start_key,json=startKey,proto3" json:"start_key,omitempty"`
+	EndKey               []byte   `protobuf:"bytes,3,opt,name=end_key,json=endKey,proto3" json:"end_key,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteRangeRequest) Reset()         { *m = DeleteRangeRequest{} }
+func (m *DeleteRangeRequest) String() string { return proto.CompactTextString(m) }
+func (*DeleteRangeRequest) ProtoMessage()    {}
+func (*DeleteRangeRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{45}
+}
+func (m *DeleteRangeRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *DeleteRangeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_DeleteRangeRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *DeleteRangeRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteRangeRequest.Merge(dst, src)
+}
+func (m *DeleteRangeRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *DeleteRangeRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteRangeRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *DeleteRangeRequest) Reset()                    { *m = DeleteRangeRequest{} }
@@ -1667,8 +3521,47 @@ func (m *DeleteRangeRequest) GetEndKey() []byte {
 }
 
 type DeleteRangeResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *DeleteRangeResponse) Reset()         { *m = DeleteRangeResponse{} }
+func (m *DeleteRangeResponse) String() string { return proto.CompactTextString(m) }
+func (*DeleteRangeResponse) ProtoMessage()    {}
+func (*DeleteRangeResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{46}
+}
+func (m *DeleteRangeResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *DeleteRangeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_DeleteRangeResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *DeleteRangeResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteRangeResponse.Merge(dst, src)
+}
+func (m *DeleteRangeResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *DeleteRangeResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteRangeResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *DeleteRangeResponse) Reset()                    { *m = DeleteRangeResponse{} }
@@ -1691,10 +3584,51 @@ func (m *DeleteRangeResponse) GetError() string {
 }
 
 type RawDeleteRangeRequest struct {
+<<<<<<< HEAD
 	Context  *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	StartKey []byte   `protobuf:"bytes,2,opt,name=start_key,json=startKey,proto3" json:"start_key,omitempty"`
 	EndKey   []byte   `protobuf:"bytes,3,opt,name=end_key,json=endKey,proto3" json:"end_key,omitempty"`
 	Cf       string   `protobuf:"bytes,4,opt,name=cf,proto3" json:"cf,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	StartKey             []byte   `protobuf:"bytes,2,opt,name=start_key,json=startKey,proto3" json:"start_key,omitempty"`
+	EndKey               []byte   `protobuf:"bytes,3,opt,name=end_key,json=endKey,proto3" json:"end_key,omitempty"`
+	Cf                   string   `protobuf:"bytes,4,opt,name=cf,proto3" json:"cf,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RawDeleteRangeRequest) Reset()         { *m = RawDeleteRangeRequest{} }
+func (m *RawDeleteRangeRequest) String() string { return proto.CompactTextString(m) }
+func (*RawDeleteRangeRequest) ProtoMessage()    {}
+func (*RawDeleteRangeRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{47}
+}
+func (m *RawDeleteRangeRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawDeleteRangeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawDeleteRangeRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawDeleteRangeRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawDeleteRangeRequest.Merge(dst, src)
+}
+func (m *RawDeleteRangeRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawDeleteRangeRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawDeleteRangeRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawDeleteRangeRequest) Reset()                    { *m = RawDeleteRangeRequest{} }
@@ -1731,8 +3665,47 @@ func (m *RawDeleteRangeRequest) GetCf() string {
 }
 
 type RawDeleteRangeResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *RawDeleteRangeResponse) Reset()         { *m = RawDeleteRangeResponse{} }
+func (m *RawDeleteRangeResponse) String() string { return proto.CompactTextString(m) }
+func (*RawDeleteRangeResponse) ProtoMessage()    {}
+func (*RawDeleteRangeResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{48}
+}
+func (m *RawDeleteRangeResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawDeleteRangeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawDeleteRangeResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawDeleteRangeResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawDeleteRangeResponse.Merge(dst, src)
+}
+func (m *RawDeleteRangeResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawDeleteRangeResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawDeleteRangeResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawDeleteRangeResponse) Reset()                    { *m = RawDeleteRangeResponse{} }
@@ -1761,6 +3734,46 @@ type RawScanRequest struct {
 	KeyOnly  bool     `protobuf:"varint,4,opt,name=key_only,json=keyOnly,proto3" json:"key_only,omitempty"`
 	Cf       string   `protobuf:"bytes,5,opt,name=cf,proto3" json:"cf,omitempty"`
 	Reverse  bool     `protobuf:"varint,6,opt,name=reverse,proto3" json:"reverse,omitempty"`
+<<<<<<< HEAD
+=======
+	// For compatibility, when scanning forward, the range to scan is [start_key, end_key), where start_key < end_key;
+	// and when scanning backward, it scans [end_key, start_key) in descending order, where end_key < start_key.
+	EndKey               []byte   `protobuf:"bytes,7,opt,name=end_key,json=endKey,proto3" json:"end_key,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RawScanRequest) Reset()         { *m = RawScanRequest{} }
+func (m *RawScanRequest) String() string { return proto.CompactTextString(m) }
+func (*RawScanRequest) ProtoMessage()    {}
+func (*RawScanRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{49}
+}
+func (m *RawScanRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawScanRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawScanRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawScanRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawScanRequest.Merge(dst, src)
+}
+func (m *RawScanRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawScanRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawScanRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawScanRequest) Reset()                    { *m = RawScanRequest{} }
@@ -1810,9 +3823,55 @@ func (m *RawScanRequest) GetReverse() bool {
 	return false
 }
 
+func (m *RawScanRequest) GetEndKey() []byte {
+	if m != nil {
+		return m.EndKey
+	}
+	return nil
+}
+
 type RawScanResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Kvs         []*KvPair      `protobuf:"bytes,2,rep,name=kvs" json:"kvs,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Kvs                  []*KvPair      `protobuf:"bytes,2,rep,name=kvs" json:"kvs,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *RawScanResponse) Reset()         { *m = RawScanResponse{} }
+func (m *RawScanResponse) String() string { return proto.CompactTextString(m) }
+func (*RawScanResponse) ProtoMessage()    {}
+func (*RawScanResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{50}
+}
+func (m *RawScanResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawScanResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawScanResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawScanResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawScanResponse.Merge(dst, src)
+}
+func (m *RawScanResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawScanResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawScanResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawScanResponse) Reset()                    { *m = RawScanResponse{} }
@@ -1835,8 +3894,47 @@ func (m *RawScanResponse) GetKvs() []*KvPair {
 }
 
 type KeyRange struct {
+<<<<<<< HEAD
 	StartKey []byte `protobuf:"bytes,1,opt,name=start_key,json=startKey,proto3" json:"start_key,omitempty"`
 	EndKey   []byte `protobuf:"bytes,2,opt,name=end_key,json=endKey,proto3" json:"end_key,omitempty"`
+=======
+	StartKey             []byte   `protobuf:"bytes,1,opt,name=start_key,json=startKey,proto3" json:"start_key,omitempty"`
+	EndKey               []byte   `protobuf:"bytes,2,opt,name=end_key,json=endKey,proto3" json:"end_key,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *KeyRange) Reset()         { *m = KeyRange{} }
+func (m *KeyRange) String() string { return proto.CompactTextString(m) }
+func (*KeyRange) ProtoMessage()    {}
+func (*KeyRange) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{51}
+}
+func (m *KeyRange) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *KeyRange) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_KeyRange.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *KeyRange) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_KeyRange.Merge(dst, src)
+}
+func (m *KeyRange) XXX_Size() int {
+	return m.Size()
+}
+func (m *KeyRange) XXX_DiscardUnknown() {
+	xxx_messageInfo_KeyRange.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *KeyRange) Reset()                    { *m = KeyRange{} }
@@ -1859,12 +3957,55 @@ func (m *KeyRange) GetEndKey() []byte {
 }
 
 type RawBatchScanRequest struct {
+<<<<<<< HEAD
 	Context   *Context    `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Ranges    []*KeyRange `protobuf:"bytes,2,rep,name=ranges" json:"ranges,omitempty"`
 	EachLimit uint32      `protobuf:"varint,3,opt,name=each_limit,json=eachLimit,proto3" json:"each_limit,omitempty"`
 	KeyOnly   bool        `protobuf:"varint,4,opt,name=key_only,json=keyOnly,proto3" json:"key_only,omitempty"`
 	Cf        string      `protobuf:"bytes,5,opt,name=cf,proto3" json:"cf,omitempty"`
 	Reverse   bool        `protobuf:"varint,6,opt,name=reverse,proto3" json:"reverse,omitempty"`
+=======
+	Context              *Context    `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	Ranges               []*KeyRange `protobuf:"bytes,2,rep,name=ranges" json:"ranges,omitempty"`
+	EachLimit            uint32      `protobuf:"varint,3,opt,name=each_limit,json=eachLimit,proto3" json:"each_limit,omitempty"`
+	KeyOnly              bool        `protobuf:"varint,4,opt,name=key_only,json=keyOnly,proto3" json:"key_only,omitempty"`
+	Cf                   string      `protobuf:"bytes,5,opt,name=cf,proto3" json:"cf,omitempty"`
+	Reverse              bool        `protobuf:"varint,6,opt,name=reverse,proto3" json:"reverse,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *RawBatchScanRequest) Reset()         { *m = RawBatchScanRequest{} }
+func (m *RawBatchScanRequest) String() string { return proto.CompactTextString(m) }
+func (*RawBatchScanRequest) ProtoMessage()    {}
+func (*RawBatchScanRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{52}
+}
+func (m *RawBatchScanRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawBatchScanRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawBatchScanRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawBatchScanRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawBatchScanRequest.Merge(dst, src)
+}
+func (m *RawBatchScanRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawBatchScanRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawBatchScanRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawBatchScanRequest) Reset()                    { *m = RawBatchScanRequest{} }
@@ -1915,8 +4056,47 @@ func (m *RawBatchScanRequest) GetReverse() bool {
 }
 
 type RawBatchScanResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Kvs         []*KvPair      `protobuf:"bytes,2,rep,name=kvs" json:"kvs,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Kvs                  []*KvPair      `protobuf:"bytes,2,rep,name=kvs" json:"kvs,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *RawBatchScanResponse) Reset()         { *m = RawBatchScanResponse{} }
+func (m *RawBatchScanResponse) String() string { return proto.CompactTextString(m) }
+func (*RawBatchScanResponse) ProtoMessage()    {}
+func (*RawBatchScanResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{53}
+}
+func (m *RawBatchScanResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RawBatchScanResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RawBatchScanResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RawBatchScanResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RawBatchScanResponse.Merge(dst, src)
+}
+func (m *RawBatchScanResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *RawBatchScanResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RawBatchScanResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *RawBatchScanResponse) Reset()                    { *m = RawBatchScanResponse{} }
@@ -1939,10 +4119,51 @@ func (m *RawBatchScanResponse) GetKvs() []*KvPair {
 }
 
 type MvccWrite struct {
+<<<<<<< HEAD
 	Type       Op     `protobuf:"varint,1,opt,name=type,proto3,enum=kvrpcpb.Op" json:"type,omitempty"`
 	StartTs    uint64 `protobuf:"varint,2,opt,name=start_ts,json=startTs,proto3" json:"start_ts,omitempty"`
 	CommitTs   uint64 `protobuf:"varint,3,opt,name=commit_ts,json=commitTs,proto3" json:"commit_ts,omitempty"`
 	ShortValue []byte `protobuf:"bytes,4,opt,name=short_value,json=shortValue,proto3" json:"short_value,omitempty"`
+=======
+	Type                 Op       `protobuf:"varint,1,opt,name=type,proto3,enum=kvrpcpb.Op" json:"type,omitempty"`
+	StartTs              uint64   `protobuf:"varint,2,opt,name=start_ts,json=startTs,proto3" json:"start_ts,omitempty"`
+	CommitTs             uint64   `protobuf:"varint,3,opt,name=commit_ts,json=commitTs,proto3" json:"commit_ts,omitempty"`
+	ShortValue           []byte   `protobuf:"bytes,4,opt,name=short_value,json=shortValue,proto3" json:"short_value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *MvccWrite) Reset()         { *m = MvccWrite{} }
+func (m *MvccWrite) String() string { return proto.CompactTextString(m) }
+func (*MvccWrite) ProtoMessage()    {}
+func (*MvccWrite) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{54}
+}
+func (m *MvccWrite) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MvccWrite) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MvccWrite.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *MvccWrite) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MvccWrite.Merge(dst, src)
+}
+func (m *MvccWrite) XXX_Size() int {
+	return m.Size()
+}
+func (m *MvccWrite) XXX_DiscardUnknown() {
+	xxx_messageInfo_MvccWrite.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *MvccWrite) Reset()                    { *m = MvccWrite{} }
@@ -1979,8 +4200,47 @@ func (m *MvccWrite) GetShortValue() []byte {
 }
 
 type MvccValue struct {
+<<<<<<< HEAD
 	StartTs uint64 `protobuf:"varint,1,opt,name=start_ts,json=startTs,proto3" json:"start_ts,omitempty"`
 	Value   []byte `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+=======
+	StartTs              uint64   `protobuf:"varint,1,opt,name=start_ts,json=startTs,proto3" json:"start_ts,omitempty"`
+	Value                []byte   `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *MvccValue) Reset()         { *m = MvccValue{} }
+func (m *MvccValue) String() string { return proto.CompactTextString(m) }
+func (*MvccValue) ProtoMessage()    {}
+func (*MvccValue) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{55}
+}
+func (m *MvccValue) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MvccValue) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MvccValue.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *MvccValue) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MvccValue.Merge(dst, src)
+}
+func (m *MvccValue) XXX_Size() int {
+	return m.Size()
+}
+func (m *MvccValue) XXX_DiscardUnknown() {
+	xxx_messageInfo_MvccValue.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *MvccValue) Reset()                    { *m = MvccValue{} }
@@ -2003,10 +4263,51 @@ func (m *MvccValue) GetValue() []byte {
 }
 
 type MvccLock struct {
+<<<<<<< HEAD
 	Type       Op     `protobuf:"varint,1,opt,name=type,proto3,enum=kvrpcpb.Op" json:"type,omitempty"`
 	StartTs    uint64 `protobuf:"varint,2,opt,name=start_ts,json=startTs,proto3" json:"start_ts,omitempty"`
 	Primary    []byte `protobuf:"bytes,3,opt,name=primary,proto3" json:"primary,omitempty"`
 	ShortValue []byte `protobuf:"bytes,4,opt,name=short_value,json=shortValue,proto3" json:"short_value,omitempty"`
+=======
+	Type                 Op       `protobuf:"varint,1,opt,name=type,proto3,enum=kvrpcpb.Op" json:"type,omitempty"`
+	StartTs              uint64   `protobuf:"varint,2,opt,name=start_ts,json=startTs,proto3" json:"start_ts,omitempty"`
+	Primary              []byte   `protobuf:"bytes,3,opt,name=primary,proto3" json:"primary,omitempty"`
+	ShortValue           []byte   `protobuf:"bytes,4,opt,name=short_value,json=shortValue,proto3" json:"short_value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *MvccLock) Reset()         { *m = MvccLock{} }
+func (m *MvccLock) String() string { return proto.CompactTextString(m) }
+func (*MvccLock) ProtoMessage()    {}
+func (*MvccLock) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{56}
+}
+func (m *MvccLock) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MvccLock) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MvccLock.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *MvccLock) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MvccLock.Merge(dst, src)
+}
+func (m *MvccLock) XXX_Size() int {
+	return m.Size()
+}
+func (m *MvccLock) XXX_DiscardUnknown() {
+	xxx_messageInfo_MvccLock.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *MvccLock) Reset()                    { *m = MvccLock{} }
@@ -2043,9 +4344,49 @@ func (m *MvccLock) GetShortValue() []byte {
 }
 
 type MvccInfo struct {
+<<<<<<< HEAD
 	Lock   *MvccLock    `protobuf:"bytes,1,opt,name=lock" json:"lock,omitempty"`
 	Writes []*MvccWrite `protobuf:"bytes,2,rep,name=writes" json:"writes,omitempty"`
 	Values []*MvccValue `protobuf:"bytes,3,rep,name=values" json:"values,omitempty"`
+=======
+	Lock                 *MvccLock    `protobuf:"bytes,1,opt,name=lock" json:"lock,omitempty"`
+	Writes               []*MvccWrite `protobuf:"bytes,2,rep,name=writes" json:"writes,omitempty"`
+	Values               []*MvccValue `protobuf:"bytes,3,rep,name=values" json:"values,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
+}
+
+func (m *MvccInfo) Reset()         { *m = MvccInfo{} }
+func (m *MvccInfo) String() string { return proto.CompactTextString(m) }
+func (*MvccInfo) ProtoMessage()    {}
+func (*MvccInfo) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{57}
+}
+func (m *MvccInfo) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MvccInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MvccInfo.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *MvccInfo) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MvccInfo.Merge(dst, src)
+}
+func (m *MvccInfo) XXX_Size() int {
+	return m.Size()
+}
+func (m *MvccInfo) XXX_DiscardUnknown() {
+	xxx_messageInfo_MvccInfo.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *MvccInfo) Reset()                    { *m = MvccInfo{} }
@@ -2075,8 +4416,47 @@ func (m *MvccInfo) GetValues() []*MvccValue {
 }
 
 type MvccGetByKeyRequest struct {
+<<<<<<< HEAD
 	Context *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	Key     []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	Key                  []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *MvccGetByKeyRequest) Reset()         { *m = MvccGetByKeyRequest{} }
+func (m *MvccGetByKeyRequest) String() string { return proto.CompactTextString(m) }
+func (*MvccGetByKeyRequest) ProtoMessage()    {}
+func (*MvccGetByKeyRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{58}
+}
+func (m *MvccGetByKeyRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MvccGetByKeyRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MvccGetByKeyRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *MvccGetByKeyRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MvccGetByKeyRequest.Merge(dst, src)
+}
+func (m *MvccGetByKeyRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *MvccGetByKeyRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_MvccGetByKeyRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *MvccGetByKeyRequest) Reset()                    { *m = MvccGetByKeyRequest{} }
@@ -2099,9 +4479,49 @@ func (m *MvccGetByKeyRequest) GetKey() []byte {
 }
 
 type MvccGetByKeyResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
 	Info        *MvccInfo      `protobuf:"bytes,3,opt,name=info" json:"info,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	Info                 *MvccInfo      `protobuf:"bytes,3,opt,name=info" json:"info,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *MvccGetByKeyResponse) Reset()         { *m = MvccGetByKeyResponse{} }
+func (m *MvccGetByKeyResponse) String() string { return proto.CompactTextString(m) }
+func (*MvccGetByKeyResponse) ProtoMessage()    {}
+func (*MvccGetByKeyResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{59}
+}
+func (m *MvccGetByKeyResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MvccGetByKeyResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MvccGetByKeyResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *MvccGetByKeyResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MvccGetByKeyResponse.Merge(dst, src)
+}
+func (m *MvccGetByKeyResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MvccGetByKeyResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MvccGetByKeyResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *MvccGetByKeyResponse) Reset()                    { *m = MvccGetByKeyResponse{} }
@@ -2131,8 +4551,47 @@ func (m *MvccGetByKeyResponse) GetInfo() *MvccInfo {
 }
 
 type MvccGetByStartTsRequest struct {
+<<<<<<< HEAD
 	Context *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	StartTs uint64   `protobuf:"varint,2,opt,name=start_ts,json=startTs,proto3" json:"start_ts,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	StartTs              uint64   `protobuf:"varint,2,opt,name=start_ts,json=startTs,proto3" json:"start_ts,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *MvccGetByStartTsRequest) Reset()         { *m = MvccGetByStartTsRequest{} }
+func (m *MvccGetByStartTsRequest) String() string { return proto.CompactTextString(m) }
+func (*MvccGetByStartTsRequest) ProtoMessage()    {}
+func (*MvccGetByStartTsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{60}
+}
+func (m *MvccGetByStartTsRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MvccGetByStartTsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MvccGetByStartTsRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *MvccGetByStartTsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MvccGetByStartTsRequest.Merge(dst, src)
+}
+func (m *MvccGetByStartTsRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *MvccGetByStartTsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_MvccGetByStartTsRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *MvccGetByStartTsRequest) Reset()                    { *m = MvccGetByStartTsRequest{} }
@@ -2155,10 +4614,51 @@ func (m *MvccGetByStartTsRequest) GetStartTs() uint64 {
 }
 
 type MvccGetByStartTsResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Error       string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
 	Key         []byte         `protobuf:"bytes,3,opt,name=key,proto3" json:"key,omitempty"`
 	Info        *MvccInfo      `protobuf:"bytes,4,opt,name=info" json:"info,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Error                string         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	Key                  []byte         `protobuf:"bytes,3,opt,name=key,proto3" json:"key,omitempty"`
+	Info                 *MvccInfo      `protobuf:"bytes,4,opt,name=info" json:"info,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *MvccGetByStartTsResponse) Reset()         { *m = MvccGetByStartTsResponse{} }
+func (m *MvccGetByStartTsResponse) String() string { return proto.CompactTextString(m) }
+func (*MvccGetByStartTsResponse) ProtoMessage()    {}
+func (*MvccGetByStartTsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{61}
+}
+func (m *MvccGetByStartTsResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MvccGetByStartTsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MvccGetByStartTsResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *MvccGetByStartTsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MvccGetByStartTsResponse.Merge(dst, src)
+}
+func (m *MvccGetByStartTsResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MvccGetByStartTsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MvccGetByStartTsResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *MvccGetByStartTsResponse) Reset()                    { *m = MvccGetByStartTsResponse{} }
@@ -2195,8 +4695,47 @@ func (m *MvccGetByStartTsResponse) GetInfo() *MvccInfo {
 }
 
 type SplitRegionRequest struct {
+<<<<<<< HEAD
 	Context  *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	SplitKey []byte   `protobuf:"bytes,2,opt,name=split_key,json=splitKey,proto3" json:"split_key,omitempty"`
+=======
+	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
+	SplitKey             []byte   `protobuf:"bytes,2,opt,name=split_key,json=splitKey,proto3" json:"split_key,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SplitRegionRequest) Reset()         { *m = SplitRegionRequest{} }
+func (m *SplitRegionRequest) String() string { return proto.CompactTextString(m) }
+func (*SplitRegionRequest) ProtoMessage()    {}
+func (*SplitRegionRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{62}
+}
+func (m *SplitRegionRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *SplitRegionRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_SplitRegionRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *SplitRegionRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SplitRegionRequest.Merge(dst, src)
+}
+func (m *SplitRegionRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *SplitRegionRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_SplitRegionRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *SplitRegionRequest) Reset()                    { *m = SplitRegionRequest{} }
@@ -2219,9 +4758,49 @@ func (m *SplitRegionRequest) GetSplitKey() []byte {
 }
 
 type SplitRegionResponse struct {
+<<<<<<< HEAD
 	RegionError *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
 	Left        *metapb.Region `protobuf:"bytes,2,opt,name=left" json:"left,omitempty"`
 	Right       *metapb.Region `protobuf:"bytes,3,opt,name=right" json:"right,omitempty"`
+=======
+	RegionError          *errorpb.Error `protobuf:"bytes,1,opt,name=region_error,json=regionError" json:"region_error,omitempty"`
+	Left                 *metapb.Region `protobuf:"bytes,2,opt,name=left" json:"left,omitempty"`
+	Right                *metapb.Region `protobuf:"bytes,3,opt,name=right" json:"right,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+
+func (m *SplitRegionResponse) Reset()         { *m = SplitRegionResponse{} }
+func (m *SplitRegionResponse) String() string { return proto.CompactTextString(m) }
+func (*SplitRegionResponse) ProtoMessage()    {}
+func (*SplitRegionResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{63}
+}
+func (m *SplitRegionResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *SplitRegionResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_SplitRegionResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *SplitRegionResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SplitRegionResponse.Merge(dst, src)
+}
+func (m *SplitRegionResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *SplitRegionResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_SplitRegionResponse.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *SplitRegionResponse) Reset()                    { *m = SplitRegionResponse{} }
@@ -2260,7 +4839,35 @@ func (m *UnsafeDestroyRangeRequest) Reset()         { *m = UnsafeDestroyRangeReq
 func (m *UnsafeDestroyRangeRequest) String() string { return proto.CompactTextString(m) }
 func (*UnsafeDestroyRangeRequest) ProtoMessage()    {}
 func (*UnsafeDestroyRangeRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptorKvrpcpb, []int{64}
+=======
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{64}
+}
+func (m *UnsafeDestroyRangeRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *UnsafeDestroyRangeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_UnsafeDestroyRangeRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *UnsafeDestroyRangeRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_UnsafeDestroyRangeRequest.Merge(dst, src)
+}
+func (m *UnsafeDestroyRangeRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *UnsafeDestroyRangeRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_UnsafeDestroyRangeRequest.DiscardUnknown(m)
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *UnsafeDestroyRangeRequest) GetContext() *Context {
@@ -2293,7 +4900,26 @@ func (m *UnsafeDestroyRangeResponse) Reset()         { *m = UnsafeDestroyRangeRe
 func (m *UnsafeDestroyRangeResponse) String() string { return proto.CompactTextString(m) }
 func (*UnsafeDestroyRangeResponse) ProtoMessage()    {}
 func (*UnsafeDestroyRangeResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptorKvrpcpb, []int{65}
+=======
+	return fileDescriptor_kvrpcpb_6483f77f6dfce12f, []int{65}
+}
+func (m *UnsafeDestroyRangeResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *UnsafeDestroyRangeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_UnsafeDestroyRangeResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
 
 func (m *UnsafeDestroyRangeResponse) GetRegionError() *errorpb.Error {
@@ -4489,6 +7115,18 @@ func (m *RawScanRequest) MarshalTo(dAtA []byte) (int, error) {
 		}
 		i++
 	}
+<<<<<<< HEAD
+=======
+	if len(m.EndKey) > 0 {
+		dAtA[i] = 0x3a
+		i++
+		i = encodeVarintKvrpcpb(dAtA, i, uint64(len(m.EndKey)))
+		i += copy(dAtA[i:], m.EndKey)
+	}
+	if m.XXX_unrecognized != nil {
+		i += copy(dAtA[i:], m.XXX_unrecognized)
+	}
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 	return i, nil
 }
 
@@ -6058,6 +8696,16 @@ func (m *RawScanRequest) Size() (n int) {
 	if m.Reverse {
 		n += 2
 	}
+<<<<<<< HEAD
+=======
+	l = len(m.EndKey)
+	if l > 0 {
+		n += 1 + l + sovKvrpcpb(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 	return n
 }
 
@@ -13176,6 +15824,37 @@ func (m *RawScanRequest) Unmarshal(dAtA []byte) error {
 				}
 			}
 			m.Reverse = bool(v != 0)
+		case 7:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field EndKey", wireType)
+			}
+			var byteLen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowKvrpcpb
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				byteLen |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if byteLen < 0 {
+				return ErrInvalidLengthKvrpcpb
+			}
+			postIndex := iNdEx + byteLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.EndKey = append(m.EndKey[:0], dAtA[iNdEx:postIndex]...)
+			if m.EndKey == nil {
+				m.EndKey = []byte{}
+			}
+			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipKvrpcpb(dAtA[iNdEx:])
@@ -15434,6 +18113,7 @@ var (
 	ErrIntOverflowKvrpcpb   = fmt.Errorf("proto: integer overflow")
 )
 
+<<<<<<< HEAD
 func init() { proto.RegisterFile("kvrpcpb.proto", fileDescriptorKvrpcpb) }
 
 var fileDescriptorKvrpcpb = []byte{
@@ -15567,4 +18247,138 @@ var fileDescriptorKvrpcpb = []byte{
 	0xf2, 0xc3, 0xbe, 0x47, 0xa2, 0x4d, 0xee, 0x0f, 0xc7, 0x9b, 0xc3, 0xb1, 0xfc, 0x67, 0xc2, 0x61,
 	0x55, 0xfe, 0x7c, 0xf8, 0xdf, 0x00, 0x00, 0x00, 0xff, 0xff, 0xbd, 0xe9, 0x34, 0x4f, 0xed, 0x20,
 	0x00, 0x00,
+=======
+func init() { proto.RegisterFile("kvrpcpb.proto", fileDescriptor_kvrpcpb_6483f77f6dfce12f) }
+
+var fileDescriptor_kvrpcpb_6483f77f6dfce12f = []byte{
+	// 2043 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xc4, 0x5a, 0x5f, 0x6f, 0x1b, 0xc7,
+	0x11, 0xf7, 0xfd, 0x21, 0x79, 0x1c, 0x52, 0x14, 0xb3, 0x92, 0x6d, 0xc6, 0x6e, 0x6c, 0xe5, 0x1a,
+	0xc3, 0xb2, 0x8b, 0xca, 0x28, 0x13, 0xf4, 0xa9, 0x28, 0x02, 0x53, 0xae, 0xa3, 0x58, 0xae, 0x85,
+	0x95, 0xea, 0xc2, 0x40, 0x13, 0xe6, 0x74, 0x5c, 0x91, 0x07, 0x1e, 0x6f, 0xcf, 0x77, 0x4b, 0x4a,
+	0x44, 0x11, 0x14, 0x45, 0x91, 0x02, 0x79, 0x6c, 0x51, 0xa0, 0x7d, 0x68, 0x3e, 0x40, 0x3f, 0x43,
+	0xbf, 0x40, 0x5f, 0x0a, 0xe4, 0xa1, 0x1f, 0xa0, 0x70, 0xbf, 0x48, 0xb1, 0x7f, 0xee, 0x8e, 0x47,
+	0x52, 0xb1, 0x70, 0xa5, 0xd4, 0x27, 0xde, 0xce, 0xcc, 0xee, 0xcc, 0x6f, 0x66, 0x76, 0xf6, 0x1f,
+	0x61, 0x6d, 0x38, 0x89, 0x42, 0x37, 0x3c, 0xde, 0x09, 0x23, 0xca, 0x28, 0xaa, 0xa8, 0xe6, 0xad,
+	0xfa, 0x88, 0x30, 0x27, 0x21, 0xdf, 0x5a, 0x23, 0x51, 0x44, 0xa3, 0xb4, 0xb9, 0xd9, 0xa7, 0x7d,
+	0x2a, 0x3e, 0x1f, 0xf1, 0x2f, 0x49, 0xb5, 0xbf, 0x04, 0x6b, 0x9f, 0xba, 0xc3, 0xbd, 0xe0, 0x84,
+	0xa2, 0xf7, 0xa1, 0x1e, 0x46, 0xde, 0xc8, 0x89, 0xa6, 0x5d, 0x9f, 0xba, 0xc3, 0x96, 0xb6, 0xa5,
+	0x6d, 0xd7, 0x71, 0x4d, 0xd1, 0xb8, 0x18, 0x17, 0xe1, 0xac, 0xee, 0x84, 0x44, 0xb1, 0x47, 0x83,
+	0x96, 0xbe, 0xa5, 0x6d, 0x9b, 0xb8, 0xc6, 0x69, 0x2f, 0x25, 0x09, 0x35, 0xc1, 0x18, 0x92, 0x69,
+	0xcb, 0x10, 0x9d, 0xf9, 0x27, 0x7a, 0x17, 0x2c, 0xd1, 0x89, 0x31, 0xbf, 0x65, 0x8a, 0x0e, 0x15,
+	0xde, 0x3e, 0x62, 0xbe, 0xfd, 0x8d, 0x06, 0xd6, 0x33, 0x32, 0x7d, 0xc2, 0x2d, 0x45, 0x0f, 0xa0,
+	0xcc, 0xe9, 0xa4, 0x27, 0x34, 0xd7, 0xda, 0xef, 0xec, 0x24, 0x38, 0x13, 0x13, 0xb1, 0x12, 0x40,
+	0xdf, 0x83, 0x6a, 0x44, 0x58, 0x34, 0x75, 0x8e, 0x7d, 0x22, 0x8c, 0xa8, 0xe2, 0x8c, 0x80, 0x36,
+	0xa1, 0xe4, 0x1c, 0xd3, 0x88, 0x09, 0x23, 0xaa, 0x58, 0x36, 0x50, 0x1b, 0x2c, 0x97, 0x06, 0x27,
+	0xbe, 0xe7, 0x32, 0x61, 0x46, 0xad, 0x7d, 0x23, 0x55, 0xf0, 0xcb, 0xc8, 0x63, 0xa4, 0xa3, 0xb8,
+	0x38, 0x95, 0xb3, 0x4f, 0x61, 0x2d, 0xc7, 0xe2, 0x58, 0x62, 0xe6, 0x44, 0xac, 0xcb, 0x62, 0x61,
+	0xa5, 0x89, 0x2b, 0xa2, 0x7d, 0x14, 0xa3, 0xbb, 0x50, 0x4b, 0xfa, 0x71, 0xae, 0x74, 0x0d, 0x24,
+	0xa4, 0xa3, 0x78, 0x89, 0x67, 0x5a, 0x50, 0x51, 0xde, 0x15, 0x16, 0xd5, 0x71, 0xd2, 0xb4, 0xbf,
+	0x31, 0xa0, 0xd2, 0xa1, 0x01, 0x23, 0x67, 0x0c, 0xdd, 0xe6, 0x60, 0xfb, 0x1e, 0x0d, 0xba, 0x5e,
+	0x4f, 0x29, 0xb5, 0x24, 0x61, 0xaf, 0x87, 0x7e, 0x0c, 0x75, 0xc5, 0x24, 0x21, 0x75, 0x07, 0x42,
+	0x6d, 0xad, 0xbd, 0xb1, 0xa3, 0x52, 0x01, 0x0b, 0xde, 0x13, 0xce, 0xc2, 0xb5, 0x28, 0x6b, 0xa0,
+	0x2d, 0x30, 0x43, 0x42, 0x22, 0x61, 0x4d, 0xad, 0x5d, 0x4f, 0xe4, 0x0f, 0x08, 0x89, 0xb0, 0xe0,
+	0x20, 0x04, 0x26, 0x23, 0xd1, 0xa8, 0x55, 0x12, 0x1a, 0xc5, 0x37, 0x7a, 0x04, 0x56, 0x18, 0x79,
+	0x34, 0xf2, 0xd8, 0xb4, 0x55, 0xde, 0xd2, 0xb6, 0x1b, 0xed, 0x8d, 0xd4, 0x87, 0x1d, 0x3a, 0x1a,
+	0x39, 0x41, 0xef, 0x20, 0xf2, 0x70, 0x2a, 0x84, 0x3e, 0x86, 0x75, 0x2f, 0xa6, 0xbe, 0xc3, 0xb8,
+	0x85, 0x3e, 0x99, 0x10, 0xbf, 0x55, 0x11, 0xfd, 0x6e, 0xa6, 0xfd, 0xf6, 0x12, 0xfe, 0x3e, 0x67,
+	0xe3, 0x86, 0x97, 0x6b, 0xa3, 0x0f, 0xa0, 0x11, 0x50, 0xd6, 0x3d, 0xf1, 0x7c, 0xbf, 0xeb, 0x3a,
+	0xee, 0x80, 0xb4, 0xac, 0x2d, 0x6d, 0xdb, 0xc2, 0xf5, 0x80, 0xb2, 0x9f, 0x79, 0xbe, 0xdf, 0xe1,
+	0x34, 0x11, 0x97, 0x69, 0xe0, 0x76, 0x7d, 0xda, 0x6f, 0x55, 0x05, 0xbf, 0xc2, 0xdb, 0xfb, 0xb4,
+	0xcf, 0xe3, 0x32, 0x70, 0x82, 0x9e, 0x4f, 0xba, 0xcc, 0x1b, 0x91, 0x16, 0x08, 0x2e, 0x48, 0xd2,
+	0x91, 0x37, 0x22, 0x5c, 0x20, 0x76, 0x9d, 0xa0, 0xdb, 0x23, 0xcc, 0xf1, 0xfc, 0x56, 0x4d, 0x0a,
+	0x70, 0xd2, 0xae, 0xa0, 0x7c, 0x6a, 0x5a, 0x66, 0xb3, 0xc4, 0xdd, 0xe7, 0xf4, 0xba, 0xaf, 0xc7,
+	0x34, 0x1a, 0x8f, 0xec, 0x5d, 0x80, 0x4f, 0xb2, 0x11, 0x6e, 0x42, 0xe5, 0xd4, 0xf1, 0x58, 0x77,
+	0x24, 0x93, 0xc2, 0xc0, 0x65, 0xde, 0x7c, 0x1e, 0xa3, 0xf7, 0x00, 0xc2, 0x88, 0xba, 0x24, 0x8e,
+	0x39, 0x4f, 0x17, 0xbc, 0xaa, 0xa2, 0x3c, 0x8f, 0xed, 0x9f, 0x82, 0x75, 0xe8, 0x3a, 0x81, 0x98,
+	0x7d, 0x9b, 0x50, 0x62, 0x94, 0x39, 0xbe, 0x1a, 0x41, 0x36, 0x78, 0xa2, 0x2b, 0x71, 0xd2, 0x9b,
+	0xeb, 0x4f, 0x7a, 0xf6, 0xef, 0x34, 0x80, 0xc3, 0xd4, 0x4e, 0x74, 0x1f, 0x4a, 0xa7, 0x3c, 0x5b,
+	0x17, 0xe6, 0x4f, 0xa2, 0x04, 0x4b, 0x3e, 0xba, 0x07, 0xa6, 0x98, 0xe1, 0xfa, 0x79, 0x72, 0x82,
+	0xcd, 0xc5, 0x7a, 0x0e, 0x73, 0x54, 0x8e, 0x2c, 0x13, 0xe3, 0x6c, 0x7b, 0x0a, 0xb5, 0x27, 0x67,
+	0xc4, 0x95, 0x46, 0xc4, 0xe8, 0xa3, 0xbc, 0xbf, 0x35, 0x95, 0x90, 0x49, 0xe7, 0xcc, 0x6d, 0xb9,
+	0x20, 0x7c, 0x94, 0x0f, 0x82, 0x3e, 0xd7, 0x2b, 0x43, 0x39, 0x1b, 0x19, 0xbb, 0x07, 0xf0, 0x94,
+	0x30, 0x4c, 0x5e, 0x8f, 0x49, 0xcc, 0xd0, 0x43, 0xa8, 0xb8, 0x72, 0xce, 0x28, 0xad, 0xcd, 0x99,
+	0xe4, 0x14, 0x74, 0x9c, 0x08, 0x24, 0x93, 0x51, 0xcf, 0x4d, 0xc6, 0xa4, 0xac, 0x19, 0x72, 0x66,
+	0xab, 0xa6, 0xfd, 0x1b, 0xa8, 0x09, 0x2d, 0x71, 0x48, 0x83, 0x98, 0xa0, 0x1f, 0x65, 0x53, 0x8e,
+	0xd7, 0x2d, 0xa5, 0xab, 0xb1, 0x93, 0xd4, 0x5b, 0x51, 0xcd, 0xd2, 0xd9, 0x26, 0x4a, 0xdb, 0x7d,
+	0x28, 0x49, 0xd9, 0x79, 0x8f, 0x27, 0xc5, 0x0f, 0x4b, 0x3e, 0xcf, 0x82, 0x89, 0xe3, 0x8f, 0x89,
+	0xaa, 0x12, 0xb2, 0x61, 0xff, 0x4b, 0x83, 0x1a, 0xf7, 0x40, 0x11, 0xa0, 0xb7, 0xa1, 0x2a, 0x2b,
+	0x56, 0x06, 0x57, 0x96, 0xb0, 0x67, 0x64, 0xca, 0xd5, 0xf9, 0xde, 0xc8, 0x93, 0x95, 0x72, 0x0d,
+	0xcb, 0xc6, 0xac, 0x27, 0xcc, 0x9c, 0x27, 0xf8, 0x34, 0x1b, 0x92, 0x69, 0x97, 0x06, 0xfe, 0x54,
+	0xd4, 0x05, 0x0b, 0x57, 0x86, 0x64, 0xfa, 0x22, 0xf0, 0x85, 0xfb, 0x22, 0xc2, 0xe5, 0x88, 0xa8,
+	0x0c, 0x16, 0x4e, 0x9a, 0x7c, 0x76, 0x90, 0xa0, 0x27, 0xf4, 0x57, 0x84, 0xfe, 0x32, 0x09, 0x7a,
+	0xcf, 0xc8, 0xd4, 0x7e, 0x05, 0xe5, 0x67, 0x93, 0x03, 0xc7, 0x9b, 0xf1, 0x8f, 0xf6, 0x16, 0xff,
+	0x2c, 0x86, 0x6d, 0xb9, 0xc7, 0x06, 0x50, 0x97, 0x0e, 0x2b, 0x1e, 0xb3, 0x7b, 0x50, 0x0a, 0x1d,
+	0x2f, 0xe2, 0xd3, 0xd6, 0xd8, 0xae, 0xb5, 0xd7, 0x33, 0x9b, 0x84, 0xcd, 0x58, 0x72, 0xed, 0x17,
+	0x60, 0x3d, 0x1f, 0x33, 0x51, 0xb0, 0xd0, 0x6d, 0xd0, 0x69, 0x28, 0xc6, 0x6e, 0xb4, 0x6b, 0xa9,
+	0xfc, 0x8b, 0x10, 0xeb, 0x34, 0xbc, 0xb0, 0xe9, 0x5f, 0xe9, 0xb0, 0x7e, 0x10, 0x11, 0x31, 0x53,
+	0x8b, 0x04, 0xfc, 0x11, 0x54, 0x47, 0xca, 0xa0, 0xc4, 0xf6, 0xcc, 0x9f, 0x89, 0xa9, 0x38, 0x93,
+	0x59, 0x58, 0xf7, 0x8d, 0xc5, 0x75, 0xff, 0xfb, 0xb0, 0x26, 0x93, 0x28, 0x9f, 0x17, 0x75, 0x41,
+	0x7c, 0x99, 0x25, 0x47, 0xba, 0xce, 0x97, 0x72, 0xeb, 0x3c, 0x6a, 0xc3, 0xf5, 0x78, 0xe8, 0x85,
+	0x5d, 0x97, 0x06, 0x31, 0x8b, 0x1c, 0x2f, 0x60, 0x5d, 0x77, 0x40, 0xdc, 0xa1, 0x4a, 0x95, 0x0d,
+	0xce, 0xec, 0xa4, 0xbc, 0x0e, 0x67, 0xd9, 0x21, 0x34, 0x33, 0x37, 0x14, 0x0f, 0xe3, 0x03, 0x28,
+	0x0b, 0xee, 0xa2, 0x2f, 0xd2, 0xdc, 0x52, 0x02, 0xf6, 0xdf, 0x34, 0x58, 0xe3, 0xab, 0x98, 0x57,
+	0xa8, 0xa2, 0x2c, 0xf8, 0x48, 0x5f, 0xe2, 0x23, 0x04, 0xe6, 0x90, 0x4c, 0xe3, 0x96, 0xb1, 0x65,
+	0x6c, 0xd7, 0xb1, 0xf8, 0x46, 0xf7, 0xa0, 0xe1, 0x0a, 0xad, 0x73, 0xde, 0x5d, 0x93, 0x54, 0xd5,
+	0xf5, 0x53, 0xd3, 0x2a, 0x35, 0xcb, 0xb8, 0x7c, 0xec, 0x05, 0x3e, 0xed, 0xdb, 0x3e, 0x34, 0x12,
+	0x53, 0x2f, 0xbf, 0x2c, 0xd9, 0x7d, 0x58, 0xdb, 0x1b, 0x85, 0x34, 0x4a, 0x1d, 0x93, 0x4b, 0x32,
+	0xed, 0x02, 0x49, 0xb6, 0x08, 0x52, 0x5f, 0x02, 0xd2, 0x7e, 0x05, 0x8d, 0x44, 0x51, 0x71, 0x58,
+	0x9b, 0xb3, 0xb0, 0xaa, 0x09, 0x86, 0x5f, 0xc3, 0xe6, 0x63, 0x87, 0xb9, 0x03, 0x4c, 0x7d, 0xff,
+	0xd8, 0x71, 0x87, 0x57, 0x19, 0x63, 0x3b, 0x86, 0xeb, 0x73, 0xca, 0xaf, 0x20, 0x6a, 0x31, 0x34,
+	0x3a, 0x3e, 0x71, 0x82, 0x71, 0xb8, 0x9a, 0x15, 0x72, 0x01, 0xbd, 0xb1, 0x88, 0xde, 0xfe, 0x93,
+	0x06, 0xeb, 0xa9, 0xd6, 0x2b, 0x58, 0x31, 0x17, 0x13, 0xcb, 0x58, 0x96, 0x58, 0x43, 0x58, 0x17,
+	0x01, 0x28, 0xb8, 0x5d, 0x48, 0x62, 0xaa, 0xcf, 0xcc, 0xdb, 0xf3, 0x37, 0x0c, 0x3e, 0x34, 0x33,
+	0x65, 0x97, 0xbe, 0x02, 0xfd, 0x41, 0x83, 0x75, 0xbe, 0xd8, 0xf1, 0x4a, 0x5d, 0x04, 0xdb, 0x5d,
+	0xa8, 0x8d, 0x9c, 0xb3, 0xb9, 0x94, 0x86, 0x91, 0x73, 0x96, 0x24, 0x74, 0x6e, 0x0b, 0x61, 0x9c,
+	0xb7, 0x85, 0x30, 0x67, 0xb6, 0x10, 0xf6, 0x9f, 0x35, 0x68, 0x66, 0x36, 0x5d, 0x41, 0x1a, 0xdc,
+	0x87, 0x12, 0x5f, 0x6c, 0xe4, 0xac, 0x5b, 0x7a, 0x76, 0x94, 0x7c, 0xfb, 0x43, 0xa8, 0x1c, 0x9d,
+	0xc9, 0x2d, 0x77, 0x13, 0x0c, 0x76, 0x16, 0xa8, 0x23, 0x15, 0xff, 0x44, 0x37, 0xa0, 0x1c, 0x33,
+	0x87, 0x8d, 0x93, 0xe3, 0x9b, 0x6a, 0xd9, 0x7f, 0xd7, 0x00, 0x61, 0x12, 0x53, 0x7f, 0x42, 0x8a,
+	0x7a, 0xf9, 0x42, 0xa5, 0xe3, 0x62, 0xc9, 0x8c, 0x7e, 0x08, 0x55, 0x76, 0x16, 0x74, 0xbd, 0xe0,
+	0x84, 0xc6, 0x2d, 0x53, 0x00, 0xce, 0x34, 0x2b, 0x74, 0xd8, 0x62, 0xf2, 0x23, 0xb6, 0x5f, 0xc3,
+	0x46, 0xce, 0xf8, 0x2b, 0x28, 0x3d, 0x2f, 0xa1, 0xfa, 0xb4, 0x53, 0xc4, 0x4d, 0xef, 0x01, 0xc4,
+	0xce, 0x09, 0xe9, 0x86, 0xd4, 0x0b, 0x98, 0xf2, 0x51, 0x95, 0x53, 0x0e, 0x38, 0xc1, 0x1e, 0x00,
+	0xf0, 0x71, 0xaf, 0x00, 0xc1, 0x67, 0xb0, 0x86, 0x9d, 0xd3, 0x95, 0x9d, 0x2e, 0x1a, 0xa0, 0xbb,
+	0x27, 0xea, 0x42, 0x42, 0x77, 0x4f, 0x6c, 0x0a, 0x8d, 0x64, 0xf8, 0x15, 0x2f, 0x74, 0xe7, 0x6c,
+	0x2b, 0x63, 0x81, 0xe7, 0x60, 0xbc, 0x22, 0x3c, 0x4b, 0x95, 0x28, 0x94, 0x66, 0x8a, 0xf2, 0x95,
+	0x40, 0x29, 0x94, 0xae, 0x7a, 0x39, 0x3f, 0x05, 0x84, 0x9d, 0x53, 0x51, 0x66, 0x0b, 0x82, 0xba,
+	0x58, 0x79, 0x5d, 0x88, 0xdc, 0xe7, 0xb0, 0x91, 0x53, 0xbc, 0x6a, 0x60, 0xbd, 0x0c, 0xd8, 0x0a,
+	0x17, 0xab, 0xc5, 0xfc, 0xdb, 0xc8, 0x69, 0xb9, 0xf4, 0x55, 0xea, 0x0b, 0x68, 0x62, 0xe7, 0x74,
+	0x97, 0xf8, 0xa4, 0xd8, 0xb1, 0xe6, 0xed, 0x53, 0xea, 0x57, 0xf0, 0xce, 0x8c, 0x86, 0x55, 0x87,
+	0xa5, 0x0f, 0xd7, 0x13, 0x87, 0x15, 0x07, 0x71, 0x91, 0xc8, 0x38, 0x70, 0x63, 0x5e, 0xd1, 0xaa,
+	0xb1, 0x4c, 0x00, 0xa9, 0xa1, 0x9d, 0xa0, 0x4f, 0x56, 0x7e, 0xab, 0x30, 0x73, 0xe0, 0x37, 0x72,
+	0x07, 0xfe, 0xcf, 0x61, 0x23, 0xa7, 0x77, 0xd5, 0xb8, 0xbe, 0xd6, 0x44, 0x90, 0xfe, 0x1f, 0xd8,
+	0x16, 0x4a, 0x9f, 0x0c, 0xe3, 0xa5, 0xc2, 0xfd, 0xa7, 0x26, 0xca, 0xeb, 0x15, 0xde, 0x0c, 0xcd,
+	0xde, 0xff, 0x98, 0xf9, 0xfb, 0x1f, 0x89, 0xbf, 0x94, 0xe0, 0x2f, 0x72, 0x1f, 0xd4, 0x87, 0xf5,
+	0x14, 0x4e, 0x71, 0x5f, 0xbd, 0x0f, 0xc6, 0x70, 0x72, 0x6e, 0x35, 0xe2, 0x3c, 0xfb, 0x63, 0xf1,
+	0xea, 0x20, 0xa2, 0x92, 0xf7, 0x82, 0x76, 0x7e, 0xb4, 0xf5, 0x9c, 0xa9, 0xdf, 0x6a, 0x59, 0xfd,
+	0x2c, 0xea, 0xff, 0x07, 0x50, 0x8e, 0xb8, 0x09, 0x4b, 0x6f, 0x26, 0x64, 0xca, 0x28, 0x01, 0xbe,
+	0x2b, 0x22, 0x8e, 0x3b, 0xe8, 0xce, 0x86, 0xa4, 0xca, 0x29, 0xfb, 0x2b, 0x0b, 0x8b, 0xed, 0xc3,
+	0x66, 0x1e, 0xd1, 0xa5, 0x86, 0xe0, 0x2b, 0x0d, 0xaa, 0xcf, 0x27, 0xae, 0x2b, 0x9e, 0x57, 0xd0,
+	0x5d, 0x30, 0xd9, 0x34, 0x24, 0xcb, 0xae, 0xce, 0x04, 0x23, 0xf7, 0xee, 0xa2, 0xe7, 0xdf, 0x5d,
+	0x6e, 0x43, 0x55, 0xed, 0x99, 0x59, 0xac, 0xb6, 0xcb, 0x96, 0x24, 0xc8, 0x47, 0x99, 0x78, 0x40,
+	0xf9, 0xae, 0x5b, 0x6c, 0x56, 0xe4, 0x2b, 0x0b, 0x08, 0xd2, 0x4b, 0xb1, 0x2d, 0xfa, 0x89, 0x34,
+	0x43, 0x34, 0xbe, 0xeb, 0x75, 0x27, 0xdd, 0xef, 0xe8, 0xb3, 0x9b, 0xaa, 0xdf, 0x6a, 0x60, 0xf1,
+	0xee, 0xe2, 0x92, 0xec, 0x7f, 0x01, 0x31, 0xf3, 0x12, 0x64, 0xe4, 0x5e, 0x82, 0xde, 0x8e, 0xe0,
+	0x6b, 0x65, 0x83, 0x38, 0xd2, 0x24, 0x37, 0xfb, 0xf3, 0xf7, 0xa8, 0x89, 0x91, 0xea, 0x66, 0xff,
+	0x21, 0x94, 0xc5, 0xc5, 0x5a, 0x12, 0x23, 0x94, 0x13, 0x14, 0x31, 0xc1, 0x4a, 0x82, 0xcb, 0x0a,
+	0xd5, 0xc9, 0xd1, 0x2a, 0x2f, 0x2b, 0x6c, 0xc0, 0x4a, 0xc2, 0x3e, 0x84, 0x0d, 0x4e, 0x7c, 0x4a,
+	0xd8, 0xe3, 0x29, 0x4f, 0xe2, 0x55, 0xac, 0xf3, 0xf6, 0xef, 0x35, 0xd8, 0xcc, 0x8f, 0xba, 0xea,
+	0x1d, 0xf3, 0x3d, 0x30, 0xf9, 0x59, 0x6a, 0xe1, 0xa1, 0x23, 0x71, 0x2b, 0x16, 0x6c, 0xfb, 0x0b,
+	0xb8, 0x99, 0xda, 0x71, 0x28, 0x03, 0x57, 0x04, 0xe1, 0xf9, 0x69, 0x60, 0xff, 0x55, 0x83, 0xd6,
+	0xa2, 0x8a, 0x55, 0xc3, 0x5d, 0x7c, 0x88, 0x4c, 0x1c, 0x60, 0x7e, 0xb7, 0x03, 0x3e, 0x03, 0x74,
+	0x18, 0xfa, 0x1e, 0x93, 0xaf, 0x8a, 0x45, 0xd7, 0x1c, 0x3e, 0x42, 0x6e, 0xcd, 0xe1, 0x04, 0x5e,
+	0x54, 0xff, 0xa8, 0xc1, 0x46, 0x6e, 0xfc, 0xe2, 0xc0, 0x6d, 0x30, 0x7d, 0x72, 0xc2, 0xd4, 0x29,
+	0xaf, 0x91, 0x7f, 0x0e, 0xc5, 0x82, 0x87, 0x3e, 0x80, 0x52, 0xe4, 0xf5, 0x07, 0x4c, 0x85, 0x7d,
+	0x5e, 0x48, 0x32, 0xed, 0x2f, 0xe1, 0xdd, 0x5f, 0x04, 0xfc, 0x00, 0xba, 0x4b, 0x62, 0x16, 0xd1,
+	0xe9, 0x15, 0x6f, 0x99, 0x08, 0xdc, 0x5a, 0xa6, 0x7e, 0xc5, 0x29, 0xf1, 0xf0, 0x07, 0x00, 0xd9,
+	0xfb, 0x2d, 0x02, 0x28, 0xff, 0x9c, 0x46, 0x23, 0xc7, 0x6f, 0x5e, 0x43, 0x15, 0x30, 0xf6, 0xe9,
+	0x69, 0x53, 0x43, 0x16, 0x98, 0x9f, 0x78, 0xfd, 0x41, 0x53, 0x7f, 0xb8, 0x05, 0x8d, 0xfc, 0xa3,
+	0x2d, 0x2a, 0x83, 0x7e, 0xb8, 0xd7, 0xbc, 0xc6, 0x7f, 0x71, 0xa7, 0xa9, 0x3d, 0xdc, 0x01, 0xfd,
+	0x45, 0xc8, 0xbb, 0x1e, 0x8c, 0x99, 0x1c, 0x63, 0x97, 0xf8, 0x72, 0x0c, 0x5e, 0x85, 0x9a, 0x3a,
+	0xaa, 0x83, 0x95, 0xdc, 0x85, 0x36, 0x8d, 0xc7, 0xf6, 0x3f, 0xde, 0xdc, 0xd1, 0xbe, 0x7d, 0x73,
+	0x47, 0xfb, 0xf7, 0x9b, 0x3b, 0xda, 0x5f, 0xfe, 0x73, 0xe7, 0x1a, 0x34, 0x69, 0xd4, 0xdf, 0x61,
+	0xde, 0x70, 0xb2, 0x33, 0x9c, 0x88, 0xbf, 0x2a, 0x1c, 0x97, 0xc5, 0xcf, 0x87, 0xff, 0x0d, 0x00,
+	0x00, 0xff, 0xff, 0xa3, 0xf8, 0xeb, 0x30, 0xfe, 0x20, 0x00, 0x00,
+>>>>>>> 6bbef21... Add end_key field to RawScanRequest (#318)
 }
