@@ -7,7 +7,10 @@ keywords = ["TiKV"]
 name = "kvproto"
 
 [dependencies]
-protobuf = "~2.0"
+protobuf = "~2.1"
 futures = "0.1"
-grpcio = "0.4"
 raft = "0.4"
+
+[dependencies.grpcio]
+git = "https://github.com/hicqu/grpc-rs"
+branch = "v0.4-pb2.1"

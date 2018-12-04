@@ -1,4 +1,6 @@
 syntax = "proto3";
+import "rustproto.proto";
+option (rustproto.serde_derive_all) = true;
 package raft_serverpb;
 
 import "eraftpb.proto";
