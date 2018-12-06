@@ -44,8 +44,47 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type NotLeader struct {
+<<<<<<< HEAD
 	RegionId uint64       `protobuf:"varint,1,opt,name=region_id,json=regionId,proto3" json:"region_id,omitempty"`
 	Leader   *metapb.Peer `protobuf:"bytes,2,opt,name=leader" json:"leader,omitempty"`
+=======
+	RegionId             uint64       `protobuf:"varint,1,opt,name=region_id,json=regionId,proto3" json:"region_id,omitempty"`
+	Leader               *metapb.Peer `protobuf:"bytes,2,opt,name=leader" json:"leader,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
+}
+
+func (m *NotLeader) Reset()         { *m = NotLeader{} }
+func (m *NotLeader) String() string { return proto.CompactTextString(m) }
+func (*NotLeader) ProtoMessage()    {}
+func (*NotLeader) Descriptor() ([]byte, []int) {
+	return fileDescriptor_errorpb_a8ddf3d29af5a9c2, []int{0}
+}
+func (m *NotLeader) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *NotLeader) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_NotLeader.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *NotLeader) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_NotLeader.Merge(dst, src)
+}
+func (m *NotLeader) XXX_Size() int {
+	return m.Size()
+}
+func (m *NotLeader) XXX_DiscardUnknown() {
+	xxx_messageInfo_NotLeader.DiscardUnknown(m)
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 }
 
 func (m *NotLeader) Reset()                    { *m = NotLeader{} }
@@ -68,6 +107,45 @@ func (m *NotLeader) GetLeader() *metapb.Peer {
 }
 
 type StoreNotMatch struct {
+<<<<<<< HEAD
+=======
+	RequestStoreId       uint64   `protobuf:"varint,1,opt,name=request_store_id,json=requestStoreId,proto3" json:"request_store_id,omitempty"`
+	ActualStoreId        uint64   `protobuf:"varint,2,opt,name=actual_store_id,json=actualStoreId,proto3" json:"actual_store_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *StoreNotMatch) Reset()         { *m = StoreNotMatch{} }
+func (m *StoreNotMatch) String() string { return proto.CompactTextString(m) }
+func (*StoreNotMatch) ProtoMessage()    {}
+func (*StoreNotMatch) Descriptor() ([]byte, []int) {
+	return fileDescriptor_errorpb_a8ddf3d29af5a9c2, []int{1}
+}
+func (m *StoreNotMatch) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *StoreNotMatch) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_StoreNotMatch.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *StoreNotMatch) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StoreNotMatch.Merge(dst, src)
+}
+func (m *StoreNotMatch) XXX_Size() int {
+	return m.Size()
+}
+func (m *StoreNotMatch) XXX_DiscardUnknown() {
+	xxx_messageInfo_StoreNotMatch.DiscardUnknown(m)
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 }
 
 func (m *StoreNotMatch) Reset()                    { *m = StoreNotMatch{} }
@@ -75,8 +153,60 @@ func (m *StoreNotMatch) String() string            { return proto.CompactTextStr
 func (*StoreNotMatch) ProtoMessage()               {}
 func (*StoreNotMatch) Descriptor() ([]byte, []int) { return fileDescriptorErrorpb, []int{1} }
 
+func (m *StoreNotMatch) GetRequestStoreId() uint64 {
+	if m != nil {
+		return m.RequestStoreId
+	}
+	return 0
+}
+
+func (m *StoreNotMatch) GetActualStoreId() uint64 {
+	if m != nil {
+		return m.ActualStoreId
+	}
+	return 0
+}
+
 type RegionNotFound struct {
+<<<<<<< HEAD
 	RegionId uint64 `protobuf:"varint,1,opt,name=region_id,json=regionId,proto3" json:"region_id,omitempty"`
+=======
+	RegionId             uint64   `protobuf:"varint,1,opt,name=region_id,json=regionId,proto3" json:"region_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RegionNotFound) Reset()         { *m = RegionNotFound{} }
+func (m *RegionNotFound) String() string { return proto.CompactTextString(m) }
+func (*RegionNotFound) ProtoMessage()    {}
+func (*RegionNotFound) Descriptor() ([]byte, []int) {
+	return fileDescriptor_errorpb_a8ddf3d29af5a9c2, []int{2}
+}
+func (m *RegionNotFound) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RegionNotFound) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RegionNotFound.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RegionNotFound) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RegionNotFound.Merge(dst, src)
+}
+func (m *RegionNotFound) XXX_Size() int {
+	return m.Size()
+}
+func (m *RegionNotFound) XXX_DiscardUnknown() {
+	xxx_messageInfo_RegionNotFound.DiscardUnknown(m)
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 }
 
 func (m *RegionNotFound) Reset()                    { *m = RegionNotFound{} }
@@ -92,10 +222,51 @@ func (m *RegionNotFound) GetRegionId() uint64 {
 }
 
 type KeyNotInRegion struct {
+<<<<<<< HEAD
 	Key      []byte `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
 	RegionId uint64 `protobuf:"varint,2,opt,name=region_id,json=regionId,proto3" json:"region_id,omitempty"`
 	StartKey []byte `protobuf:"bytes,3,opt,name=start_key,json=startKey,proto3" json:"start_key,omitempty"`
 	EndKey   []byte `protobuf:"bytes,4,opt,name=end_key,json=endKey,proto3" json:"end_key,omitempty"`
+=======
+	Key                  []byte   `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	RegionId             uint64   `protobuf:"varint,2,opt,name=region_id,json=regionId,proto3" json:"region_id,omitempty"`
+	StartKey             []byte   `protobuf:"bytes,3,opt,name=start_key,json=startKey,proto3" json:"start_key,omitempty"`
+	EndKey               []byte   `protobuf:"bytes,4,opt,name=end_key,json=endKey,proto3" json:"end_key,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *KeyNotInRegion) Reset()         { *m = KeyNotInRegion{} }
+func (m *KeyNotInRegion) String() string { return proto.CompactTextString(m) }
+func (*KeyNotInRegion) ProtoMessage()    {}
+func (*KeyNotInRegion) Descriptor() ([]byte, []int) {
+	return fileDescriptor_errorpb_a8ddf3d29af5a9c2, []int{3}
+}
+func (m *KeyNotInRegion) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *KeyNotInRegion) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_KeyNotInRegion.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *KeyNotInRegion) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_KeyNotInRegion.Merge(dst, src)
+}
+func (m *KeyNotInRegion) XXX_Size() int {
+	return m.Size()
+}
+func (m *KeyNotInRegion) XXX_DiscardUnknown() {
+	xxx_messageInfo_KeyNotInRegion.DiscardUnknown(m)
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 }
 
 func (m *KeyNotInRegion) Reset()                    { *m = KeyNotInRegion{} }
@@ -132,7 +303,45 @@ func (m *KeyNotInRegion) GetEndKey() []byte {
 }
 
 type StaleEpoch struct {
+<<<<<<< HEAD
 	NewRegions []*metapb.Region `protobuf:"bytes,1,rep,name=new_regions,json=newRegions" json:"new_regions,omitempty"`
+=======
+	NewRegions           []*metapb.Region `protobuf:"bytes,1,rep,name=new_regions,json=newRegions" json:"new_regions,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
+	XXX_unrecognized     []byte           `json:"-"`
+	XXX_sizecache        int32            `json:"-"`
+}
+
+func (m *StaleEpoch) Reset()         { *m = StaleEpoch{} }
+func (m *StaleEpoch) String() string { return proto.CompactTextString(m) }
+func (*StaleEpoch) ProtoMessage()    {}
+func (*StaleEpoch) Descriptor() ([]byte, []int) {
+	return fileDescriptor_errorpb_a8ddf3d29af5a9c2, []int{4}
+}
+func (m *StaleEpoch) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *StaleEpoch) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_StaleEpoch.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *StaleEpoch) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StaleEpoch.Merge(dst, src)
+}
+func (m *StaleEpoch) XXX_Size() int {
+	return m.Size()
+}
+func (m *StaleEpoch) XXX_DiscardUnknown() {
+	xxx_messageInfo_StaleEpoch.DiscardUnknown(m)
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 }
 
 func (m *StaleEpoch) Reset()                    { *m = StaleEpoch{} }
@@ -148,8 +357,47 @@ func (m *StaleEpoch) GetNewRegions() []*metapb.Region {
 }
 
 type ServerIsBusy struct {
+<<<<<<< HEAD
 	Reason    string `protobuf:"bytes,1,opt,name=reason,proto3" json:"reason,omitempty"`
 	BackoffMs uint64 `protobuf:"varint,2,opt,name=backoff_ms,json=backoffMs,proto3" json:"backoff_ms,omitempty"`
+=======
+	Reason               string   `protobuf:"bytes,1,opt,name=reason,proto3" json:"reason,omitempty"`
+	BackoffMs            uint64   `protobuf:"varint,2,opt,name=backoff_ms,json=backoffMs,proto3" json:"backoff_ms,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ServerIsBusy) Reset()         { *m = ServerIsBusy{} }
+func (m *ServerIsBusy) String() string { return proto.CompactTextString(m) }
+func (*ServerIsBusy) ProtoMessage()    {}
+func (*ServerIsBusy) Descriptor() ([]byte, []int) {
+	return fileDescriptor_errorpb_a8ddf3d29af5a9c2, []int{5}
+}
+func (m *ServerIsBusy) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ServerIsBusy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ServerIsBusy.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *ServerIsBusy) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ServerIsBusy.Merge(dst, src)
+}
+func (m *ServerIsBusy) XXX_Size() int {
+	return m.Size()
+}
+func (m *ServerIsBusy) XXX_DiscardUnknown() {
+	xxx_messageInfo_ServerIsBusy.DiscardUnknown(m)
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 }
 
 func (m *ServerIsBusy) Reset()                    { *m = ServerIsBusy{} }
@@ -172,6 +420,43 @@ func (m *ServerIsBusy) GetBackoffMs() uint64 {
 }
 
 type StaleCommand struct {
+<<<<<<< HEAD
+=======
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *StaleCommand) Reset()         { *m = StaleCommand{} }
+func (m *StaleCommand) String() string { return proto.CompactTextString(m) }
+func (*StaleCommand) ProtoMessage()    {}
+func (*StaleCommand) Descriptor() ([]byte, []int) {
+	return fileDescriptor_errorpb_a8ddf3d29af5a9c2, []int{6}
+}
+func (m *StaleCommand) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *StaleCommand) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_StaleCommand.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *StaleCommand) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StaleCommand.Merge(dst, src)
+}
+func (m *StaleCommand) XXX_Size() int {
+	return m.Size()
+}
+func (m *StaleCommand) XXX_DiscardUnknown() {
+	xxx_messageInfo_StaleCommand.DiscardUnknown(m)
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 }
 
 func (m *StaleCommand) Reset()                    { *m = StaleCommand{} }
@@ -180,8 +465,47 @@ func (*StaleCommand) ProtoMessage()               {}
 func (*StaleCommand) Descriptor() ([]byte, []int) { return fileDescriptorErrorpb, []int{6} }
 
 type RaftEntryTooLarge struct {
+<<<<<<< HEAD
 	RegionId  uint64 `protobuf:"varint,1,opt,name=region_id,json=regionId,proto3" json:"region_id,omitempty"`
 	EntrySize uint64 `protobuf:"varint,2,opt,name=entry_size,json=entrySize,proto3" json:"entry_size,omitempty"`
+=======
+	RegionId             uint64   `protobuf:"varint,1,opt,name=region_id,json=regionId,proto3" json:"region_id,omitempty"`
+	EntrySize            uint64   `protobuf:"varint,2,opt,name=entry_size,json=entrySize,proto3" json:"entry_size,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RaftEntryTooLarge) Reset()         { *m = RaftEntryTooLarge{} }
+func (m *RaftEntryTooLarge) String() string { return proto.CompactTextString(m) }
+func (*RaftEntryTooLarge) ProtoMessage()    {}
+func (*RaftEntryTooLarge) Descriptor() ([]byte, []int) {
+	return fileDescriptor_errorpb_a8ddf3d29af5a9c2, []int{7}
+}
+func (m *RaftEntryTooLarge) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *RaftEntryTooLarge) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_RaftEntryTooLarge.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *RaftEntryTooLarge) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RaftEntryTooLarge.Merge(dst, src)
+}
+func (m *RaftEntryTooLarge) XXX_Size() int {
+	return m.Size()
+}
+func (m *RaftEntryTooLarge) XXX_DiscardUnknown() {
+	xxx_messageInfo_RaftEntryTooLarge.DiscardUnknown(m)
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 }
 
 func (m *RaftEntryTooLarge) Reset()                    { *m = RaftEntryTooLarge{} }
@@ -204,6 +528,7 @@ func (m *RaftEntryTooLarge) GetEntrySize() uint64 {
 }
 
 type Error struct {
+<<<<<<< HEAD
 	Message           string             `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
 	NotLeader         *NotLeader         `protobuf:"bytes,2,opt,name=not_leader,json=notLeader" json:"not_leader,omitempty"`
 	RegionNotFound    *RegionNotFound    `protobuf:"bytes,3,opt,name=region_not_found,json=regionNotFound" json:"region_not_found,omitempty"`
@@ -219,6 +544,54 @@ func (m *Error) Reset()                    { *m = Error{} }
 func (m *Error) String() string            { return proto.CompactTextString(m) }
 func (*Error) ProtoMessage()               {}
 func (*Error) Descriptor() ([]byte, []int) { return fileDescriptorErrorpb, []int{8} }
+=======
+	Message              string             `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	NotLeader            *NotLeader         `protobuf:"bytes,2,opt,name=not_leader,json=notLeader" json:"not_leader,omitempty"`
+	RegionNotFound       *RegionNotFound    `protobuf:"bytes,3,opt,name=region_not_found,json=regionNotFound" json:"region_not_found,omitempty"`
+	KeyNotInRegion       *KeyNotInRegion    `protobuf:"bytes,4,opt,name=key_not_in_region,json=keyNotInRegion" json:"key_not_in_region,omitempty"`
+	StaleEpoch           *StaleEpoch        `protobuf:"bytes,5,opt,name=stale_epoch,json=staleEpoch" json:"stale_epoch,omitempty"`
+	ServerIsBusy         *ServerIsBusy      `protobuf:"bytes,6,opt,name=server_is_busy,json=serverIsBusy" json:"server_is_busy,omitempty"`
+	StaleCommand         *StaleCommand      `protobuf:"bytes,7,opt,name=stale_command,json=staleCommand" json:"stale_command,omitempty"`
+	StoreNotMatch        *StoreNotMatch     `protobuf:"bytes,8,opt,name=store_not_match,json=storeNotMatch" json:"store_not_match,omitempty"`
+	RaftEntryTooLarge    *RaftEntryTooLarge `protobuf:"bytes,9,opt,name=raft_entry_too_large,json=raftEntryTooLarge" json:"raft_entry_too_large,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
+	XXX_unrecognized     []byte             `json:"-"`
+	XXX_sizecache        int32              `json:"-"`
+}
+
+func (m *Error) Reset()         { *m = Error{} }
+func (m *Error) String() string { return proto.CompactTextString(m) }
+func (*Error) ProtoMessage()    {}
+func (*Error) Descriptor() ([]byte, []int) {
+	return fileDescriptor_errorpb_a8ddf3d29af5a9c2, []int{8}
+}
+func (m *Error) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Error) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Error.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *Error) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Error.Merge(dst, src)
+}
+func (m *Error) XXX_Size() int {
+	return m.Size()
+}
+func (m *Error) XXX_DiscardUnknown() {
+	xxx_messageInfo_Error.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Error proto.InternalMessageInfo
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 
 func (m *Error) GetMessage() string {
 	if m != nil {
@@ -342,6 +715,22 @@ func (m *StoreNotMatch) MarshalTo(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+<<<<<<< HEAD
+=======
+	if m.RequestStoreId != 0 {
+		dAtA[i] = 0x8
+		i++
+		i = encodeVarintErrorpb(dAtA, i, uint64(m.RequestStoreId))
+	}
+	if m.ActualStoreId != 0 {
+		dAtA[i] = 0x10
+		i++
+		i = encodeVarintErrorpb(dAtA, i, uint64(m.ActualStoreId))
+	}
+	if m.XXX_unrecognized != nil {
+		i += copy(dAtA[i:], m.XXX_unrecognized)
+	}
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 	return i, nil
 }
 
@@ -643,6 +1032,18 @@ func (m *NotLeader) Size() (n int) {
 func (m *StoreNotMatch) Size() (n int) {
 	var l int
 	_ = l
+<<<<<<< HEAD
+=======
+	if m.RequestStoreId != 0 {
+		n += 1 + sovErrorpb(uint64(m.RequestStoreId))
+	}
+	if m.ActualStoreId != 0 {
+		n += 1 + sovErrorpb(uint64(m.ActualStoreId))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 	return n
 }
 
@@ -905,6 +1306,44 @@ func (m *StoreNotMatch) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: StoreNotMatch: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field RequestStoreId", wireType)
+			}
+			m.RequestStoreId = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowErrorpb
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.RequestStoreId |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ActualStoreId", wireType)
+			}
+			m.ActualStoreId = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowErrorpb
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.ActualStoreId |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipErrorpb(dAtA[iNdEx:])
@@ -1922,6 +2361,7 @@ var (
 	ErrIntOverflowErrorpb   = fmt.Errorf("proto: integer overflow")
 )
 
+<<<<<<< HEAD
 func init() { proto.RegisterFile("errorpb.proto", fileDescriptorErrorpb) }
 
 var fileDescriptorErrorpb = []byte{
@@ -1964,4 +2404,50 @@ var fileDescriptorErrorpb = []byte{
 	0x5b, 0xce, 0xaf, 0x7f, 0xad, 0x67, 0x10, 0x0c, 0x45, 0xda, 0x9e, 0x26, 0x7c, 0x3c, 0x64, 0xd3,
 	0xb6, 0x4e, 0x26, 0x77, 0xed, 0xc9, 0x9d, 0xfd, 0x67, 0x0c, 0x6a, 0xf6, 0xf3, 0xf6, 0x7f, 0x00,
 	0x00, 0x00, 0xff, 0xff, 0x6f, 0xa9, 0xa3, 0xe6, 0x78, 0x04, 0x00, 0x00,
+=======
+func init() { proto.RegisterFile("errorpb.proto", fileDescriptor_errorpb_a8ddf3d29af5a9c2) }
+
+var fileDescriptor_errorpb_a8ddf3d29af5a9c2 = []byte{
+	// 633 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x54, 0x5f, 0x6f, 0xda, 0x3e,
+	0x14, 0xfd, 0xa5, 0x7f, 0xa0, 0xb9, 0x84, 0xb4, 0xf5, 0xaf, 0x6b, 0xa3, 0x56, 0x45, 0x55, 0x34,
+	0x4d, 0xbc, 0x8c, 0x6a, 0xdd, 0x9e, 0x36, 0x6d, 0xd2, 0x3a, 0x31, 0x09, 0xd1, 0xb2, 0xc9, 0xec,
+	0x3d, 0x32, 0xe4, 0x42, 0x23, 0xc0, 0xee, 0x6c, 0xd3, 0x2a, 0xfd, 0x22, 0xdb, 0x47, 0xda, 0xe3,
+	0x3e, 0xc2, 0xd4, 0x7d, 0x91, 0xc9, 0x4e, 0x80, 0x84, 0x87, 0x3e, 0x61, 0x1f, 0xdf, 0x73, 0x73,
+	0x7c, 0xcf, 0x31, 0x50, 0x47, 0x29, 0x85, 0xbc, 0x1d, 0xb4, 0x6e, 0xa5, 0xd0, 0x82, 0x54, 0xf3,
+	0xed, 0xb1, 0x37, 0x43, 0xcd, 0x16, 0xf0, 0xf1, 0xc1, 0x58, 0x8c, 0x85, 0x5d, 0x9e, 0x9b, 0x55,
+	0x86, 0x86, 0x3d, 0x70, 0x7b, 0x42, 0x5f, 0x21, 0x8b, 0x51, 0x92, 0x13, 0x70, 0x25, 0x8e, 0x13,
+	0xc1, 0xa3, 0x24, 0x0e, 0x9c, 0x33, 0xa7, 0xb9, 0x45, 0x77, 0x32, 0xa0, 0x13, 0x93, 0xe7, 0x50,
+	0x99, 0xda, 0xb2, 0x60, 0xe3, 0xcc, 0x69, 0xd6, 0x2e, 0xbc, 0x56, 0xde, 0xfe, 0x2b, 0xa2, 0xa4,
+	0xf9, 0x59, 0xc8, 0xa0, 0xde, 0xd7, 0x42, 0x62, 0x4f, 0xe8, 0x6b, 0xa6, 0x87, 0x37, 0xa4, 0x09,
+	0x7b, 0x12, 0xbf, 0xcf, 0x51, 0xe9, 0x48, 0x99, 0x83, 0x55, 0x6b, 0x3f, 0xc7, 0x6d, 0x7d, 0x27,
+	0x26, 0x2f, 0x60, 0x97, 0x0d, 0xf5, 0x9c, 0x4d, 0x57, 0x85, 0x1b, 0xb6, 0xb0, 0x9e, 0xc1, 0x79,
+	0x5d, 0xf8, 0x12, 0x7c, 0x6a, 0x45, 0xf5, 0x84, 0xfe, 0x2c, 0xe6, 0x3c, 0x7e, 0x52, 0x77, 0x38,
+	0x07, 0xbf, 0x8b, 0x69, 0x4f, 0xe8, 0x0e, 0xcf, 0x68, 0x64, 0x0f, 0x36, 0x27, 0x98, 0xda, 0x42,
+	0x8f, 0x9a, 0x65, 0xb9, 0xc1, 0xc6, 0xda, 0xc5, 0x4f, 0xc0, 0x55, 0x9a, 0x49, 0x1d, 0x19, 0xd2,
+	0xa6, 0x25, 0xed, 0x58, 0xa0, 0x8b, 0x29, 0x39, 0x82, 0x2a, 0xf2, 0xd8, 0x1e, 0x6d, 0xd9, 0xa3,
+	0x0a, 0xf2, 0xb8, 0x8b, 0x69, 0xf8, 0x1e, 0xa0, 0xaf, 0xd9, 0x14, 0xdb, 0xb7, 0x62, 0x78, 0x43,
+	0xce, 0xa1, 0xc6, 0xf1, 0x3e, 0xca, 0x7a, 0xaa, 0xc0, 0x39, 0xdb, 0x6c, 0xd6, 0x2e, 0xfc, 0xc5,
+	0x04, 0x33, 0x5d, 0x14, 0x38, 0xde, 0x67, 0x4b, 0x15, 0xb6, 0xc1, 0xeb, 0xa3, 0xbc, 0x43, 0xd9,
+	0x51, 0x97, 0x73, 0x95, 0x92, 0x43, 0xa8, 0x48, 0x64, 0x4a, 0x70, 0x2b, 0xdb, 0xa5, 0xf9, 0x8e,
+	0x9c, 0x02, 0x0c, 0xd8, 0x70, 0x22, 0x46, 0xa3, 0x68, 0xa6, 0x72, 0xe9, 0x6e, 0x8e, 0x5c, 0xab,
+	0xd0, 0x07, 0xcf, 0xaa, 0xf8, 0x24, 0x66, 0x33, 0xc6, 0xe3, 0xf0, 0x0b, 0xec, 0x53, 0x36, 0xd2,
+	0x6d, 0xae, 0x65, 0xfa, 0x4d, 0x88, 0x2b, 0x26, 0xc7, 0xf8, 0xb4, 0xed, 0xa7, 0x00, 0x68, 0xaa,
+	0x23, 0x95, 0x3c, 0xe0, 0xe2, 0x03, 0x16, 0xe9, 0x27, 0x0f, 0x18, 0xfe, 0xd8, 0x82, 0xed, 0xb6,
+	0xc9, 0x1b, 0x09, 0xa0, 0x3a, 0x43, 0xa5, 0xd8, 0x18, 0x73, 0x89, 0x8b, 0x2d, 0x79, 0x05, 0xc0,
+	0x85, 0x8e, 0x4a, 0xe9, 0x21, 0xad, 0x45, 0x68, 0x97, 0xf1, 0xa3, 0x2e, 0x5f, 0x26, 0xf1, 0xa3,
+	0x49, 0x8d, 0x95, 0x64, 0x98, 0x23, 0xe3, 0xb2, 0x1d, 0x7d, 0xed, 0xe2, 0x68, 0x49, 0x2c, 0x87,
+	0xc0, 0xc4, 0xa9, 0x14, 0x8a, 0x4b, 0xd8, 0x9f, 0x60, 0x6a, 0xf9, 0x09, 0xcf, 0x27, 0x6f, 0x3d,
+	0x2a, 0xf6, 0x28, 0x27, 0x83, 0xfa, 0x93, 0x72, 0x52, 0xde, 0x40, 0x4d, 0x99, 0xf1, 0x45, 0x68,
+	0x5c, 0x0c, 0xb6, 0x2d, 0xfb, 0xff, 0x25, 0x7b, 0x65, 0x30, 0x05, 0xb5, 0x32, 0xfb, 0x1d, 0xf8,
+	0xca, 0x7a, 0x17, 0x25, 0x2a, 0x1a, 0xcc, 0x55, 0x1a, 0x54, 0x2c, 0xf1, 0xd9, 0x8a, 0x58, 0xb0,
+	0x96, 0x7a, 0xaa, 0x68, 0xf4, 0x5b, 0xa8, 0x67, 0x9f, 0x1c, 0x66, 0x96, 0x05, 0xd5, 0x75, 0x6e,
+	0xc1, 0x4f, 0xea, 0xa9, 0xc2, 0x8e, 0x7c, 0x80, 0xdd, 0xec, 0xe9, 0x98, 0x4b, 0xcf, 0xcc, 0xf3,
+	0x0b, 0x76, 0x2c, 0xfb, 0xb0, 0xc0, 0x2e, 0x3c, 0x4e, 0x5a, 0x57, 0xa5, 0xb7, 0xda, 0x85, 0x03,
+	0xc9, 0x46, 0x3a, 0xca, 0x0c, 0xd7, 0x42, 0x44, 0x53, 0x13, 0x90, 0xc0, 0xb5, 0x4d, 0x8e, 0x57,
+	0x93, 0x5f, 0x8f, 0x10, 0xdd, 0x97, 0xeb, 0xd0, 0x65, 0xf8, 0xeb, 0xb1, 0xe1, 0xfc, 0x7e, 0x6c,
+	0x38, 0x7f, 0x1e, 0x1b, 0xce, 0xcf, 0xbf, 0x8d, 0xff, 0x60, 0x4f, 0xc8, 0x71, 0x4b, 0x27, 0x93,
+	0xbb, 0xd6, 0xe4, 0xce, 0xfe, 0xfb, 0x0c, 0x2a, 0xf6, 0xe7, 0xf5, 0xbf, 0x00, 0x00, 0x00, 0xff,
+	0xff, 0x85, 0xfd, 0x82, 0x54, 0xc2, 0x04, 0x00, 0x00,
+>>>>>>> 54cf0a0... errorpb: add details to StoreNotMatch (#333)
 }
