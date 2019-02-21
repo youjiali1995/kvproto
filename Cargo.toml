@@ -13,7 +13,7 @@ path = "src/lib.rs"
 protobuf = "~2.0"
 futures = "0.1"
 grpcio = "0.4"
-raft = "0.4"
+raft = "0.5"
 
 [build-dependencies]
 protoc-rust = "2.0"
