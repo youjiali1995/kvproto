@@ -13141,7 +13141,7 @@ pub struct GetOperatorResponse {
     pub header: ::protobuf::SingularPtrField<ResponseHeader>,
     pub region_id: u64,
     pub desc: ::std::vec::Vec<u8>,
-    pub status: OperatorStatus,
+    pub status: GetOperatorResponse_OperatorStatus,
     pub kind: ::std::vec::Vec<u8>,
     // special fields
     unknown_fields: ::protobuf::UnknownFields,
@@ -13227,18 +13227,18 @@ impl GetOperatorResponse {
         &self.desc
     }
 
-    // .pdpb.OperatorStatus status = 4;
+    // .pdpb.GetOperatorResponse.OperatorStatus status = 4;
 
     pub fn clear_status(&mut self) {
-        self.status = OperatorStatus::SUCCESS;
+        self.status = GetOperatorResponse_OperatorStatus::SUCCESS;
     }
 
     // Param is passed by value, moved
-    pub fn set_status(&mut self, v: OperatorStatus) {
+    pub fn set_status(&mut self, v: GetOperatorResponse_OperatorStatus) {
         self.status = v;
     }
 
-    pub fn get_status(&self) -> OperatorStatus {
+    pub fn get_status(&self) -> GetOperatorResponse_OperatorStatus {
         self.status
     }
 
@@ -13324,7 +13324,7 @@ impl ::protobuf::Message for GetOperatorResponse {
         if !self.desc.is_empty() {
             my_size += ::protobuf::rt::bytes_size(3, &self.desc);
         }
-        if self.status != OperatorStatus::SUCCESS {
+        if self.status != GetOperatorResponse_OperatorStatus::SUCCESS {
             my_size += ::protobuf::rt::enum_size(4, self.status);
         }
         if !self.kind.is_empty() {
@@ -13347,7 +13347,7 @@ impl ::protobuf::Message for GetOperatorResponse {
         if !self.desc.is_empty() {
             os.write_bytes(3, &self.desc)?;
         }
-        if self.status != OperatorStatus::SUCCESS {
+        if self.status != GetOperatorResponse_OperatorStatus::SUCCESS {
             os.write_enum(4, self.status.value())?;
         }
         if !self.kind.is_empty() {
@@ -13445,6 +13445,52 @@ impl ::protobuf::reflect::ProtobufValue for GetOperatorResponse {
 }
 
 #[derive(Clone,PartialEq,Eq,Debug,Hash)]
+pub enum GetOperatorResponse_OperatorStatus {
+    SUCCESS = 0,
+    TIMEOUT = 1,
+    CANCEL = 2,
+}
+
+impl ::protobuf::ProtobufEnum for GetOperatorResponse_OperatorStatus {
+    fn value(&self) -> i32 {
+        *self as i32
+    }
+
+    fn from_i32(value: i32) -> ::std::option::Option<GetOperatorResponse_OperatorStatus> {
+        match value {
+            0 => ::std::option::Option::Some(GetOperatorResponse_OperatorStatus::SUCCESS),
+            1 => ::std::option::Option::Some(GetOperatorResponse_OperatorStatus::TIMEOUT),
+            2 => ::std::option::Option::Some(GetOperatorResponse_OperatorStatus::CANCEL),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    fn values() -> &'static [Self] {
+        static values: &'static [GetOperatorResponse_OperatorStatus] = &[
+            GetOperatorResponse_OperatorStatus::SUCCESS,
+            GetOperatorResponse_OperatorStatus::TIMEOUT,
+            GetOperatorResponse_OperatorStatus::CANCEL,
+        ];
+        values
+    }
+}
+
+impl ::std::marker::Copy for GetOperatorResponse_OperatorStatus {
+}
+
+impl ::std::default::Default for GetOperatorResponse_OperatorStatus {
+    fn default() -> Self {
+        GetOperatorResponse_OperatorStatus::SUCCESS
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for GetOperatorResponse_OperatorStatus {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Enum(self.descriptor())
+    }
+}
+
+#[derive(Clone,PartialEq,Eq,Debug,Hash)]
 pub enum ErrorType {
     OK = 0,
     UNKNOWN = 1,
@@ -13452,7 +13498,6 @@ pub enum ErrorType {
     STORE_TOMBSTONE = 3,
     ALREADY_BOOTSTRAPPED = 4,
     INCOMPATIBLE_VERSION = 5,
-    REGION_NOT_FOUND = 6,
 }
 
 impl ::protobuf::ProtobufEnum for ErrorType {
@@ -13468,7 +13513,6 @@ impl ::protobuf::ProtobufEnum for ErrorType {
             3 => ::std::option::Option::Some(ErrorType::STORE_TOMBSTONE),
             4 => ::std::option::Option::Some(ErrorType::ALREADY_BOOTSTRAPPED),
             5 => ::std::option::Option::Some(ErrorType::INCOMPATIBLE_VERSION),
-            6 => ::std::option::Option::Some(ErrorType::REGION_NOT_FOUND),
             _ => ::std::option::Option::None
         }
     }
@@ -13481,7 +13525,6 @@ impl ::protobuf::ProtobufEnum for ErrorType {
             ErrorType::STORE_TOMBSTONE,
             ErrorType::ALREADY_BOOTSTRAPPED,
             ErrorType::INCOMPATIBLE_VERSION,
-            ErrorType::REGION_NOT_FOUND,
         ];
         values
     }
@@ -13566,6 +13609,7 @@ impl ::protobuf::reflect::ProtobufValue for CheckPolicy {
         ::protobuf::reflect::ProtobufValueRef::Enum(self.descriptor())
     }
 }
+<<<<<<< HEAD
 
 #[derive(Clone,PartialEq,Eq,Debug,Hash)]
 pub enum OperatorStatus {
@@ -13629,3 +13673,5 @@ impl ::protobuf::reflect::ProtobufValue for OperatorStatus {
         ::protobuf::reflect::ProtobufValueRef::Enum(self.descriptor())
     }
 }
+=======
+>>>>>>> parent of 3d8cb3a... *: adjust pdpb proto (#372)
