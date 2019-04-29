@@ -54,11 +54,7 @@ func (x SwitchMode) String() string {
 	return proto.EnumName(SwitchMode_name, int32(x))
 }
 func (SwitchMode) EnumDescriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_import_sstpb_033148feab60a1da, []int{0}
-=======
-	return fileDescriptor_import_sstpb_c6f19719a4d56637, []int{0}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 
 type SwitchModeRequest struct {
@@ -72,11 +68,7 @@ func (m *SwitchModeRequest) Reset()         { *m = SwitchModeRequest{} }
 func (m *SwitchModeRequest) String() string { return proto.CompactTextString(m) }
 func (*SwitchModeRequest) ProtoMessage()    {}
 func (*SwitchModeRequest) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_import_sstpb_033148feab60a1da, []int{0}
-=======
-	return fileDescriptor_import_sstpb_c6f19719a4d56637, []int{0}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *SwitchModeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -122,11 +114,7 @@ func (m *SwitchModeResponse) Reset()         { *m = SwitchModeResponse{} }
 func (m *SwitchModeResponse) String() string { return proto.CompactTextString(m) }
 func (*SwitchModeResponse) ProtoMessage()    {}
 func (*SwitchModeResponse) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_import_sstpb_033148feab60a1da, []int{1}
-=======
-	return fileDescriptor_import_sstpb_c6f19719a4d56637, []int{1}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *SwitchModeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -167,11 +155,7 @@ func (m *Range) Reset()         { *m = Range{} }
 func (m *Range) String() string { return proto.CompactTextString(m) }
 func (*Range) ProtoMessage()    {}
 func (*Range) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_import_sstpb_033148feab60a1da, []int{2}
-=======
-	return fileDescriptor_import_sstpb_c6f19719a4d56637, []int{2}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *Range) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -231,11 +215,7 @@ func (m *SSTMeta) Reset()         { *m = SSTMeta{} }
 func (m *SSTMeta) String() string { return proto.CompactTextString(m) }
 func (*SSTMeta) ProtoMessage()    {}
 func (*SSTMeta) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_import_sstpb_033148feab60a1da, []int{3}
-=======
-	return fileDescriptor_import_sstpb_c6f19719a4d56637, []int{3}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *SSTMeta) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -327,11 +307,7 @@ func (m *UploadRequest) Reset()         { *m = UploadRequest{} }
 func (m *UploadRequest) String() string { return proto.CompactTextString(m) }
 func (*UploadRequest) ProtoMessage()    {}
 func (*UploadRequest) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_import_sstpb_033148feab60a1da, []int{4}
-=======
-	return fileDescriptor_import_sstpb_c6f19719a4d56637, []int{4}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *UploadRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -477,11 +453,7 @@ func (m *UploadResponse) Reset()         { *m = UploadResponse{} }
 func (m *UploadResponse) String() string { return proto.CompactTextString(m) }
 func (*UploadResponse) ProtoMessage()    {}
 func (*UploadResponse) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_import_sstpb_033148feab60a1da, []int{5}
-=======
-	return fileDescriptor_import_sstpb_c6f19719a4d56637, []int{5}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *UploadResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -522,11 +494,7 @@ func (m *IngestRequest) Reset()         { *m = IngestRequest{} }
 func (m *IngestRequest) String() string { return proto.CompactTextString(m) }
 func (*IngestRequest) ProtoMessage()    {}
 func (*IngestRequest) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_import_sstpb_033148feab60a1da, []int{6}
-=======
-	return fileDescriptor_import_sstpb_c6f19719a4d56637, []int{6}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *IngestRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -580,11 +548,7 @@ func (m *IngestResponse) Reset()         { *m = IngestResponse{} }
 func (m *IngestResponse) String() string { return proto.CompactTextString(m) }
 func (*IngestResponse) ProtoMessage()    {}
 func (*IngestResponse) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_import_sstpb_033148feab60a1da, []int{7}
-=======
-	return fileDescriptor_import_sstpb_c6f19719a4d56637, []int{7}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *IngestResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -635,11 +599,7 @@ func (m *CompactRequest) Reset()         { *m = CompactRequest{} }
 func (m *CompactRequest) String() string { return proto.CompactTextString(m) }
 func (*CompactRequest) ProtoMessage()    {}
 func (*CompactRequest) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_import_sstpb_033148feab60a1da, []int{8}
-=======
-	return fileDescriptor_import_sstpb_c6f19719a4d56637, []int{8}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *CompactRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -692,11 +652,7 @@ func (m *CompactResponse) Reset()         { *m = CompactResponse{} }
 func (m *CompactResponse) String() string { return proto.CompactTextString(m) }
 func (*CompactResponse) ProtoMessage()    {}
 func (*CompactResponse) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_import_sstpb_033148feab60a1da, []int{9}
-=======
-	return fileDescriptor_import_sstpb_c6f19719a4d56637, []int{9}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *CompactResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2583,15 +2539,9 @@ var (
 	ErrIntOverflowImportSstpb   = fmt.Errorf("proto: integer overflow")
 )
 
-<<<<<<< HEAD
 func init() { proto.RegisterFile("import_sstpb.proto", fileDescriptor_import_sstpb_033148feab60a1da) }
 
 var fileDescriptor_import_sstpb_033148feab60a1da = []byte{
-=======
-func init() { proto.RegisterFile("import_sstpb.proto", fileDescriptor_import_sstpb_c6f19719a4d56637) }
-
-var fileDescriptor_import_sstpb_c6f19719a4d56637 = []byte{
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 	// 628 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x84, 0x54, 0xcd, 0x6e, 0xd3, 0x40,
 	0x10, 0xce, 0xb6, 0xb1, 0xd3, 0x4e, 0x7e, 0x9a, 0x2e, 0x01, 0xac, 0x14, 0x42, 0xb0, 0x2a, 0x08,

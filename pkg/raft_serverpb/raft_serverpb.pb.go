@@ -52,11 +52,7 @@ func (x PeerState) String() string {
 	return proto.EnumName(PeerState_name, int32(x))
 }
 func (PeerState) EnumDescriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{0}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{0}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 
 type RaftMessage struct {
@@ -81,11 +77,7 @@ func (m *RaftMessage) Reset()         { *m = RaftMessage{} }
 func (m *RaftMessage) String() string { return proto.CompactTextString(m) }
 func (*RaftMessage) ProtoMessage()    {}
 func (*RaftMessage) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{0}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{0}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RaftMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -189,11 +181,7 @@ func (m *RaftTruncatedState) Reset()         { *m = RaftTruncatedState{} }
 func (m *RaftTruncatedState) String() string { return proto.CompactTextString(m) }
 func (*RaftTruncatedState) ProtoMessage()    {}
 func (*RaftTruncatedState) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{1}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{1}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RaftTruncatedState) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -249,11 +237,7 @@ func (m *SnapshotCFFile) Reset()         { *m = SnapshotCFFile{} }
 func (m *SnapshotCFFile) String() string { return proto.CompactTextString(m) }
 func (*SnapshotCFFile) ProtoMessage()    {}
 func (*SnapshotCFFile) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{2}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{2}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *SnapshotCFFile) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -314,11 +298,7 @@ func (m *SnapshotMeta) Reset()         { *m = SnapshotMeta{} }
 func (m *SnapshotMeta) String() string { return proto.CompactTextString(m) }
 func (*SnapshotMeta) ProtoMessage()    {}
 func (*SnapshotMeta) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{3}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{3}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *SnapshotMeta) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -366,11 +346,7 @@ func (m *SnapshotChunk) Reset()         { *m = SnapshotChunk{} }
 func (m *SnapshotChunk) String() string { return proto.CompactTextString(m) }
 func (*SnapshotChunk) ProtoMessage()    {}
 func (*SnapshotChunk) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{4}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{4}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *SnapshotChunk) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -423,11 +399,7 @@ func (m *Done) Reset()         { *m = Done{} }
 func (m *Done) String() string { return proto.CompactTextString(m) }
 func (*Done) ProtoMessage()    {}
 func (*Done) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{5}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{5}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *Done) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -468,11 +440,7 @@ func (m *KeyValue) Reset()         { *m = KeyValue{} }
 func (m *KeyValue) String() string { return proto.CompactTextString(m) }
 func (*KeyValue) ProtoMessage()    {}
 func (*KeyValue) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{6}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{6}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *KeyValue) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -530,11 +498,7 @@ func (m *RaftSnapshotData) Reset()         { *m = RaftSnapshotData{} }
 func (m *RaftSnapshotData) String() string { return proto.CompactTextString(m) }
 func (*RaftSnapshotData) ProtoMessage()    {}
 func (*RaftSnapshotData) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{7}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{7}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RaftSnapshotData) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -610,11 +574,7 @@ func (m *StoreIdent) Reset()         { *m = StoreIdent{} }
 func (m *StoreIdent) String() string { return proto.CompactTextString(m) }
 func (*StoreIdent) ProtoMessage()    {}
 func (*StoreIdent) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{8}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{8}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *StoreIdent) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -669,11 +629,7 @@ func (m *RaftLocalState) Reset()         { *m = RaftLocalState{} }
 func (m *RaftLocalState) String() string { return proto.CompactTextString(m) }
 func (*RaftLocalState) ProtoMessage()    {}
 func (*RaftLocalState) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{9}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{9}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RaftLocalState) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -728,11 +684,7 @@ func (m *RaftApplyState) Reset()         { *m = RaftApplyState{} }
 func (m *RaftApplyState) String() string { return proto.CompactTextString(m) }
 func (*RaftApplyState) ProtoMessage()    {}
 func (*RaftApplyState) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{10}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{10}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RaftApplyState) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -788,11 +740,7 @@ func (m *MergeState) Reset()         { *m = MergeState{} }
 func (m *MergeState) String() string { return proto.CompactTextString(m) }
 func (*MergeState) ProtoMessage()    {}
 func (*MergeState) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{11}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{11}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *MergeState) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -855,11 +803,7 @@ func (m *RegionLocalState) Reset()         { *m = RegionLocalState{} }
 func (m *RegionLocalState) String() string { return proto.CompactTextString(m) }
 func (*RegionLocalState) ProtoMessage()    {}
 func (*RegionLocalState) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
 	return fileDescriptor_raft_serverpb_60dbe20dcc8022d9, []int{12}
-=======
-	return fileDescriptor_raft_serverpb_e70f8fadb12392d2, []int{12}
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RegionLocalState) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3469,15 +3413,9 @@ var (
 	ErrIntOverflowRaftServerpb   = fmt.Errorf("proto: integer overflow")
 )
 
-<<<<<<< HEAD
 func init() { proto.RegisterFile("raft_serverpb.proto", fileDescriptor_raft_serverpb_60dbe20dcc8022d9) }
 
 var fileDescriptor_raft_serverpb_60dbe20dcc8022d9 = []byte{
-=======
-func init() { proto.RegisterFile("raft_serverpb.proto", fileDescriptor_raft_serverpb_e70f8fadb12392d2) }
-
-var fileDescriptor_raft_serverpb_e70f8fadb12392d2 = []byte{
->>>>>>> parent of 07023ac... *: add get operator service (#369)
 	// 873 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x55, 0xdd, 0x6e, 0xe3, 0x44,
 	0x14, 0x5e, 0x27, 0xae, 0x63, 0x9f, 0x38, 0xd9, 0x68, 0x16, 0xb1, 0xde, 0x56, 0x5b, 0x65, 0x8d,
