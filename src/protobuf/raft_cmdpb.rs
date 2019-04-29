@@ -2265,6 +2265,7 @@ impl ::protobuf::reflect::ProtobufValue for IngestSSTResponse {
     }
 }
 
+<<<<<<< HEAD
 #[derive(PartialEq,Clone,Default)]
 pub struct ReadIndexRequest {
     // special fields
@@ -2524,6 +2525,9 @@ impl ::protobuf::reflect::ProtobufValue for ReadIndexResponse {
 }
 
 #[derive(PartialEq,Clone,Default)]
+=======
+#[derive(PartialEq,Clone,Default,Debug)]
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 pub struct Request {
     // message fields
     pub cmd_type: CmdType,
@@ -2534,7 +2538,6 @@ pub struct Request {
     pub prewrite: ::protobuf::SingularPtrField<PrewriteRequest>,
     pub delete_range: ::protobuf::SingularPtrField<DeleteRangeRequest>,
     pub ingest_sst: ::protobuf::SingularPtrField<IngestSSTRequest>,
-    pub read_index: ::protobuf::SingularPtrField<ReadIndexRequest>,
     // special fields
     unknown_fields: ::protobuf::UnknownFields,
     cached_size: ::protobuf::CachedSize,
@@ -2790,39 +2793,6 @@ impl Request {
     pub fn get_ingest_sst(&self) -> &IngestSSTRequest {
         self.ingest_sst.as_ref().unwrap_or_else(|| IngestSSTRequest::default_instance())
     }
-
-    // .raft_cmdpb.ReadIndexRequest read_index = 10;
-
-    pub fn clear_read_index(&mut self) {
-        self.read_index.clear();
-    }
-
-    pub fn has_read_index(&self) -> bool {
-        self.read_index.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_read_index(&mut self, v: ReadIndexRequest) {
-        self.read_index = ::protobuf::SingularPtrField::some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_read_index(&mut self) -> &mut ReadIndexRequest {
-        if self.read_index.is_none() {
-            self.read_index.set_default();
-        }
-        self.read_index.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_read_index(&mut self) -> ReadIndexRequest {
-        self.read_index.take().unwrap_or_else(|| ReadIndexRequest::new())
-    }
-
-    pub fn get_read_index(&self) -> &ReadIndexRequest {
-        self.read_index.as_ref().unwrap_or_else(|| ReadIndexRequest::default_instance())
-    }
 }
 
 impl ::protobuf::Message for Request {
@@ -2862,11 +2832,6 @@ impl ::protobuf::Message for Request {
                 return false;
             }
         };
-        for v in &self.read_index {
-            if !v.is_initialized() {
-                return false;
-            }
-        };
         true
     }
 
@@ -2897,9 +2862,6 @@ impl ::protobuf::Message for Request {
                 },
                 9 => {
                     ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.ingest_sst)?;
-                },
-                10 => {
-                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.read_index)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -2944,10 +2906,6 @@ impl ::protobuf::Message for Request {
             let len = v.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         }
-        if let Some(ref v) = self.read_index.as_ref() {
-            let len = v.compute_size();
-            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
-        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -2989,11 +2947,6 @@ impl ::protobuf::Message for Request {
         }
         if let Some(ref v) = self.ingest_sst.as_ref() {
             os.write_tag(9, ::protobuf::wire_format::WireTypeLengthDelimited)?;
-            os.write_raw_varint32(v.get_cached_size())?;
-            v.write_to_with_cached_sizes(os)?;
-        }
-        if let Some(ref v) = self.read_index.as_ref() {
-            os.write_tag(10, ::protobuf::wire_format::WireTypeLengthDelimited)?;
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
         }
@@ -3052,7 +3005,6 @@ impl ::protobuf::Clear for Request {
         self.clear_prewrite();
         self.clear_delete_range();
         self.clear_ingest_sst();
-        self.clear_read_index();
         self.unknown_fields.clear();
     }
 }
@@ -3111,7 +3063,6 @@ pub struct Response {
     pub prewrite: ::protobuf::SingularPtrField<PrewriteResponse>,
     pub delte_range: ::protobuf::SingularPtrField<DeleteRangeResponse>,
     pub ingest_sst: ::protobuf::SingularPtrField<IngestSSTResponse>,
-    pub read_index: ::protobuf::SingularPtrField<ReadIndexResponse>,
     // special fields
     unknown_fields: ::protobuf::UnknownFields,
     cached_size: ::protobuf::CachedSize,
@@ -3367,39 +3318,6 @@ impl Response {
     pub fn get_ingest_sst(&self) -> &IngestSSTResponse {
         self.ingest_sst.as_ref().unwrap_or_else(|| IngestSSTResponse::default_instance())
     }
-
-    // .raft_cmdpb.ReadIndexResponse read_index = 10;
-
-    pub fn clear_read_index(&mut self) {
-        self.read_index.clear();
-    }
-
-    pub fn has_read_index(&self) -> bool {
-        self.read_index.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_read_index(&mut self, v: ReadIndexResponse) {
-        self.read_index = ::protobuf::SingularPtrField::some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_read_index(&mut self) -> &mut ReadIndexResponse {
-        if self.read_index.is_none() {
-            self.read_index.set_default();
-        }
-        self.read_index.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_read_index(&mut self) -> ReadIndexResponse {
-        self.read_index.take().unwrap_or_else(|| ReadIndexResponse::new())
-    }
-
-    pub fn get_read_index(&self) -> &ReadIndexResponse {
-        self.read_index.as_ref().unwrap_or_else(|| ReadIndexResponse::default_instance())
-    }
 }
 
 impl ::protobuf::Message for Response {
@@ -3439,11 +3357,6 @@ impl ::protobuf::Message for Response {
                 return false;
             }
         };
-        for v in &self.read_index {
-            if !v.is_initialized() {
-                return false;
-            }
-        };
         true
     }
 
@@ -3474,9 +3387,6 @@ impl ::protobuf::Message for Response {
                 },
                 9 => {
                     ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.ingest_sst)?;
-                },
-                10 => {
-                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.read_index)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -3521,10 +3431,6 @@ impl ::protobuf::Message for Response {
             let len = v.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         }
-        if let Some(ref v) = self.read_index.as_ref() {
-            let len = v.compute_size();
-            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
-        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -3566,11 +3472,6 @@ impl ::protobuf::Message for Response {
         }
         if let Some(ref v) = self.ingest_sst.as_ref() {
             os.write_tag(9, ::protobuf::wire_format::WireTypeLengthDelimited)?;
-            os.write_raw_varint32(v.get_cached_size())?;
-            v.write_to_with_cached_sizes(os)?;
-        }
-        if let Some(ref v) = self.read_index.as_ref() {
-            os.write_tag(10, ::protobuf::wire_format::WireTypeLengthDelimited)?;
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
         }
@@ -3629,7 +3530,6 @@ impl ::protobuf::Clear for Response {
         self.clear_prewrite();
         self.clear_delte_range();
         self.clear_ingest_sst();
-        self.clear_read_index();
         self.unknown_fields.clear();
     }
 }
@@ -10359,7 +10259,6 @@ pub enum CmdType {
     Prewrite = 6,
     DeleteRange = 7,
     IngestSST = 8,
-    ReadIndex = 9,
 }
 
 impl ::protobuf::ProtobufEnum for CmdType {
@@ -10377,7 +10276,6 @@ impl ::protobuf::ProtobufEnum for CmdType {
             6 => ::std::option::Option::Some(CmdType::Prewrite),
             7 => ::std::option::Option::Some(CmdType::DeleteRange),
             8 => ::std::option::Option::Some(CmdType::IngestSST),
-            9 => ::std::option::Option::Some(CmdType::ReadIndex),
             _ => ::std::option::Option::None
         }
     }
@@ -10392,7 +10290,6 @@ impl ::protobuf::ProtobufEnum for CmdType {
             CmdType::Prewrite,
             CmdType::DeleteRange,
             CmdType::IngestSST,
-            CmdType::ReadIndex,
         ];
         values
     }

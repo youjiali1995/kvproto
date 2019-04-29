@@ -51,7 +51,11 @@ func (x CommandPri) String() string {
 	return proto.EnumName(CommandPri_name, int32(x))
 }
 func (CommandPri) EnumDescriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{0}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{0}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 
 type IsolationLevel int32
@@ -74,7 +78,11 @@ func (x IsolationLevel) String() string {
 	return proto.EnumName(IsolationLevel_name, int32(x))
 }
 func (IsolationLevel) EnumDescriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{1}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{1}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 
 type Op int32
@@ -110,7 +118,11 @@ func (x Op) String() string {
 	return proto.EnumName(Op_name, int32(x))
 }
 func (Op) EnumDescriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{2}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{2}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 
 type Assertion int32
@@ -136,7 +148,11 @@ func (x Assertion) String() string {
 	return proto.EnumName(Assertion_name, int32(x))
 }
 func (Assertion) EnumDescriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{3}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{3}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 
 type LockInfo struct {
@@ -153,7 +169,11 @@ func (m *LockInfo) Reset()         { *m = LockInfo{} }
 func (m *LockInfo) String() string { return proto.CompactTextString(m) }
 func (*LockInfo) ProtoMessage()    {}
 func (*LockInfo) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{0}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{0}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *LockInfo) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -221,7 +241,11 @@ func (m *AlreadyExist) Reset()         { *m = AlreadyExist{} }
 func (m *AlreadyExist) String() string { return proto.CompactTextString(m) }
 func (*AlreadyExist) ProtoMessage()    {}
 func (*AlreadyExist) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{1}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{1}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *AlreadyExist) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -272,7 +296,11 @@ func (m *KeyError) Reset()         { *m = KeyError{} }
 func (m *KeyError) String() string { return proto.CompactTextString(m) }
 func (*KeyError) ProtoMessage()    {}
 func (*KeyError) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{2}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{2}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *KeyError) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -350,7 +378,11 @@ func (m *WriteConflict) Reset()         { *m = WriteConflict{} }
 func (m *WriteConflict) String() string { return proto.CompactTextString(m) }
 func (*WriteConflict) ProtoMessage()    {}
 func (*WriteConflict) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{3}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{3}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *WriteConflict) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -427,7 +459,11 @@ func (m *Context) Reset()         { *m = Context{} }
 func (m *Context) String() string { return proto.CompactTextString(m) }
 func (*Context) ProtoMessage()    {}
 func (*Context) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{4}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{4}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *Context) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -538,7 +574,11 @@ func (m *HandleTime) Reset()         { *m = HandleTime{} }
 func (m *HandleTime) String() string { return proto.CompactTextString(m) }
 func (*HandleTime) ProtoMessage()    {}
 func (*HandleTime) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{5}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{5}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *HandleTime) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -593,7 +633,11 @@ func (m *ScanInfo) Reset()         { *m = ScanInfo{} }
 func (m *ScanInfo) String() string { return proto.CompactTextString(m) }
 func (*ScanInfo) ProtoMessage()    {}
 func (*ScanInfo) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{6}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{6}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *ScanInfo) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -649,7 +693,11 @@ func (m *ScanDetail) Reset()         { *m = ScanDetail{} }
 func (m *ScanDetail) String() string { return proto.CompactTextString(m) }
 func (*ScanDetail) ProtoMessage()    {}
 func (*ScanDetail) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{7}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{7}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *ScanDetail) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -711,7 +759,11 @@ func (m *ExecDetails) Reset()         { *m = ExecDetails{} }
 func (m *ExecDetails) String() string { return proto.CompactTextString(m) }
 func (*ExecDetails) ProtoMessage()    {}
 func (*ExecDetails) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{8}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{8}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *ExecDetails) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -767,7 +819,11 @@ func (m *GetRequest) Reset()         { *m = GetRequest{} }
 func (m *GetRequest) String() string { return proto.CompactTextString(m) }
 func (*GetRequest) ProtoMessage()    {}
 func (*GetRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{9}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{9}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *GetRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -830,7 +886,11 @@ func (m *GetResponse) Reset()         { *m = GetResponse{} }
 func (m *GetResponse) String() string { return proto.CompactTextString(m) }
 func (*GetResponse) ProtoMessage()    {}
 func (*GetResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{10}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{10}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *GetResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -899,7 +959,11 @@ func (m *ScanRequest) Reset()         { *m = ScanRequest{} }
 func (m *ScanRequest) String() string { return proto.CompactTextString(m) }
 func (*ScanRequest) ProtoMessage()    {}
 func (*ScanRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{11}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{11}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *ScanRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -990,7 +1054,11 @@ func (m *KvPair) Reset()         { *m = KvPair{} }
 func (m *KvPair) String() string { return proto.CompactTextString(m) }
 func (*KvPair) ProtoMessage()    {}
 func (*KvPair) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{12}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{12}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *KvPair) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1052,7 +1120,11 @@ func (m *ScanResponse) Reset()         { *m = ScanResponse{} }
 func (m *ScanResponse) String() string { return proto.CompactTextString(m) }
 func (*ScanResponse) ProtoMessage()    {}
 func (*ScanResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{13}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{13}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *ScanResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1109,7 +1181,11 @@ func (m *Mutation) Reset()         { *m = Mutation{} }
 func (m *Mutation) String() string { return proto.CompactTextString(m) }
 func (*Mutation) ProtoMessage()    {}
 func (*Mutation) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{14}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{14}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *Mutation) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1185,7 +1261,11 @@ func (m *PrewriteRequest) Reset()         { *m = PrewriteRequest{} }
 func (m *PrewriteRequest) String() string { return proto.CompactTextString(m) }
 func (*PrewriteRequest) ProtoMessage()    {}
 func (*PrewriteRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{15}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{15}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *PrewriteRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1275,7 +1355,11 @@ func (m *PrewriteResponse) Reset()         { *m = PrewriteResponse{} }
 func (m *PrewriteResponse) String() string { return proto.CompactTextString(m) }
 func (*PrewriteResponse) ProtoMessage()    {}
 func (*PrewriteResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{16}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{16}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *PrewriteResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1484,7 +1568,11 @@ func (m *CommitRequest) Reset()         { *m = CommitRequest{} }
 func (m *CommitRequest) String() string { return proto.CompactTextString(m) }
 func (*CommitRequest) ProtoMessage()    {}
 func (*CommitRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{19}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{17}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *CommitRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1553,7 +1641,11 @@ func (m *CommitResponse) Reset()         { *m = CommitResponse{} }
 func (m *CommitResponse) String() string { return proto.CompactTextString(m) }
 func (*CommitResponse) ProtoMessage()    {}
 func (*CommitResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{20}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{18}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *CommitResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1608,7 +1700,11 @@ func (m *ImportRequest) Reset()         { *m = ImportRequest{} }
 func (m *ImportRequest) String() string { return proto.CompactTextString(m) }
 func (*ImportRequest) ProtoMessage()    {}
 func (*ImportRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{21}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{19}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *ImportRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1663,7 +1759,11 @@ func (m *ImportResponse) Reset()         { *m = ImportResponse{} }
 func (m *ImportResponse) String() string { return proto.CompactTextString(m) }
 func (*ImportResponse) ProtoMessage()    {}
 func (*ImportResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{22}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{20}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *ImportResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1719,7 +1819,11 @@ func (m *BatchRollbackRequest) Reset()         { *m = BatchRollbackRequest{} }
 func (m *BatchRollbackRequest) String() string { return proto.CompactTextString(m) }
 func (*BatchRollbackRequest) ProtoMessage()    {}
 func (*BatchRollbackRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{23}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{21}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *BatchRollbackRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1781,7 +1885,11 @@ func (m *BatchRollbackResponse) Reset()         { *m = BatchRollbackResponse{} }
 func (m *BatchRollbackResponse) String() string { return proto.CompactTextString(m) }
 func (*BatchRollbackResponse) ProtoMessage()    {}
 func (*BatchRollbackResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{24}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{22}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *BatchRollbackResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1837,7 +1945,11 @@ func (m *CleanupRequest) Reset()         { *m = CleanupRequest{} }
 func (m *CleanupRequest) String() string { return proto.CompactTextString(m) }
 func (*CleanupRequest) ProtoMessage()    {}
 func (*CleanupRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{25}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{23}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *CleanupRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1900,7 +2012,11 @@ func (m *CleanupResponse) Reset()         { *m = CleanupResponse{} }
 func (m *CleanupResponse) String() string { return proto.CompactTextString(m) }
 func (*CleanupResponse) ProtoMessage()    {}
 func (*CleanupResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{26}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{24}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *CleanupResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1963,7 +2079,11 @@ func (m *BatchGetRequest) Reset()         { *m = BatchGetRequest{} }
 func (m *BatchGetRequest) String() string { return proto.CompactTextString(m) }
 func (*BatchGetRequest) ProtoMessage()    {}
 func (*BatchGetRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{27}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{25}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *BatchGetRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2025,7 +2145,11 @@ func (m *BatchGetResponse) Reset()         { *m = BatchGetResponse{} }
 func (m *BatchGetResponse) String() string { return proto.CompactTextString(m) }
 func (*BatchGetResponse) ProtoMessage()    {}
 func (*BatchGetResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{28}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{26}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *BatchGetResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2082,7 +2206,11 @@ func (m *ScanLockRequest) Reset()         { *m = ScanLockRequest{} }
 func (m *ScanLockRequest) String() string { return proto.CompactTextString(m) }
 func (*ScanLockRequest) ProtoMessage()    {}
 func (*ScanLockRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{29}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{27}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *ScanLockRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2152,7 +2280,11 @@ func (m *ScanLockResponse) Reset()         { *m = ScanLockResponse{} }
 func (m *ScanLockResponse) String() string { return proto.CompactTextString(m) }
 func (*ScanLockResponse) ProtoMessage()    {}
 func (*ScanLockResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{30}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{28}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *ScanLockResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2214,7 +2346,11 @@ func (m *TxnInfo) Reset()         { *m = TxnInfo{} }
 func (m *TxnInfo) String() string { return proto.CompactTextString(m) }
 func (*TxnInfo) ProtoMessage()    {}
 func (*TxnInfo) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{31}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{29}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *TxnInfo) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2272,7 +2408,11 @@ func (m *ResolveLockRequest) Reset()         { *m = ResolveLockRequest{} }
 func (m *ResolveLockRequest) String() string { return proto.CompactTextString(m) }
 func (*ResolveLockRequest) ProtoMessage()    {}
 func (*ResolveLockRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{32}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{30}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *ResolveLockRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2341,7 +2481,11 @@ func (m *ResolveLockResponse) Reset()         { *m = ResolveLockResponse{} }
 func (m *ResolveLockResponse) String() string { return proto.CompactTextString(m) }
 func (*ResolveLockResponse) ProtoMessage()    {}
 func (*ResolveLockResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{33}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{31}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *ResolveLockResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2396,7 +2540,11 @@ func (m *GCRequest) Reset()         { *m = GCRequest{} }
 func (m *GCRequest) String() string { return proto.CompactTextString(m) }
 func (*GCRequest) ProtoMessage()    {}
 func (*GCRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{34}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{32}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *GCRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2451,7 +2599,11 @@ func (m *GCResponse) Reset()         { *m = GCResponse{} }
 func (m *GCResponse) String() string { return proto.CompactTextString(m) }
 func (*GCResponse) ProtoMessage()    {}
 func (*GCResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{35}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{33}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *GCResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2507,7 +2659,11 @@ func (m *RawGetRequest) Reset()         { *m = RawGetRequest{} }
 func (m *RawGetRequest) String() string { return proto.CompactTextString(m) }
 func (*RawGetRequest) ProtoMessage()    {}
 func (*RawGetRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{36}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{34}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawGetRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2570,7 +2726,11 @@ func (m *RawGetResponse) Reset()         { *m = RawGetResponse{} }
 func (m *RawGetResponse) String() string { return proto.CompactTextString(m) }
 func (*RawGetResponse) ProtoMessage()    {}
 func (*RawGetResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{37}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{35}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawGetResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2634,7 +2794,11 @@ func (m *RawPutRequest) Reset()         { *m = RawPutRequest{} }
 func (m *RawPutRequest) String() string { return proto.CompactTextString(m) }
 func (*RawPutRequest) ProtoMessage()    {}
 func (*RawPutRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{38}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{36}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawPutRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2703,7 +2867,11 @@ func (m *RawPutResponse) Reset()         { *m = RawPutResponse{} }
 func (m *RawPutResponse) String() string { return proto.CompactTextString(m) }
 func (*RawPutResponse) ProtoMessage()    {}
 func (*RawPutResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{39}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{37}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawPutResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2759,7 +2927,11 @@ func (m *RawBatchPutRequest) Reset()         { *m = RawBatchPutRequest{} }
 func (m *RawBatchPutRequest) String() string { return proto.CompactTextString(m) }
 func (*RawBatchPutRequest) ProtoMessage()    {}
 func (*RawBatchPutRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{40}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{38}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawBatchPutRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2821,7 +2993,11 @@ func (m *RawBatchPutResponse) Reset()         { *m = RawBatchPutResponse{} }
 func (m *RawBatchPutResponse) String() string { return proto.CompactTextString(m) }
 func (*RawBatchPutResponse) ProtoMessage()    {}
 func (*RawBatchPutResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{41}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{39}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawBatchPutResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2877,7 +3053,11 @@ func (m *RawBatchGetRequest) Reset()         { *m = RawBatchGetRequest{} }
 func (m *RawBatchGetRequest) String() string { return proto.CompactTextString(m) }
 func (*RawBatchGetRequest) ProtoMessage()    {}
 func (*RawBatchGetRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{42}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{40}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawBatchGetRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2939,7 +3119,11 @@ func (m *RawBatchGetResponse) Reset()         { *m = RawBatchGetResponse{} }
 func (m *RawBatchGetResponse) String() string { return proto.CompactTextString(m) }
 func (*RawBatchGetResponse) ProtoMessage()    {}
 func (*RawBatchGetResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{43}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{41}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawBatchGetResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2995,7 +3179,11 @@ func (m *RawDeleteRequest) Reset()         { *m = RawDeleteRequest{} }
 func (m *RawDeleteRequest) String() string { return proto.CompactTextString(m) }
 func (*RawDeleteRequest) ProtoMessage()    {}
 func (*RawDeleteRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{44}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{42}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawDeleteRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3057,7 +3245,11 @@ func (m *RawDeleteResponse) Reset()         { *m = RawDeleteResponse{} }
 func (m *RawDeleteResponse) String() string { return proto.CompactTextString(m) }
 func (*RawDeleteResponse) ProtoMessage()    {}
 func (*RawDeleteResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{45}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{43}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawDeleteResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3113,7 +3305,11 @@ func (m *RawBatchDeleteRequest) Reset()         { *m = RawBatchDeleteRequest{} }
 func (m *RawBatchDeleteRequest) String() string { return proto.CompactTextString(m) }
 func (*RawBatchDeleteRequest) ProtoMessage()    {}
 func (*RawBatchDeleteRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{46}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{44}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawBatchDeleteRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3175,7 +3371,11 @@ func (m *RawBatchDeleteResponse) Reset()         { *m = RawBatchDeleteResponse{}
 func (m *RawBatchDeleteResponse) String() string { return proto.CompactTextString(m) }
 func (*RawBatchDeleteResponse) ProtoMessage()    {}
 func (*RawBatchDeleteResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{47}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{45}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawBatchDeleteResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3231,7 +3431,11 @@ func (m *DeleteRangeRequest) Reset()         { *m = DeleteRangeRequest{} }
 func (m *DeleteRangeRequest) String() string { return proto.CompactTextString(m) }
 func (*DeleteRangeRequest) ProtoMessage()    {}
 func (*DeleteRangeRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{48}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{46}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *DeleteRangeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3293,7 +3497,11 @@ func (m *DeleteRangeResponse) Reset()         { *m = DeleteRangeResponse{} }
 func (m *DeleteRangeResponse) String() string { return proto.CompactTextString(m) }
 func (*DeleteRangeResponse) ProtoMessage()    {}
 func (*DeleteRangeResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{49}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{47}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *DeleteRangeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3350,7 +3558,11 @@ func (m *RawDeleteRangeRequest) Reset()         { *m = RawDeleteRangeRequest{} }
 func (m *RawDeleteRangeRequest) String() string { return proto.CompactTextString(m) }
 func (*RawDeleteRangeRequest) ProtoMessage()    {}
 func (*RawDeleteRangeRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{50}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{48}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawDeleteRangeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3419,7 +3631,11 @@ func (m *RawDeleteRangeResponse) Reset()         { *m = RawDeleteRangeResponse{}
 func (m *RawDeleteRangeResponse) String() string { return proto.CompactTextString(m) }
 func (*RawDeleteRangeResponse) ProtoMessage()    {}
 func (*RawDeleteRangeResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{51}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{49}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawDeleteRangeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3481,7 +3697,11 @@ func (m *RawScanRequest) Reset()         { *m = RawScanRequest{} }
 func (m *RawScanRequest) String() string { return proto.CompactTextString(m) }
 func (*RawScanRequest) ProtoMessage()    {}
 func (*RawScanRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{52}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{50}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawScanRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3571,7 +3791,11 @@ func (m *RawScanResponse) Reset()         { *m = RawScanResponse{} }
 func (m *RawScanResponse) String() string { return proto.CompactTextString(m) }
 func (*RawScanResponse) ProtoMessage()    {}
 func (*RawScanResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{53}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{51}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawScanResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3626,7 +3850,11 @@ func (m *KeyRange) Reset()         { *m = KeyRange{} }
 func (m *KeyRange) String() string { return proto.CompactTextString(m) }
 func (*KeyRange) ProtoMessage()    {}
 func (*KeyRange) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{54}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{52}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *KeyRange) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3685,7 +3913,11 @@ func (m *RawBatchScanRequest) Reset()         { *m = RawBatchScanRequest{} }
 func (m *RawBatchScanRequest) String() string { return proto.CompactTextString(m) }
 func (*RawBatchScanRequest) ProtoMessage()    {}
 func (*RawBatchScanRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{55}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{53}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawBatchScanRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3768,7 +4000,11 @@ func (m *RawBatchScanResponse) Reset()         { *m = RawBatchScanResponse{} }
 func (m *RawBatchScanResponse) String() string { return proto.CompactTextString(m) }
 func (*RawBatchScanResponse) ProtoMessage()    {}
 func (*RawBatchScanResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{56}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{54}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *RawBatchScanResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3825,7 +4061,11 @@ func (m *MvccWrite) Reset()         { *m = MvccWrite{} }
 func (m *MvccWrite) String() string { return proto.CompactTextString(m) }
 func (*MvccWrite) ProtoMessage()    {}
 func (*MvccWrite) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{57}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{55}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *MvccWrite) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3894,7 +4134,11 @@ func (m *MvccValue) Reset()         { *m = MvccValue{} }
 func (m *MvccValue) String() string { return proto.CompactTextString(m) }
 func (*MvccValue) ProtoMessage()    {}
 func (*MvccValue) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{58}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{56}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *MvccValue) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3951,7 +4195,11 @@ func (m *MvccLock) Reset()         { *m = MvccLock{} }
 func (m *MvccLock) String() string { return proto.CompactTextString(m) }
 func (*MvccLock) ProtoMessage()    {}
 func (*MvccLock) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{59}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{57}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *MvccLock) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4021,7 +4269,11 @@ func (m *MvccInfo) Reset()         { *m = MvccInfo{} }
 func (m *MvccInfo) String() string { return proto.CompactTextString(m) }
 func (*MvccInfo) ProtoMessage()    {}
 func (*MvccInfo) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{60}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{58}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *MvccInfo) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4083,7 +4335,11 @@ func (m *MvccGetByKeyRequest) Reset()         { *m = MvccGetByKeyRequest{} }
 func (m *MvccGetByKeyRequest) String() string { return proto.CompactTextString(m) }
 func (*MvccGetByKeyRequest) ProtoMessage()    {}
 func (*MvccGetByKeyRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{61}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{59}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *MvccGetByKeyRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4139,7 +4395,11 @@ func (m *MvccGetByKeyResponse) Reset()         { *m = MvccGetByKeyResponse{} }
 func (m *MvccGetByKeyResponse) String() string { return proto.CompactTextString(m) }
 func (*MvccGetByKeyResponse) ProtoMessage()    {}
 func (*MvccGetByKeyResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{62}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{60}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *MvccGetByKeyResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4201,7 +4461,11 @@ func (m *MvccGetByStartTsRequest) Reset()         { *m = MvccGetByStartTsRequest
 func (m *MvccGetByStartTsRequest) String() string { return proto.CompactTextString(m) }
 func (*MvccGetByStartTsRequest) ProtoMessage()    {}
 func (*MvccGetByStartTsRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{63}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{61}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *MvccGetByStartTsRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4258,7 +4522,11 @@ func (m *MvccGetByStartTsResponse) Reset()         { *m = MvccGetByStartTsRespon
 func (m *MvccGetByStartTsResponse) String() string { return proto.CompactTextString(m) }
 func (*MvccGetByStartTsResponse) ProtoMessage()    {}
 func (*MvccGetByStartTsResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{64}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{62}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *MvccGetByStartTsResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4327,7 +4595,11 @@ func (m *SplitRegionRequest) Reset()         { *m = SplitRegionRequest{} }
 func (m *SplitRegionRequest) String() string { return proto.CompactTextString(m) }
 func (*SplitRegionRequest) ProtoMessage()    {}
 func (*SplitRegionRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{65}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{63}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *SplitRegionRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4383,7 +4655,11 @@ func (m *SplitRegionResponse) Reset()         { *m = SplitRegionResponse{} }
 func (m *SplitRegionResponse) String() string { return proto.CompactTextString(m) }
 func (*SplitRegionResponse) ProtoMessage()    {}
 func (*SplitRegionResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{66}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{64}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *SplitRegionResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4446,7 +4722,11 @@ func (m *UnsafeDestroyRangeRequest) Reset()         { *m = UnsafeDestroyRangeReq
 func (m *UnsafeDestroyRangeRequest) String() string { return proto.CompactTextString(m) }
 func (*UnsafeDestroyRangeRequest) ProtoMessage()    {}
 func (*UnsafeDestroyRangeRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{67}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{65}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *UnsafeDestroyRangeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4508,7 +4788,11 @@ func (m *UnsafeDestroyRangeResponse) Reset()         { *m = UnsafeDestroyRangeRe
 func (m *UnsafeDestroyRangeResponse) String() string { return proto.CompactTextString(m) }
 func (*UnsafeDestroyRangeResponse) ProtoMessage()    {}
 func (*UnsafeDestroyRangeResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_kvrpcpb_44d6feb0775b5de8, []int{68}
+=======
+	return fileDescriptor_kvrpcpb_1d1e61477e631345, []int{66}
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }
 func (m *UnsafeDestroyRangeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4551,6 +4835,7 @@ func (m *UnsafeDestroyRangeResponse) GetError() string {
 	return ""
 }
 
+<<<<<<< HEAD
 type ReadIndexRequest struct {
 	Context              *Context `protobuf:"bytes,1,opt,name=context" json:"context,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -4653,6 +4938,8 @@ func (m *ReadIndexResponse) GetReadIndex() uint64 {
 	return 0
 }
 
+=======
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 func init() {
 	proto.RegisterType((*LockInfo)(nil), "kvrpcpb.LockInfo")
 	proto.RegisterType((*AlreadyExist)(nil), "kvrpcpb.AlreadyExist")
@@ -4723,8 +5010,6 @@ func init() {
 	proto.RegisterType((*SplitRegionResponse)(nil), "kvrpcpb.SplitRegionResponse")
 	proto.RegisterType((*UnsafeDestroyRangeRequest)(nil), "kvrpcpb.UnsafeDestroyRangeRequest")
 	proto.RegisterType((*UnsafeDestroyRangeResponse)(nil), "kvrpcpb.UnsafeDestroyRangeResponse")
-	proto.RegisterType((*ReadIndexRequest)(nil), "kvrpcpb.ReadIndexRequest")
-	proto.RegisterType((*ReadIndexResponse)(nil), "kvrpcpb.ReadIndexResponse")
 	proto.RegisterEnum("kvrpcpb.CommandPri", CommandPri_name, CommandPri_value)
 	proto.RegisterEnum("kvrpcpb.IsolationLevel", IsolationLevel_name, IsolationLevel_value)
 	proto.RegisterEnum("kvrpcpb.Op", Op_name, Op_value)
@@ -7875,6 +8160,7 @@ func (m *UnsafeDestroyRangeResponse) MarshalTo(dAtA []byte) (int, error) {
 	return i, nil
 }
 
+<<<<<<< HEAD
 func (m *ReadIndexRequest) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -7942,6 +8228,8 @@ func (m *ReadIndexResponse) MarshalTo(dAtA []byte) (int, error) {
 	return i, nil
 }
 
+=======
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 func encodeVarintKvrpcpb(dAtA []byte, offset int, v uint64) int {
 	for v >= 1<<7 {
 		dAtA[offset] = uint8(v&0x7f | 0x80)
@@ -9405,35 +9693,6 @@ func (m *UnsafeDestroyRangeResponse) Size() (n int) {
 	l = len(m.Error)
 	if l > 0 {
 		n += 1 + l + sovKvrpcpb(uint64(l))
-	}
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *ReadIndexRequest) Size() (n int) {
-	var l int
-	_ = l
-	if m.Context != nil {
-		l = m.Context.Size()
-		n += 1 + l + sovKvrpcpb(uint64(l))
-	}
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *ReadIndexResponse) Size() (n int) {
-	var l int
-	_ = l
-	if m.RegionError != nil {
-		l = m.RegionError.Size()
-		n += 1 + l + sovKvrpcpb(uint64(l))
-	}
-	if m.ReadIndex != 0 {
-		n += 1 + sovKvrpcpb(uint64(m.ReadIndex))
 	}
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -19060,193 +19319,6 @@ func (m *UnsafeDestroyRangeResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ReadIndexRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowKvrpcpb
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ReadIndexRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ReadIndexRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Context", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Context == nil {
-				m.Context = &Context{}
-			}
-			if err := m.Context.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipKvrpcpb(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthKvrpcpb
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *ReadIndexResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowKvrpcpb
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ReadIndexResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ReadIndexResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field RegionError", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.RegionError == nil {
-				m.RegionError = &errorpb.Error{}
-			}
-			if err := m.RegionError.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ReadIndex", wireType)
-			}
-			m.ReadIndex = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.ReadIndex |= (uint64(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipKvrpcpb(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthKvrpcpb
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
 func skipKvrpcpb(dAtA []byte) (n int, err error) {
 	l := len(dAtA)
 	iNdEx := 0
@@ -19352,6 +19424,7 @@ var (
 	ErrIntOverflowKvrpcpb   = fmt.Errorf("proto: integer overflow")
 )
 
+<<<<<<< HEAD
 func init() { proto.RegisterFile("kvrpcpb.proto", fileDescriptor_kvrpcpb_44d6feb0775b5de8) }
 
 var fileDescriptor_kvrpcpb_44d6feb0775b5de8 = []byte{
@@ -19499,4 +19572,145 @@ var fileDescriptor_kvrpcpb_44d6feb0775b5de8 = []byte{
 	0xf9, 0xf2, 0xba, 0xf6, 0xaf, 0x97, 0xd7, 0xb5, 0xdf, 0xfe, 0xfb, 0xfa, 0x05, 0x30, 0x69, 0xd8,
 	0xdf, 0xe6, 0xee, 0x70, 0xb2, 0x3d, 0x9c, 0xc8, 0xff, 0x00, 0x1d, 0x95, 0xe4, 0xcf, 0x3b, 0xff,
 	0x09, 0x00, 0x00, 0xff, 0xff, 0xa3, 0x8f, 0xa5, 0xe8, 0x68, 0x24, 0x00, 0x00,
+=======
+func init() { proto.RegisterFile("kvrpcpb.proto", fileDescriptor_kvrpcpb_1d1e61477e631345) }
+
+var fileDescriptor_kvrpcpb_1d1e61477e631345 = []byte{
+	// 2155 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xc4, 0x5a, 0x5f, 0x6f, 0x1b, 0xc7,
+	0x11, 0xf7, 0x1d, 0x8f, 0xe4, 0x71, 0xf8, 0x47, 0x97, 0x95, 0x1c, 0x33, 0x76, 0x63, 0x2b, 0xd7,
+	0xb8, 0x96, 0x55, 0x54, 0x6e, 0x99, 0xa0, 0x0f, 0x41, 0x51, 0xa4, 0x96, 0x5d, 0x47, 0xb1, 0x6c,
+	0x0b, 0x2b, 0xd5, 0x85, 0x81, 0x26, 0xcc, 0xea, 0xb8, 0x22, 0x0f, 0x3c, 0xde, 0x9e, 0xef, 0x96,
+	0x94, 0x88, 0x22, 0x28, 0x8a, 0x22, 0x05, 0xf2, 0xd8, 0xa2, 0x40, 0xfb, 0xd0, 0xbe, 0xb7, 0x9f,
+	0xa1, 0x5f, 0xa0, 0x2f, 0x05, 0xf2, 0xd0, 0x87, 0xf6, 0xad, 0x70, 0xbf, 0x48, 0xb1, 0xbb, 0xf7,
+	0x87, 0x27, 0x52, 0xb1, 0x70, 0xa5, 0xd4, 0x27, 0xde, 0xce, 0xcc, 0xee, 0xec, 0x6f, 0x66, 0x76,
+	0x76, 0x76, 0x97, 0xd0, 0x1c, 0x4e, 0xc2, 0xc0, 0x09, 0x0e, 0xb7, 0x82, 0x90, 0x71, 0x86, 0xaa,
+	0x71, 0xf3, 0x7a, 0x63, 0x44, 0x39, 0x49, 0xc8, 0xd7, 0x9b, 0x34, 0x0c, 0x59, 0x98, 0x36, 0xd7,
+	0xfa, 0xac, 0xcf, 0xe4, 0xe7, 0x3d, 0xf1, 0x15, 0x53, 0x57, 0xc2, 0x71, 0xc4, 0xe5, 0xa7, 0x22,
+	0xd8, 0x9f, 0x83, 0xb9, 0xcb, 0x9c, 0xe1, 0x8e, 0x7f, 0xc4, 0xd0, 0x3b, 0xd0, 0x08, 0x42, 0x77,
+	0x44, 0xc2, 0x69, 0xd7, 0x63, 0xce, 0xb0, 0xad, 0xad, 0x6b, 0x1b, 0x0d, 0x5c, 0x8f, 0x69, 0x42,
+	0x4c, 0x88, 0x08, 0x56, 0x77, 0x42, 0xc3, 0xc8, 0x65, 0x7e, 0x5b, 0x5f, 0xd7, 0x36, 0x0c, 0x5c,
+	0x17, 0xb4, 0xe7, 0x8a, 0x84, 0x2c, 0x28, 0x0d, 0xe9, 0xb4, 0x5d, 0x92, 0x9d, 0xc5, 0x27, 0x7a,
+	0x0b, 0x4c, 0xd9, 0x89, 0x73, 0xaf, 0x6d, 0xc8, 0x0e, 0x55, 0xd1, 0x3e, 0xe0, 0x9e, 0xbd, 0x0e,
+	0x8d, 0x1f, 0x79, 0x21, 0x25, 0xbd, 0xe9, 0xc3, 0x13, 0x37, 0xe2, 0x49, 0x67, 0x2d, 0xed, 0x6c,
+	0xff, 0x4b, 0x03, 0xf3, 0x31, 0x9d, 0x3e, 0x14, 0xe0, 0xd0, 0x5d, 0xa8, 0x88, 0x9e, 0xb4, 0x27,
+	0x25, 0xea, 0x9d, 0x37, 0xb6, 0x12, 0xd3, 0x24, 0x20, 0x70, 0x2c, 0x80, 0xbe, 0x01, 0xb5, 0x90,
+	0xf2, 0x70, 0x4a, 0x0e, 0x3d, 0x2a, 0xa7, 0x59, 0xc3, 0x19, 0x01, 0xad, 0x41, 0x99, 0x1c, 0xb2,
+	0x90, 0xcb, 0x69, 0xd6, 0xb0, 0x6a, 0xa0, 0x0e, 0x98, 0x0e, 0xf3, 0x8f, 0x3c, 0xd7, 0xe1, 0x72,
+	0xa2, 0xf5, 0xce, 0x9b, 0xa9, 0x82, 0x9f, 0x86, 0x2e, 0xa7, 0xdb, 0x31, 0x17, 0xa7, 0x72, 0xe8,
+	0x03, 0x68, 0x12, 0x85, 0xa0, 0x4b, 0x05, 0x84, 0x76, 0x59, 0x76, 0xbc, 0x9a, 0x76, 0x9c, 0xc5,
+	0x87, 0x1b, 0x64, 0xa6, 0x65, 0x1f, 0x43, 0x33, 0x37, 0xac, 0xb0, 0x54, 0xc4, 0x49, 0xc8, 0xbb,
+	0x3c, 0x92, 0x08, 0x0d, 0x5c, 0x95, 0xed, 0x83, 0x08, 0xdd, 0x82, 0x7a, 0xa2, 0x53, 0x70, 0x95,
+	0xe1, 0x21, 0x21, 0x1d, 0x44, 0x0b, 0xec, 0xde, 0x86, 0x6a, 0xec, 0x3b, 0x89, 0xa6, 0x81, 0x93,
+	0xa6, 0xfd, 0xa7, 0x12, 0x54, 0xb7, 0x99, 0xcf, 0xe9, 0x09, 0x47, 0x37, 0x84, 0xa1, 0xfa, 0x2e,
+	0xf3, 0xbb, 0x6e, 0x2f, 0x56, 0x6a, 0x2a, 0xc2, 0x4e, 0x0f, 0x7d, 0x1f, 0x1a, 0x31, 0x93, 0x06,
+	0xcc, 0x19, 0x48, 0xb5, 0xf5, 0xce, 0xea, 0x56, 0x1c, 0x79, 0x58, 0xf2, 0x1e, 0x0a, 0x16, 0xae,
+	0x87, 0x59, 0x03, 0xad, 0x83, 0x11, 0x50, 0x1a, 0xca, 0xd9, 0xd4, 0x3b, 0x8d, 0x44, 0x7e, 0x8f,
+	0xd2, 0x10, 0x4b, 0x0e, 0x42, 0x60, 0x70, 0x1a, 0x8e, 0xa4, 0xb9, 0x0c, 0x2c, 0xbf, 0xd1, 0x3d,
+	0x30, 0x83, 0xd0, 0x65, 0xa1, 0xcb, 0xa7, 0xed, 0xca, 0xba, 0xb6, 0xd1, 0xea, 0xac, 0xa6, 0x66,
+	0xdc, 0x66, 0xa3, 0x11, 0xf1, 0x7b, 0x7b, 0xa1, 0x8b, 0x53, 0x21, 0xf4, 0x21, 0xac, 0xb8, 0x11,
+	0xf3, 0x08, 0x17, 0x33, 0xf4, 0xe8, 0x84, 0x7a, 0xed, 0xaa, 0xec, 0x77, 0x2d, 0xed, 0xb7, 0x93,
+	0xf0, 0x77, 0x05, 0x1b, 0xb7, 0xdc, 0x5c, 0x1b, 0xbd, 0x0b, 0x2d, 0x9f, 0xf1, 0xee, 0x91, 0xeb,
+	0x79, 0x5d, 0x87, 0x38, 0x03, 0xda, 0x36, 0xd7, 0xb5, 0x0d, 0x13, 0x37, 0x7c, 0xc6, 0x7f, 0xec,
+	0x7a, 0xde, 0xb6, 0xa0, 0x49, 0xbf, 0x4c, 0x7d, 0xa7, 0xeb, 0xb1, 0x7e, 0xbb, 0x26, 0xf9, 0x55,
+	0xd1, 0xde, 0x65, 0x7d, 0xe1, 0x97, 0x01, 0xf1, 0x7b, 0x1e, 0xed, 0x72, 0x77, 0x44, 0xdb, 0x20,
+	0xb9, 0xa0, 0x48, 0x07, 0xee, 0x88, 0x0a, 0x81, 0xc8, 0x21, 0x7e, 0xb7, 0x47, 0x39, 0x71, 0xbd,
+	0x76, 0x5d, 0x09, 0x08, 0xd2, 0x03, 0x49, 0xf9, 0xd8, 0x30, 0x0d, 0xab, 0x2c, 0xcc, 0x47, 0x7a,
+	0xdd, 0x97, 0x63, 0x16, 0x8e, 0x47, 0xf6, 0x03, 0x80, 0x8f, 0xb2, 0x11, 0xae, 0x41, 0xf5, 0x98,
+	0xb8, 0xbc, 0x3b, 0x52, 0x41, 0x51, 0xc2, 0x15, 0xd1, 0x7c, 0x12, 0xa1, 0xb7, 0x01, 0x82, 0x90,
+	0x39, 0x34, 0x8a, 0x04, 0x4f, 0x97, 0xbc, 0x5a, 0x4c, 0x79, 0x12, 0xd9, 0x3f, 0x04, 0x73, 0xdf,
+	0x21, 0xbe, 0x5c, 0xdb, 0x6b, 0x50, 0xe6, 0x8c, 0x13, 0x2f, 0x1e, 0x41, 0x35, 0xc4, 0x22, 0x89,
+	0xc5, 0x69, 0xef, 0x54, 0x7f, 0xda, 0xb3, 0x7f, 0xa5, 0x01, 0xec, 0xa7, 0xf3, 0x44, 0x77, 0xa0,
+	0x7c, 0x2c, 0xa2, 0x75, 0x6e, 0xed, 0x25, 0x4a, 0xb0, 0xe2, 0xa3, 0xdb, 0x60, 0xc8, 0xfc, 0xa1,
+	0x9f, 0x25, 0x27, 0xd9, 0x42, 0xac, 0x47, 0x38, 0x89, 0x63, 0x64, 0x91, 0x98, 0x60, 0xdb, 0x53,
+	0xa8, 0x3f, 0x3c, 0xa1, 0x8e, 0x9a, 0x44, 0x84, 0xde, 0xcf, 0xdb, 0x5b, 0x8b, 0x03, 0x32, 0xe9,
+	0x9c, 0x99, 0x2d, 0xe7, 0x84, 0xf7, 0xf3, 0x4e, 0xd0, 0x4f, 0xf5, 0xca, 0x50, 0xce, 0x7a, 0xc6,
+	0xee, 0x01, 0x3c, 0xa2, 0x1c, 0xd3, 0x97, 0x63, 0x1a, 0x71, 0xb4, 0x09, 0x55, 0x47, 0xad, 0x99,
+	0x58, 0xab, 0x35, 0x13, 0x9c, 0x92, 0x8e, 0x13, 0x81, 0x64, 0x31, 0xea, 0xb9, 0xc5, 0x98, 0x24,
+	0xcd, 0x92, 0x5a, 0xd9, 0x71, 0xd3, 0xfe, 0x05, 0xd4, 0xa5, 0x96, 0x28, 0x60, 0x7e, 0x44, 0xd1,
+	0xf7, 0xb2, 0x25, 0x27, 0x72, 0x5e, 0xac, 0xab, 0xb5, 0x95, 0xa4, 0x77, 0x99, 0x09, 0xd3, 0xd5,
+	0x26, 0xd3, 0xe2, 0x1d, 0x28, 0x2b, 0xd9, 0xd3, 0x16, 0x4f, 0x12, 0x27, 0x56, 0x7c, 0x11, 0x05,
+	0x13, 0xe2, 0x8d, 0x69, 0x9c, 0x25, 0x54, 0xc3, 0xfe, 0x87, 0x06, 0x75, 0x61, 0x81, 0x22, 0x40,
+	0x6f, 0x40, 0x4d, 0x65, 0xac, 0x0c, 0xae, 0x4a, 0x61, 0x8f, 0xe9, 0x54, 0xa8, 0xf3, 0xdc, 0x91,
+	0xab, 0xb2, 0x6c, 0x13, 0xab, 0xc6, 0xac, 0x25, 0x8c, 0x9c, 0x25, 0xc4, 0x32, 0x1b, 0xd2, 0x69,
+	0x97, 0xf9, 0xde, 0x54, 0xe6, 0x05, 0x13, 0x57, 0x87, 0x74, 0xfa, 0xcc, 0xf7, 0xa4, 0xf9, 0x42,
+	0x2a, 0xe4, 0xa8, 0xcc, 0x0c, 0x26, 0x4e, 0x9a, 0x62, 0x75, 0x50, 0xbf, 0x27, 0xf5, 0x57, 0xa5,
+	0xfe, 0x0a, 0xf5, 0x7b, 0x8f, 0xe9, 0xd4, 0x7e, 0x01, 0x95, 0xc7, 0x93, 0x3d, 0xe2, 0xce, 0xd8,
+	0x47, 0x7b, 0x8d, 0x7d, 0xe6, 0xdd, 0xb6, 0xd8, 0x62, 0x03, 0x68, 0x28, 0x83, 0x15, 0xf7, 0xd9,
+	0x6d, 0x28, 0x07, 0xc4, 0x0d, 0xc5, 0xb2, 0x2d, 0x6d, 0xd4, 0x3b, 0x2b, 0xd9, 0x9c, 0xe4, 0x9c,
+	0xb1, 0xe2, 0xda, 0xbf, 0xd4, 0xc0, 0x7c, 0x32, 0xe6, 0x32, 0x63, 0xa1, 0x1b, 0xa0, 0xb3, 0x40,
+	0x0e, 0xde, 0xea, 0xd4, 0xd3, 0x0e, 0xcf, 0x02, 0xac, 0xb3, 0xe0, 0xbc, 0x73, 0x47, 0xdf, 0x85,
+	0x1a, 0x89, 0x22, 0x1a, 0xf2, 0xc4, 0x01, 0xad, 0x0e, 0xca, 0x36, 0xab, 0x84, 0x83, 0x33, 0x21,
+	0xfb, 0x0b, 0x1d, 0x56, 0xf6, 0x42, 0x2a, 0x17, 0x77, 0x91, 0x18, 0xb9, 0x07, 0xb5, 0x51, 0x0c,
+	0x21, 0x81, 0x9b, 0xb9, 0x20, 0x01, 0x87, 0x33, 0x99, 0xb9, 0x42, 0xa4, 0x34, 0x5f, 0x88, 0x7c,
+	0x13, 0x9a, 0x2a, 0xee, 0xf2, 0xa1, 0xd4, 0x90, 0xc4, 0xe7, 0x59, 0x3c, 0xa5, 0x85, 0x47, 0x39,
+	0x57, 0x78, 0xa0, 0x0e, 0x5c, 0x8d, 0x86, 0x6e, 0xd0, 0x75, 0x98, 0x1f, 0xf1, 0x90, 0xb8, 0x3e,
+	0xef, 0x3a, 0x03, 0xea, 0x0c, 0xe3, 0xe8, 0x5a, 0x15, 0xcc, 0xed, 0x94, 0xb7, 0x2d, 0x58, 0x76,
+	0x00, 0x56, 0x66, 0x86, 0xe2, 0x9e, 0xbf, 0x0b, 0x15, 0xc9, 0x9d, 0xb7, 0x45, 0x1a, 0x8e, 0xb1,
+	0x80, 0xfd, 0x17, 0x0d, 0x9a, 0x62, 0xe3, 0x73, 0x0b, 0x25, 0xa1, 0x39, 0x1b, 0xe9, 0x0b, 0x6c,
+	0x84, 0xc0, 0x18, 0xd2, 0x69, 0xd4, 0x2e, 0xad, 0x97, 0x36, 0x1a, 0x58, 0x7e, 0xa3, 0xdb, 0xd0,
+	0x72, 0xa4, 0xd6, 0x53, 0xd6, 0x6d, 0x2a, 0x6a, 0xdc, 0xf5, 0x63, 0xc3, 0x2c, 0x5b, 0x15, 0x5c,
+	0x39, 0x74, 0x7d, 0x8f, 0xf5, 0x6d, 0x0f, 0x5a, 0xc9, 0x54, 0x2f, 0x3e, 0x93, 0xd9, 0x7d, 0x68,
+	0xee, 0x8c, 0x02, 0x16, 0xa6, 0x86, 0xc9, 0x05, 0x99, 0x76, 0x8e, 0x20, 0x9b, 0x07, 0xa9, 0x2f,
+	0x00, 0x69, 0xbf, 0x80, 0x56, 0xa2, 0xa8, 0x38, 0xac, 0xb5, 0x59, 0x58, 0xb5, 0x04, 0xc3, 0xcf,
+	0x61, 0xed, 0x3e, 0xe1, 0xce, 0x00, 0x33, 0xcf, 0x3b, 0x24, 0xce, 0xf0, 0x32, 0x7d, 0x6c, 0x47,
+	0x70, 0xf5, 0x94, 0xf2, 0x4b, 0xf0, 0x5a, 0x04, 0xad, 0x6d, 0x8f, 0x12, 0x7f, 0x1c, 0x2c, 0x67,
+	0x53, 0x9d, 0x43, 0x5f, 0x9a, 0x47, 0x6f, 0xff, 0x4e, 0x83, 0x95, 0x54, 0xeb, 0x25, 0x6c, 0xb2,
+	0xf3, 0x81, 0x55, 0x5a, 0x14, 0x58, 0x43, 0x58, 0x91, 0x0e, 0x28, 0x58, 0x61, 0x24, 0x3e, 0xd5,
+	0x67, 0xd6, 0xed, 0xd9, 0x35, 0x86, 0x07, 0x56, 0xa6, 0xec, 0xc2, 0x37, 0xad, 0xdf, 0x68, 0xb0,
+	0x22, 0xf6, 0x47, 0x91, 0xa9, 0x8b, 0x60, 0xbb, 0x05, 0xf5, 0x11, 0x39, 0x39, 0x15, 0xd2, 0x30,
+	0x22, 0x27, 0x49, 0x40, 0xe7, 0xaa, 0x8e, 0xd2, 0x59, 0x55, 0x87, 0x31, 0x53, 0x75, 0xd8, 0xbf,
+	0xd7, 0xc0, 0xca, 0xe6, 0x74, 0x09, 0x61, 0x70, 0x07, 0xca, 0x62, 0xb3, 0x51, 0xab, 0x6e, 0xe1,
+	0x51, 0x55, 0xf1, 0xed, 0xf7, 0xa0, 0x7a, 0x70, 0xa2, 0xaa, 0x74, 0x0b, 0x4a, 0xfc, 0xc4, 0x8f,
+	0x4f, 0x61, 0xe2, 0x13, 0xbd, 0x09, 0x95, 0x88, 0x13, 0x3e, 0x4e, 0x4e, 0x7c, 0x71, 0xcb, 0xfe,
+	0xab, 0x06, 0x08, 0xd3, 0x88, 0x79, 0x13, 0x5a, 0xd4, 0xca, 0xe7, 0x4a, 0x1d, 0xe7, 0x0b, 0x66,
+	0xf4, 0x1d, 0xa8, 0xf1, 0x13, 0xbf, 0xeb, 0xfa, 0x47, 0x2c, 0x6a, 0x1b, 0x12, 0x70, 0xa6, 0x39,
+	0x46, 0x87, 0x4d, 0xae, 0x3e, 0x22, 0xfb, 0x25, 0xac, 0xe6, 0x26, 0x7f, 0x09, 0xa9, 0xe7, 0x39,
+	0xd4, 0x1e, 0x6d, 0x17, 0x31, 0xd3, 0xdb, 0x00, 0x11, 0x39, 0xa2, 0xdd, 0x80, 0xb9, 0x3e, 0x8f,
+	0x6d, 0x54, 0x13, 0x94, 0x3d, 0x41, 0xb0, 0x07, 0x00, 0x62, 0xdc, 0x4b, 0x40, 0xf0, 0x09, 0x34,
+	0x31, 0x39, 0x5e, 0xda, 0x81, 0xa4, 0x05, 0xba, 0x73, 0x14, 0xdf, 0x7f, 0xe8, 0xce, 0x91, 0xcd,
+	0xa0, 0x95, 0x0c, 0xbf, 0xe4, 0x8d, 0xee, 0x8c, 0x22, 0x3a, 0x92, 0x78, 0xf6, 0xc6, 0x4b, 0xc2,
+	0xb3, 0xb8, 0xda, 0x55, 0x28, 0x8d, 0x14, 0xe5, 0x0b, 0x89, 0x52, 0x2a, 0x5d, 0xf6, 0x76, 0x7e,
+	0x0c, 0x08, 0x93, 0x63, 0x99, 0x66, 0x0b, 0x82, 0x3a, 0x5f, 0x7a, 0x9d, 0xf3, 0xdc, 0xa7, 0xb0,
+	0x9a, 0x53, 0xbc, 0x6c, 0x60, 0xbd, 0x0c, 0xd8, 0x12, 0x37, 0xab, 0xf9, 0xf8, 0x5b, 0xcd, 0x69,
+	0xb9, 0xf0, 0x5d, 0xea, 0x33, 0xb0, 0x30, 0x39, 0x7e, 0x40, 0x3d, 0x5a, 0xec, 0x58, 0xf3, 0xfa,
+	0x25, 0xf5, 0x33, 0x78, 0x63, 0x46, 0xc3, 0xb2, 0xdd, 0xd2, 0x87, 0xab, 0x89, 0xc1, 0x8a, 0x83,
+	0x38, 0x8f, 0x67, 0x08, 0xbc, 0x79, 0x5a, 0xd1, 0xb2, 0xb1, 0x4c, 0x00, 0xc5, 0x43, 0x13, 0xbf,
+	0x4f, 0x97, 0x7e, 0x11, 0x31, 0x73, 0x47, 0x50, 0xca, 0xdd, 0x11, 0x7c, 0x0a, 0xab, 0x39, 0xbd,
+	0xcb, 0xc6, 0xf5, 0xa5, 0x26, 0x9d, 0xf4, 0xff, 0xc0, 0x36, 0x97, 0xfa, 0x94, 0x1b, 0x2f, 0x14,
+	0xee, 0xdf, 0x35, 0x99, 0x5e, 0x2f, 0xf1, 0x32, 0x69, 0xf6, 0xca, 0xc8, 0xc8, 0x5f, 0x19, 0x29,
+	0xfc, 0xe5, 0x04, 0x7f, 0x91, 0x2b, 0xa4, 0x3e, 0xac, 0xa4, 0x70, 0x8a, 0xdb, 0xea, 0x1d, 0x28,
+	0x0d, 0x27, 0x67, 0x66, 0x23, 0xc1, 0xb3, 0x3f, 0x94, 0x8f, 0x1c, 0xd2, 0x2b, 0x79, 0x2b, 0x68,
+	0x67, 0x7b, 0x5b, 0xcf, 0x4d, 0xf5, 0x2b, 0x2d, 0xcb, 0x9f, 0x45, 0xed, 0x7f, 0x17, 0x2a, 0xa1,
+	0x98, 0xc2, 0xc2, 0x9b, 0x09, 0x15, 0x32, 0xb1, 0x80, 0xa8, 0x8a, 0x28, 0x71, 0x06, 0xdd, 0x59,
+	0x97, 0xd4, 0x04, 0x65, 0x77, 0x69, 0x6e, 0xb1, 0x3d, 0x58, 0xcb, 0x23, 0xba, 0x50, 0x17, 0x7c,
+	0xa1, 0x41, 0xed, 0xc9, 0xc4, 0x71, 0xe4, 0x8b, 0x0c, 0xba, 0x05, 0x06, 0x9f, 0x06, 0x74, 0xd1,
+	0x65, 0x9b, 0x64, 0xe4, 0x9e, 0x6a, 0xf4, 0xfc, 0x53, 0xcd, 0x0d, 0xa8, 0xc5, 0x35, 0x33, 0x8f,
+	0xe2, 0x72, 0xd9, 0x54, 0x04, 0xf5, 0x8e, 0x13, 0x0d, 0x98, 0xa8, 0xba, 0x65, 0xb1, 0xa2, 0x1e,
+	0x66, 0x40, 0x92, 0x9e, 0xcb, 0xb2, 0xe8, 0x07, 0x6a, 0x1a, 0xb2, 0xf1, 0x75, 0x0f, 0x42, 0x69,
+	0xbd, 0xa3, 0xcf, 0x16, 0x55, 0xf2, 0xbe, 0x70, 0xe2, 0x38, 0xf2, 0x92, 0xec, 0x7f, 0x01, 0x31,
+	0xf3, 0x78, 0x54, 0xca, 0x3d, 0x1e, 0xbd, 0x1e, 0xc1, 0x97, 0xf1, 0x1c, 0xe4, 0x91, 0x26, 0x79,
+	0x0c, 0x38, 0x7d, 0xf5, 0x9a, 0x4c, 0x32, 0x7e, 0x0c, 0xd8, 0x84, 0x8a, 0xbc, 0x58, 0x4b, 0x7c,
+	0x84, 0x72, 0x82, 0xd2, 0x27, 0x38, 0x96, 0x10, 0xb2, 0x52, 0x75, 0x72, 0xb4, 0xca, 0xcb, 0xca,
+	0x39, 0xe0, 0x58, 0xc2, 0xde, 0x87, 0x55, 0x41, 0x7c, 0x44, 0xf9, 0xfd, 0xa9, 0x08, 0xe2, 0x65,
+	0xec, 0xf3, 0xf6, 0xaf, 0x35, 0x58, 0xcb, 0x8f, 0xba, 0xec, 0x8a, 0xf9, 0x36, 0x18, 0xe2, 0x2c,
+	0x35, 0xf7, 0x36, 0x92, 0x98, 0x15, 0x4b, 0xb6, 0xfd, 0x19, 0x5c, 0x4b, 0xe7, 0xb1, 0xaf, 0x1c,
+	0x57, 0x04, 0xe1, 0xd9, 0x61, 0x60, 0xff, 0x51, 0x83, 0xf6, 0xbc, 0x8a, 0x65, 0xc3, 0x9d, 0x7f,
+	0xbb, 0x4c, 0x0c, 0x60, 0x7c, 0xbd, 0x01, 0x3e, 0x01, 0xb4, 0x1f, 0x78, 0x2e, 0x57, 0x0f, 0x91,
+	0x45, 0xf7, 0x1c, 0x31, 0x42, 0x6e, 0xcf, 0x11, 0x04, 0x91, 0x54, 0x7f, 0xab, 0xc1, 0x6a, 0x6e,
+	0xfc, 0xe2, 0xc0, 0x6d, 0x30, 0x3c, 0x7a, 0xc4, 0xe3, 0x53, 0x5e, 0x2b, 0xff, 0x82, 0x8a, 0x25,
+	0x0f, 0xbd, 0x0b, 0xe5, 0xd0, 0xed, 0x0f, 0x78, 0xec, 0xf6, 0xd3, 0x42, 0x8a, 0x69, 0x7f, 0x0e,
+	0x6f, 0xfd, 0xc4, 0x17, 0x07, 0xd0, 0x07, 0x34, 0xe2, 0x21, 0x9b, 0x5e, 0x72, 0xc9, 0x44, 0xe1,
+	0xfa, 0x22, 0xf5, 0x4b, 0x0e, 0x89, 0xcd, 0x6f, 0x03, 0x64, 0x4f, 0xbe, 0x08, 0xa0, 0xf2, 0x94,
+	0x85, 0x23, 0xe2, 0x59, 0x57, 0x50, 0x15, 0x4a, 0xbb, 0xec, 0xd8, 0xd2, 0x90, 0x09, 0xc6, 0x47,
+	0x6e, 0x7f, 0x60, 0xe9, 0x9b, 0xeb, 0xd0, 0xca, 0xbf, 0xf3, 0xa2, 0x0a, 0xe8, 0xfb, 0x3b, 0xd6,
+	0x15, 0xf1, 0x8b, 0xb7, 0x2d, 0x6d, 0xf3, 0x03, 0xd0, 0x9f, 0x05, 0xa2, 0xeb, 0xde, 0x98, 0xab,
+	0x31, 0x1e, 0x50, 0x4f, 0x8d, 0x21, 0xb2, 0x90, 0xa5, 0xa3, 0x06, 0x98, 0xc9, 0x5d, 0xa8, 0x55,
+	0x12, 0x0a, 0x77, 0xfc, 0x88, 0x86, 0xdc, 0x32, 0x36, 0xb7, 0xa0, 0x96, 0xbe, 0x8b, 0x88, 0x0e,
+	0x4f, 0x99, 0x4f, 0xad, 0x2b, 0xa8, 0x06, 0x65, 0xf9, 0x8c, 0x6f, 0x69, 0xa2, 0xef, 0x53, 0xc6,
+	0x55, 0x4b, 0xbf, 0xff, 0xad, 0x7f, 0xfe, 0xd9, 0xd4, 0xfe, 0xf6, 0xea, 0xa6, 0xf6, 0xd5, 0xab,
+	0x9b, 0xda, 0xbf, 0x5f, 0xdd, 0xd4, 0xfe, 0xf0, 0x9f, 0x9b, 0x57, 0xc0, 0x62, 0x61, 0x7f, 0x8b,
+	0xbb, 0xc3, 0xc9, 0xd6, 0x70, 0x22, 0xff, 0x7b, 0x71, 0x58, 0x91, 0x3f, 0xef, 0xfd, 0x37, 0x00,
+	0x00, 0xff, 0xff, 0xee, 0xee, 0x50, 0x78, 0xe0, 0x21, 0x00, 0x00,
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 }

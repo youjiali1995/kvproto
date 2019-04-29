@@ -17231,6 +17231,7 @@ impl ::protobuf::reflect::ProtobufValue for UnsafeDestroyRangeResponse {
     }
 }
 
+<<<<<<< HEAD
 #[derive(PartialEq,Clone,Default)]
 pub struct ReadIndexRequest {
     // message fields
@@ -17605,6 +17606,8 @@ impl ::protobuf::reflect::ProtobufValue for ReadIndexResponse {
     }
 }
 
+=======
+>>>>>>> parent of 894ab99... support cpp lang in `kvproto` (#375)
 #[derive(Clone,PartialEq,Eq,Debug,Hash)]
 pub enum CommandPri {
     Normal = 0,

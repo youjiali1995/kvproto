@@ -5,8 +5,6 @@ pub mod deadlock;
 pub mod deadlock_grpc;
 pub mod debugpb;
 pub mod debugpb_grpc;
-pub mod enginepb;
-pub mod enginepb_grpc;
 pub mod errorpb;
 pub mod import_kvpb;
 pub mod import_kvpb_grpc;
