@@ -13478,6 +13478,17 @@ impl ::protobuf::ProtobufEnum for GetOperatorResponse_OperatorStatus {
 impl ::std::marker::Copy for GetOperatorResponse_OperatorStatus {
 }
 
+impl crate::text::PbPrint for GetOperatorResponse_OperatorStatus {
+    fn fmt(&self, name: &str, buf: &mut String) {
+        use std::fmt::Write;
+        if *self == GetOperatorResponse_OperatorStatus::default() {
+            return;
+        }
+        crate::text::push_field_start(name, buf);
+        write!(buf, "{:?}", self).unwrap();
+    }
+}
+
 impl ::std::default::Default for GetOperatorResponse_OperatorStatus {
     fn default() -> Self {
         GetOperatorResponse_OperatorStatus::SUCCESS
@@ -13609,69 +13620,3 @@ impl ::protobuf::reflect::ProtobufValue for CheckPolicy {
         ::protobuf::reflect::ProtobufValueRef::Enum(self.descriptor())
     }
 }
-<<<<<<< HEAD
-
-#[derive(Clone,PartialEq,Eq,Debug,Hash)]
-pub enum OperatorStatus {
-    SUCCESS = 0,
-    TIMEOUT = 1,
-    CANCEL = 2,
-    REPLACE = 3,
-    RUNNING = 4,
-}
-
-impl ::protobuf::ProtobufEnum for OperatorStatus {
-    fn value(&self) -> i32 {
-        *self as i32
-    }
-
-    fn from_i32(value: i32) -> ::std::option::Option<OperatorStatus> {
-        match value {
-            0 => ::std::option::Option::Some(OperatorStatus::SUCCESS),
-            1 => ::std::option::Option::Some(OperatorStatus::TIMEOUT),
-            2 => ::std::option::Option::Some(OperatorStatus::CANCEL),
-            3 => ::std::option::Option::Some(OperatorStatus::REPLACE),
-            4 => ::std::option::Option::Some(OperatorStatus::RUNNING),
-            _ => ::std::option::Option::None
-        }
-    }
-
-    fn values() -> &'static [Self] {
-        static values: &'static [OperatorStatus] = &[
-            OperatorStatus::SUCCESS,
-            OperatorStatus::TIMEOUT,
-            OperatorStatus::CANCEL,
-            OperatorStatus::REPLACE,
-            OperatorStatus::RUNNING,
-        ];
-        values
-    }
-}
-
-impl ::std::marker::Copy for OperatorStatus {
-}
-
-impl crate::text::PbPrint for OperatorStatus {
-    fn fmt(&self, name: &str, buf: &mut String) {
-        use std::fmt::Write;
-        if *self == OperatorStatus::default() {
-            return;
-        }
-        crate::text::push_field_start(name, buf);
-        write!(buf, "{:?}", self).unwrap();
-    }
-}
-
-impl ::std::default::Default for OperatorStatus {
-    fn default() -> Self {
-        OperatorStatus::SUCCESS
-    }
-}
-
-impl ::protobuf::reflect::ProtobufValue for OperatorStatus {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
-        ::protobuf::reflect::ProtobufValueRef::Enum(self.descriptor())
-    }
-}
-=======
->>>>>>> parent of 3d8cb3a... *: adjust pdpb proto (#372)
