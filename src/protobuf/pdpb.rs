@@ -4160,7 +4160,6 @@ impl crate::text::PbPrint for GetRegionResponse {
         crate::text::PbPrint::fmt(&self.header, "header", buf);
         crate::text::PbPrint::fmt(&self.region, "region", buf);
         crate::text::PbPrint::fmt(&self.leader, "leader", buf);
-        crate::text::PbPrint::fmt(&self.slaves, "slaves", buf);
         if old_len < buf.len() {
           buf.push(' ');
         }
@@ -4174,7 +4173,6 @@ impl ::std::fmt::Debug for GetRegionResponse {
         crate::text::PbPrint::fmt(&self.header, "header", &mut s);
         crate::text::PbPrint::fmt(&self.region, "region", &mut s);
         crate::text::PbPrint::fmt(&self.leader, "leader", &mut s);
-        crate::text::PbPrint::fmt(&self.slaves, "slaves", &mut s);
         write!(f, "{}", s)
     }
 }
