@@ -47,7 +47,11 @@ func (x Mutation_OP) String() string {
 	return proto.EnumName(Mutation_OP_name, int32(x))
 }
 func (Mutation_OP) EnumDescriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{5, 0}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{5, 0}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 
 type SwitchModeRequest struct {
@@ -62,7 +66,11 @@ func (m *SwitchModeRequest) Reset()         { *m = SwitchModeRequest{} }
 func (m *SwitchModeRequest) String() string { return proto.CompactTextString(m) }
 func (*SwitchModeRequest) ProtoMessage()    {}
 func (*SwitchModeRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{0}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{0}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *SwitchModeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -115,7 +123,11 @@ func (m *SwitchModeResponse) Reset()         { *m = SwitchModeResponse{} }
 func (m *SwitchModeResponse) String() string { return proto.CompactTextString(m) }
 func (*SwitchModeResponse) ProtoMessage()    {}
 func (*SwitchModeResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{1}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{1}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *SwitchModeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -155,7 +167,11 @@ func (m *OpenEngineRequest) Reset()         { *m = OpenEngineRequest{} }
 func (m *OpenEngineRequest) String() string { return proto.CompactTextString(m) }
 func (*OpenEngineRequest) ProtoMessage()    {}
 func (*OpenEngineRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{2}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{2}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *OpenEngineRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -201,7 +217,11 @@ func (m *OpenEngineResponse) Reset()         { *m = OpenEngineResponse{} }
 func (m *OpenEngineResponse) String() string { return proto.CompactTextString(m) }
 func (*OpenEngineResponse) ProtoMessage()    {}
 func (*OpenEngineResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{3}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{3}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *OpenEngineResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -241,7 +261,11 @@ func (m *WriteHead) Reset()         { *m = WriteHead{} }
 func (m *WriteHead) String() string { return proto.CompactTextString(m) }
 func (*WriteHead) ProtoMessage()    {}
 func (*WriteHead) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{4}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{4}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *WriteHead) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -290,7 +314,11 @@ func (m *Mutation) Reset()         { *m = Mutation{} }
 func (m *Mutation) String() string { return proto.CompactTextString(m) }
 func (*Mutation) ProtoMessage()    {}
 func (*Mutation) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{5}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{5}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *Mutation) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -352,7 +380,11 @@ func (m *WriteBatch) Reset()         { *m = WriteBatch{} }
 func (m *WriteBatch) String() string { return proto.CompactTextString(m) }
 func (*WriteBatch) ProtoMessage()    {}
 func (*WriteBatch) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{6}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{6}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *WriteBatch) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -409,7 +441,11 @@ func (m *WriteEngineRequest) Reset()         { *m = WriteEngineRequest{} }
 func (m *WriteEngineRequest) String() string { return proto.CompactTextString(m) }
 func (*WriteEngineRequest) ProtoMessage()    {}
 func (*WriteEngineRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{7}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{7}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *WriteEngineRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -560,7 +596,11 @@ func (m *WriteEngineResponse) Reset()         { *m = WriteEngineResponse{} }
 func (m *WriteEngineResponse) String() string { return proto.CompactTextString(m) }
 func (*WriteEngineResponse) ProtoMessage()    {}
 func (*WriteEngineResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{8}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{8}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *WriteEngineResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -607,7 +647,11 @@ func (m *CloseEngineRequest) Reset()         { *m = CloseEngineRequest{} }
 func (m *CloseEngineRequest) String() string { return proto.CompactTextString(m) }
 func (*CloseEngineRequest) ProtoMessage()    {}
 func (*CloseEngineRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{9}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{9}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *CloseEngineRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -654,7 +698,11 @@ func (m *CloseEngineResponse) Reset()         { *m = CloseEngineResponse{} }
 func (m *CloseEngineResponse) String() string { return proto.CompactTextString(m) }
 func (*CloseEngineResponse) ProtoMessage()    {}
 func (*CloseEngineResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{10}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{10}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *CloseEngineResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -702,7 +750,11 @@ func (m *ImportEngineRequest) Reset()         { *m = ImportEngineRequest{} }
 func (m *ImportEngineRequest) String() string { return proto.CompactTextString(m) }
 func (*ImportEngineRequest) ProtoMessage()    {}
 func (*ImportEngineRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{11}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{11}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *ImportEngineRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -755,7 +807,11 @@ func (m *ImportEngineResponse) Reset()         { *m = ImportEngineResponse{} }
 func (m *ImportEngineResponse) String() string { return proto.CompactTextString(m) }
 func (*ImportEngineResponse) ProtoMessage()    {}
 func (*ImportEngineResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{12}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{12}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *ImportEngineResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -795,7 +851,11 @@ func (m *CleanupEngineRequest) Reset()         { *m = CleanupEngineRequest{} }
 func (m *CleanupEngineRequest) String() string { return proto.CompactTextString(m) }
 func (*CleanupEngineRequest) ProtoMessage()    {}
 func (*CleanupEngineRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{13}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{13}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *CleanupEngineRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -841,7 +901,11 @@ func (m *CleanupEngineResponse) Reset()         { *m = CleanupEngineResponse{} }
 func (m *CleanupEngineResponse) String() string { return proto.CompactTextString(m) }
 func (*CleanupEngineResponse) ProtoMessage()    {}
 func (*CleanupEngineResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{14}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{14}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *CleanupEngineResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -882,7 +946,11 @@ func (m *CompactClusterRequest) Reset()         { *m = CompactClusterRequest{} }
 func (m *CompactClusterRequest) String() string { return proto.CompactTextString(m) }
 func (*CompactClusterRequest) ProtoMessage()    {}
 func (*CompactClusterRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{15}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{15}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *CompactClusterRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -935,7 +1003,11 @@ func (m *CompactClusterResponse) Reset()         { *m = CompactClusterResponse{}
 func (m *CompactClusterResponse) String() string { return proto.CompactTextString(m) }
 func (*CompactClusterResponse) ProtoMessage()    {}
 func (*CompactClusterResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{16}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{16}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *CompactClusterResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -979,7 +1051,11 @@ func (m *Error) Reset()         { *m = Error{} }
 func (m *Error) String() string { return proto.CompactTextString(m) }
 func (*Error) ProtoMessage()    {}
 func (*Error) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{17}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{17}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *Error) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1026,7 +1102,11 @@ func (m *Error_EngineNotFound) Reset()         { *m = Error_EngineNotFound{} }
 func (m *Error_EngineNotFound) String() string { return proto.CompactTextString(m) }
 func (*Error_EngineNotFound) ProtoMessage()    {}
 func (*Error_EngineNotFound) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_import_kvpb_72d9fdd4e107f180, []int{17, 0}
+=======
+	return fileDescriptor_import_kvpb_ae8ae036691db3a8, []int{17, 0}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *Error_EngineNotFound) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3973,9 +4053,15 @@ var (
 	ErrIntOverflowImportKvpb   = fmt.Errorf("proto: integer overflow")
 )
 
+<<<<<<< HEAD
 func init() { proto.RegisterFile("import_kvpb.proto", fileDescriptor_import_kvpb_72d9fdd4e107f180) }
 
 var fileDescriptor_import_kvpb_72d9fdd4e107f180 = []byte{
+=======
+func init() { proto.RegisterFile("import_kvpb.proto", fileDescriptor_import_kvpb_ae8ae036691db3a8) }
+
+var fileDescriptor_import_kvpb_ae8ae036691db3a8 = []byte{
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 	// 710 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x55, 0x6d, 0x6f, 0xd2, 0x50,
 	0x14, 0xa6, 0xbc, 0x0c, 0x38, 0x6c, 0xc8, 0xce, 0xd8, 0x46, 0xd0, 0x00, 0xab, 0x46, 0x89, 0x31,

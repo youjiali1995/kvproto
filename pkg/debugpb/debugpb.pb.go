@@ -57,7 +57,11 @@ func (x DB) String() string {
 	return proto.EnumName(DB_name, int32(x))
 }
 func (DB) EnumDescriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{0}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{0}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 
 type MODULE int32
@@ -107,7 +111,11 @@ func (x MODULE) String() string {
 	return proto.EnumName(MODULE_name, int32(x))
 }
 func (MODULE) EnumDescriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{1}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{1}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 
 type BottommostLevelCompaction int32
@@ -136,7 +144,11 @@ func (x BottommostLevelCompaction) String() string {
 	return proto.EnumName(BottommostLevelCompaction_name, int32(x))
 }
 func (BottommostLevelCompaction) EnumDescriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{2}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{2}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 
 type GetRequest struct {
@@ -152,7 +164,11 @@ func (m *GetRequest) Reset()         { *m = GetRequest{} }
 func (m *GetRequest) String() string { return proto.CompactTextString(m) }
 func (*GetRequest) ProtoMessage()    {}
 func (*GetRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{0}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{0}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *GetRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -213,7 +229,11 @@ func (m *GetResponse) Reset()         { *m = GetResponse{} }
 func (m *GetResponse) String() string { return proto.CompactTextString(m) }
 func (*GetResponse) ProtoMessage()    {}
 func (*GetResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{1}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{1}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *GetResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -261,7 +281,11 @@ func (m *RaftLogRequest) Reset()         { *m = RaftLogRequest{} }
 func (m *RaftLogRequest) String() string { return proto.CompactTextString(m) }
 func (*RaftLogRequest) ProtoMessage()    {}
 func (*RaftLogRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{2}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{2}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RaftLogRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -315,7 +339,11 @@ func (m *RaftLogResponse) Reset()         { *m = RaftLogResponse{} }
 func (m *RaftLogResponse) String() string { return proto.CompactTextString(m) }
 func (*RaftLogResponse) ProtoMessage()    {}
 func (*RaftLogResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{3}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{3}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RaftLogResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -362,7 +390,11 @@ func (m *RegionInfoRequest) Reset()         { *m = RegionInfoRequest{} }
 func (m *RegionInfoRequest) String() string { return proto.CompactTextString(m) }
 func (*RegionInfoRequest) ProtoMessage()    {}
 func (*RegionInfoRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{4}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{4}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RegionInfoRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -411,7 +443,11 @@ func (m *RegionInfoResponse) Reset()         { *m = RegionInfoResponse{} }
 func (m *RegionInfoResponse) String() string { return proto.CompactTextString(m) }
 func (*RegionInfoResponse) ProtoMessage()    {}
 func (*RegionInfoResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{5}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{5}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RegionInfoResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -473,7 +509,11 @@ func (m *RegionSizeRequest) Reset()         { *m = RegionSizeRequest{} }
 func (m *RegionSizeRequest) String() string { return proto.CompactTextString(m) }
 func (*RegionSizeRequest) ProtoMessage()    {}
 func (*RegionSizeRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{6}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{6}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RegionSizeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -527,7 +567,11 @@ func (m *RegionSizeResponse) Reset()         { *m = RegionSizeResponse{} }
 func (m *RegionSizeResponse) String() string { return proto.CompactTextString(m) }
 func (*RegionSizeResponse) ProtoMessage()    {}
 func (*RegionSizeResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{7}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{7}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RegionSizeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -575,7 +619,11 @@ func (m *RegionSizeResponse_Entry) Reset()         { *m = RegionSizeResponse_Ent
 func (m *RegionSizeResponse_Entry) String() string { return proto.CompactTextString(m) }
 func (*RegionSizeResponse_Entry) ProtoMessage()    {}
 func (*RegionSizeResponse_Entry) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{7, 0}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{7, 0}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RegionSizeResponse_Entry) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -631,7 +679,11 @@ func (m *ScanMvccRequest) Reset()         { *m = ScanMvccRequest{} }
 func (m *ScanMvccRequest) String() string { return proto.CompactTextString(m) }
 func (*ScanMvccRequest) ProtoMessage()    {}
 func (*ScanMvccRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{8}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{8}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *ScanMvccRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -693,7 +745,11 @@ func (m *ScanMvccResponse) Reset()         { *m = ScanMvccResponse{} }
 func (m *ScanMvccResponse) String() string { return proto.CompactTextString(m) }
 func (*ScanMvccResponse) ProtoMessage()    {}
 func (*ScanMvccResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{9}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{9}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *ScanMvccResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -752,7 +808,11 @@ func (m *CompactRequest) Reset()         { *m = CompactRequest{} }
 func (m *CompactRequest) String() string { return proto.CompactTextString(m) }
 func (*CompactRequest) ProtoMessage()    {}
 func (*CompactRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{10}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{10}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *CompactRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -833,7 +893,11 @@ func (m *CompactResponse) Reset()         { *m = CompactResponse{} }
 func (m *CompactResponse) String() string { return proto.CompactTextString(m) }
 func (*CompactResponse) ProtoMessage()    {}
 func (*CompactResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{11}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{11}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *CompactResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -874,7 +938,11 @@ func (m *InjectFailPointRequest) Reset()         { *m = InjectFailPointRequest{}
 func (m *InjectFailPointRequest) String() string { return proto.CompactTextString(m) }
 func (*InjectFailPointRequest) ProtoMessage()    {}
 func (*InjectFailPointRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{12}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{12}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *InjectFailPointRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -927,7 +995,11 @@ func (m *InjectFailPointResponse) Reset()         { *m = InjectFailPointResponse
 func (m *InjectFailPointResponse) String() string { return proto.CompactTextString(m) }
 func (*InjectFailPointResponse) ProtoMessage()    {}
 func (*InjectFailPointResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{13}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{13}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *InjectFailPointResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -967,7 +1039,11 @@ func (m *RecoverFailPointRequest) Reset()         { *m = RecoverFailPointRequest
 func (m *RecoverFailPointRequest) String() string { return proto.CompactTextString(m) }
 func (*RecoverFailPointRequest) ProtoMessage()    {}
 func (*RecoverFailPointRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{14}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{14}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RecoverFailPointRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1013,7 +1089,11 @@ func (m *RecoverFailPointResponse) Reset()         { *m = RecoverFailPointRespon
 func (m *RecoverFailPointResponse) String() string { return proto.CompactTextString(m) }
 func (*RecoverFailPointResponse) ProtoMessage()    {}
 func (*RecoverFailPointResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{15}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{15}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RecoverFailPointResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1052,7 +1132,11 @@ func (m *ListFailPointsRequest) Reset()         { *m = ListFailPointsRequest{} }
 func (m *ListFailPointsRequest) String() string { return proto.CompactTextString(m) }
 func (*ListFailPointsRequest) ProtoMessage()    {}
 func (*ListFailPointsRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{16}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{16}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *ListFailPointsRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1092,7 +1176,11 @@ func (m *ListFailPointsResponse) Reset()         { *m = ListFailPointsResponse{}
 func (m *ListFailPointsResponse) String() string { return proto.CompactTextString(m) }
 func (*ListFailPointsResponse) ProtoMessage()    {}
 func (*ListFailPointsResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{17}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{17}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *ListFailPointsResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1140,7 +1228,11 @@ func (m *ListFailPointsResponse_Entry) Reset()         { *m = ListFailPointsResp
 func (m *ListFailPointsResponse_Entry) String() string { return proto.CompactTextString(m) }
 func (*ListFailPointsResponse_Entry) ProtoMessage()    {}
 func (*ListFailPointsResponse_Entry) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{17, 0}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{17, 0}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *ListFailPointsResponse_Entry) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1194,7 +1286,11 @@ func (m *GetMetricsRequest) Reset()         { *m = GetMetricsRequest{} }
 func (m *GetMetricsRequest) String() string { return proto.CompactTextString(m) }
 func (*GetMetricsRequest) ProtoMessage()    {}
 func (*GetMetricsRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{18}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{18}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *GetMetricsRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1245,7 +1341,11 @@ func (m *GetMetricsResponse) Reset()         { *m = GetMetricsResponse{} }
 func (m *GetMetricsResponse) String() string { return proto.CompactTextString(m) }
 func (*GetMetricsResponse) ProtoMessage()    {}
 func (*GetMetricsResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{19}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{19}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *GetMetricsResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1320,7 +1420,11 @@ func (m *RegionConsistencyCheckRequest) Reset()         { *m = RegionConsistency
 func (m *RegionConsistencyCheckRequest) String() string { return proto.CompactTextString(m) }
 func (*RegionConsistencyCheckRequest) ProtoMessage()    {}
 func (*RegionConsistencyCheckRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{20}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{20}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RegionConsistencyCheckRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1366,7 +1470,11 @@ func (m *RegionConsistencyCheckResponse) Reset()         { *m = RegionConsistenc
 func (m *RegionConsistencyCheckResponse) String() string { return proto.CompactTextString(m) }
 func (*RegionConsistencyCheckResponse) ProtoMessage()    {}
 func (*RegionConsistencyCheckResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{21}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{21}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *RegionConsistencyCheckResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1408,7 +1516,11 @@ func (m *ModifyTikvConfigRequest) Reset()         { *m = ModifyTikvConfigRequest
 func (m *ModifyTikvConfigRequest) String() string { return proto.CompactTextString(m) }
 func (*ModifyTikvConfigRequest) ProtoMessage()    {}
 func (*ModifyTikvConfigRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{22}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{22}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *ModifyTikvConfigRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1468,7 +1580,11 @@ func (m *ModifyTikvConfigResponse) Reset()         { *m = ModifyTikvConfigRespon
 func (m *ModifyTikvConfigResponse) String() string { return proto.CompactTextString(m) }
 func (*ModifyTikvConfigResponse) ProtoMessage()    {}
 func (*ModifyTikvConfigResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{23}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{23}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *ModifyTikvConfigResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1509,7 +1625,11 @@ func (m *Property) Reset()         { *m = Property{} }
 func (m *Property) String() string { return proto.CompactTextString(m) }
 func (*Property) ProtoMessage()    {}
 func (*Property) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{24}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{24}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *Property) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1563,7 +1683,11 @@ func (m *GetRegionPropertiesRequest) Reset()         { *m = GetRegionPropertiesR
 func (m *GetRegionPropertiesRequest) String() string { return proto.CompactTextString(m) }
 func (*GetRegionPropertiesRequest) ProtoMessage()    {}
 func (*GetRegionPropertiesRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{25}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{25}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *GetRegionPropertiesRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1610,7 +1734,11 @@ func (m *GetRegionPropertiesResponse) Reset()         { *m = GetRegionProperties
 func (m *GetRegionPropertiesResponse) String() string { return proto.CompactTextString(m) }
 func (*GetRegionPropertiesResponse) ProtoMessage()    {}
 func (*GetRegionPropertiesResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_debugpb_aa169ba8e375d405, []int{26}
+=======
+	return fileDescriptor_debugpb_881d81d7f1aa28b0, []int{26}
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 }
 func (m *GetRegionPropertiesResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -6443,9 +6571,15 @@ var (
 	ErrIntOverflowDebugpb   = fmt.Errorf("proto: integer overflow")
 )
 
+<<<<<<< HEAD
 func init() { proto.RegisterFile("debugpb.proto", fileDescriptor_debugpb_aa169ba8e375d405) }
 
 var fileDescriptor_debugpb_aa169ba8e375d405 = []byte{
+=======
+func init() { proto.RegisterFile("debugpb.proto", fileDescriptor_debugpb_881d81d7f1aa28b0) }
+
+var fileDescriptor_debugpb_881d81d7f1aa28b0 = []byte{
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 	// 1422 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x57, 0xcb, 0x6f, 0xdb, 0x46,
 	0x13, 0x17, 0xf5, 0xd6, 0xc8, 0x96, 0xe8, 0x8d, 0x63, 0xcb, 0x34, 0x22, 0xcb, 0xcc, 0xcb, 0xc8,

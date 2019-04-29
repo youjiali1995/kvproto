@@ -2604,7 +2604,6 @@ pub struct GetStoreResponse {
     // message fields
     pub header: ::protobuf::SingularPtrField<ResponseHeader>,
     pub store: ::protobuf::SingularPtrField<super::metapb::Store>,
-    pub stats: ::protobuf::SingularPtrField<StoreStats>,
     // special fields
     unknown_fields: ::protobuf::UnknownFields,
     cached_size: ::protobuf::CachedSize,
@@ -2680,39 +2679,6 @@ impl GetStoreResponse {
     pub fn get_store(&self) -> &super::metapb::Store {
         self.store.as_ref().unwrap_or_else(|| super::metapb::Store::default_instance())
     }
-
-    // .pdpb.StoreStats stats = 3;
-
-    pub fn clear_stats(&mut self) {
-        self.stats.clear();
-    }
-
-    pub fn has_stats(&self) -> bool {
-        self.stats.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_stats(&mut self, v: StoreStats) {
-        self.stats = ::protobuf::SingularPtrField::some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_stats(&mut self) -> &mut StoreStats {
-        if self.stats.is_none() {
-            self.stats.set_default();
-        }
-        self.stats.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_stats(&mut self) -> StoreStats {
-        self.stats.take().unwrap_or_else(|| StoreStats::new())
-    }
-
-    pub fn get_stats(&self) -> &StoreStats {
-        self.stats.as_ref().unwrap_or_else(|| StoreStats::default_instance())
-    }
 }
 
 impl ::protobuf::Message for GetStoreResponse {
@@ -2723,11 +2689,6 @@ impl ::protobuf::Message for GetStoreResponse {
             }
         };
         for v in &self.store {
-            if !v.is_initialized() {
-                return false;
-            }
-        };
-        for v in &self.stats {
             if !v.is_initialized() {
                 return false;
             }
@@ -2744,9 +2705,6 @@ impl ::protobuf::Message for GetStoreResponse {
                 },
                 2 => {
                     ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.store)?;
-                },
-                3 => {
-                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.stats)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -2768,10 +2726,6 @@ impl ::protobuf::Message for GetStoreResponse {
             let len = v.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         }
-        if let Some(ref v) = self.stats.as_ref() {
-            let len = v.compute_size();
-            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
-        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -2785,11 +2739,6 @@ impl ::protobuf::Message for GetStoreResponse {
         }
         if let Some(ref v) = self.store.as_ref() {
             os.write_tag(2, ::protobuf::wire_format::WireTypeLengthDelimited)?;
-            os.write_raw_varint32(v.get_cached_size())?;
-            v.write_to_with_cached_sizes(os)?;
-        }
-        if let Some(ref v) = self.stats.as_ref() {
-            os.write_tag(3, ::protobuf::wire_format::WireTypeLengthDelimited)?;
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
         }
@@ -2842,7 +2791,6 @@ impl ::protobuf::Clear for GetStoreResponse {
     fn clear(&mut self) {
         self.clear_header();
         self.clear_store();
-        self.clear_stats();
         self.unknown_fields.clear();
     }
 }
@@ -12932,6 +12880,7 @@ impl ::protobuf::reflect::ProtobufValue for SyncRegionResponse {
     }
 }
 
+<<<<<<< HEAD
 #[derive(PartialEq,Clone,Default)]
 pub struct GetOperatorRequest {
     // message fields
@@ -13501,6 +13450,8 @@ impl ::protobuf::reflect::ProtobufValue for GetOperatorResponse_OperatorStatus {
     }
 }
 
+=======
+>>>>>>> parent of 07023ac... *: add get operator service (#369)
 #[derive(Clone,PartialEq,Eq,Debug,Hash)]
 pub enum ErrorType {
     OK = 0,
