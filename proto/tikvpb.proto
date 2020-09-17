@@ -35,6 +35,7 @@ service Tikv {
     rpc KvResolveLock(kvrpcpb.ResolveLockRequest) returns (kvrpcpb.ResolveLockResponse) {}
     rpc KvGC(kvrpcpb.GCRequest) returns (kvrpcpb.GCResponse) {}
     rpc KvDeleteRange(kvrpcpb.DeleteRangeRequest) returns (kvrpcpb.DeleteRangeResponse) {}
+    rpc KvWrite(kvrpcpb.WriteRequest) returns (kvrpcpb.WriteResponse) {}
 
     // Raw commands; no transaction support.
     rpc RawGet(kvrpcpb.RawGetRequest) returns (kvrpcpb.RawGetResponse) {}
@@ -131,6 +132,8 @@ message BatchCommandsRequest {
 
             kvrpcpb.CheckSecondaryLocksRequest CheckSecondaryLocks = 33;
 
+            kvrpcpb.WriteRequest write = 34;
+
             // For some test cases.
             BatchCommandsEmptyRequest Empty = 255;
         }
@@ -183,6 +186,8 @@ message BatchCommandsResponse {
             kvrpcpb.VerDeleteRangeResponse VerDeleteRange = 32;
 
             kvrpcpb.CheckSecondaryLocksResponse CheckSecondaryLocks = 33;
+
+            kvrpcpb.WriteResponse write = 34;
 
             // For some test cases.
             BatchCommandsEmptyResponse Empty = 255;
